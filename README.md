@@ -14,7 +14,7 @@ Some information about myself:
 
     3. My goal for doing this program is to fill in the gap of my computer science knowledge and gain a deeper understanding of how computer actually works so that I can build sophisticated systems or applications.
 
-# Structure of the Course (Current Course work)
+# Structure of the Course (Current Coursework)
 
 ## Programming
 
