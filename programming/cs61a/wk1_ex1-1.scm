@@ -49,3 +49,21 @@ define (square x)
 ; special form
 ; when wrapping the cond inside a function, it returns an actuatl value and will be first evaluated if used in the body of a functoin; in that case the new-if cannot be used to check / determine whether the guess and x are good enough
 
+
+;Ex 1,7 
+(define (average x y) (/ (+ x y) 2))
+(define (improve guess x) (average guess (/ x guess)))
+(define (good-enough? guess x)
+ (< (abs (- (square guess) x)) 0.01)) ; change from 0.001 to 0.01
+
+(define (sqrt-iter guess x) (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x)))
+
+# the problem with the good-enough? test is that it loses its precision when it comes to a very large or small number
+  an example would be:
+                      (square (sqrt 1000)) would not give you back 1000
+                      (sqrt (+ (sqrt 2) (sqrt 3))) is a bit off
+ to improve it, I changed the checking value 0.001 to 0.01, and the results have been improved to be a bit more precise, compared to my scientific calculator
+
+
