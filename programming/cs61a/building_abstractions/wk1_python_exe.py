@@ -24,3 +24,23 @@ def sqrt(x):
 ans = sqrt(2)
 
 print(square(ans))
+
+# writing square sum
+def get_larger(x, y):
+    if x < y:
+        return y
+
+    return x
+
+def three_square_sum(x, y, z):
+    lg_1 = get_larger(x, y)
+    lg_2 = get_larger(y, z)
+
+    if lg_1 == lg_2:
+        lg_2 = get_larger(x, z)
+
+    return square(lg_1) + square(lg_2)
+
+ans_2 = three_square_sum(2, 4, 3)  # expect 25
+
+print(ans_2)
