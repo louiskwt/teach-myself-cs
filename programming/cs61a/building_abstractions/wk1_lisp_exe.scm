@@ -56,7 +56,8 @@ define (square x)
 (define (good-enough? guess x)
  (< (abs (- (square guess) x)) 0.01)) ; change from 0.001 to 0.01
 
-(define (sqrt-iter guess x) (if (good-enough? guess x)
+(define (sqrt-iter guess x) 
+    (if (good-enough? guess x)
       guess
       (sqrt-iter (improve guess x) x)))
 

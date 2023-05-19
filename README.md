@@ -25,3 +25,14 @@ Some information about myself:
 ## Mathematics for Computer Science
 
     - Precalculus (Brusing up my math skills) (5/8 - 8/5)
+
+# Reflection Section 💭
+
+## 5/8 - 5/19
+
+1. Going through SICP and CS61A lectures made me rethink the fundamental concepts of programming 
+
+2. Picking up Precal help me understand more about functions and its raltion to programming in general
+
+3. As the week progresses, I feel like I need to focus more on building projects and actually doing something practical with the materials I'm learning.
+
