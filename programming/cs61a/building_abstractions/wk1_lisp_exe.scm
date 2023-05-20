@@ -54,12 +54,16 @@ define (square x)
 (define (average x y) (/ (+ x y) 2))
 (define (improve guess x) (average guess (/ x guess)))
 (define (good-enough? guess x)
- (< (abs (- (square guess) x)) 0.01)) ; change from 0.001 to 0.01
+ (< (abs (- (square guess) x)) 0.001)
+ ) 
 
 (define (sqrt-iter guess x) 
     (if (good-enough? guess x)
       guess
       (sqrt-iter (improve guess x) x)))
+
+(define (square x) (* x x))
+(define (sqrt x) (sqrt-iter 1 x))
 
 # the problem with the good-enough? test is that it loses its precision when it comes to a very large or small number
   an example would be:
