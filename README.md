@@ -36,3 +36,14 @@ Some information about myself:
 
 3. As the week progresses, I feel like I need to focus more on building projects and actually doing something practical with the materials I'm learning.
 
+# Resources Section 
+
+## Programming
+
+- SICP Exercise on [hexlet.io]('https://sicp.hexlet.io/')
+- CS61A [lecture video]('https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter')
+
+## Math 
+
+- Precalculus [textbook]('https://openstax.org/details/books/precalculus-2e')
+
