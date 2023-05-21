@@ -5,7 +5,7 @@ def square(x):
 
 def sqrt(x):
     def good_enough(guess, x):
-        return abs(square(guess) - x) < 0.01
+        return abs(square(guess) - x) < 0.001
 
     def average(x, y):
         return (x + y) / 2
@@ -15,15 +15,15 @@ def sqrt(x):
 
     def sqrt_iter(guess, x):
         if good_enough(guess, x):
-            return guess
+            return round(guess, 3) 
         else:
             return sqrt_iter(improve(guess, x), x)
 
     return sqrt_iter(1.0, x)
 
-ans = sqrt(2)
+sqrt(2)
 
-print(square(ans))
+print(square(sqrt(2)))
 
 # writing square sum
 def get_larger(x, y):
@@ -43,4 +43,4 @@ def three_square_sum(x, y, z):
 
 ans_2 = three_square_sum(2, 4, 3)  # expect 25
 
-print(ans_2)
+# print(ans_2)
