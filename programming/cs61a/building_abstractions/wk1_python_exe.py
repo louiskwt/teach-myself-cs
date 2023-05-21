@@ -1,7 +1,12 @@
 # Ex  1 Translating Newton's Square root method in python
+import math
 
 def square(x):
     return x * x
+
+def round_up(n, d=0):
+    multiplier = 10 ** d
+    return math.ceil(n * multiplier) / multiplier
 
 def sqrt(x):
     def good_enough(guess, x):
@@ -15,7 +20,7 @@ def sqrt(x):
 
     def sqrt_iter(guess, x):
         if good_enough(guess, x):
-            return round(guess, 3) 
+            return math.ceil(guess) 
         else:
             return sqrt_iter(improve(guess, x), x)
 
