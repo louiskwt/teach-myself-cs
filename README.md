@@ -40,8 +40,10 @@ Some information about myself:
 
 ## Programming
 
-- SICP Exercise on [hexlet.io]('https://sicp.hexlet.io/')
-- CS61A [lecture video]('https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter')
+- Composing Program [book]('http://composingprograms.com/')
+
+- CS61A [lecture video]('https://inst.eecs.berkeley.edu/~cs61a/su20/')
+
 
 ## Math 
 
