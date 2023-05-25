@@ -46,4 +46,7 @@ Some information about myself:
 ## Math 
 
 - Precalculus [textbook]('https://openstax.org/details/books/precalculus-2e')
+- Precalculus Lecture [videos]('https://www.youtube.com/watch?v=9OOrhA2iKak&list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP') by Professor Leonard
+
+- Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1') 
 
