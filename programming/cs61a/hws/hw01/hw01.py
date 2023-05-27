@@ -13,9 +13,9 @@ def a_plus_abs_b(a, b):
     ['return h(a, b)']
     """
     if b >= 0:
-        h = add(a, b)
+        h = add
     else:
-        h = sub(a, b)
+        h = sub
     return h(a, b)
 
 
@@ -37,7 +37,7 @@ def two_of_three(x, y, z):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(two_of_three)).body[0].body]
     ['Expr', 'Return']
     """
-    return _____
+    return min(x, y, z)**2 + min(max(x, y), max(z, x), max(y, z))**2
 
 
 def largest_factor(x):
