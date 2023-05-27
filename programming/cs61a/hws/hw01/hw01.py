@@ -116,6 +116,7 @@ def false_func():
     "*** YOUR CODE HERE ***"
     print(47)
 
+# This question has to do with function return and return order
 
 def hailstone(x):
     """Print the hailstone sequence starting at x and return its
