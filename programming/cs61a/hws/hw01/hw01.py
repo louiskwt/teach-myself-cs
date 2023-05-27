@@ -39,7 +39,6 @@ def two_of_three(x, y, z):
     """
     return min(x, y, z)**2 + min(max(x, y), max(z, x), max(y, z))**2
 
-
 def largest_factor(x):
     """Return the largest factor of x that is smaller than x.
 
@@ -51,6 +50,17 @@ def largest_factor(x):
     1
     """
     "*** YOUR CODE HERE ***"
+    if x < 1:
+        return
+
+    largest_factor = 1
+
+    for i in range(1, x + 1):
+        if x % i == 0 and i != x:
+            largest_factor = i
+
+    return largest_factor
+
 
 
 def if_function(condition, true_result, false_result):
