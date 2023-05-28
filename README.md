@@ -36,7 +36,7 @@ Some information about myself:
 
 3. As the week progresses, I feel like I need to focus more on building projects and actually doing something practical with the materials I'm learning.
 
-# Resources Section 
+# Resources Section 🔗
 
 ## Programming
 
@@ -50,7 +50,12 @@ Some information about myself:
 ## Math 
 
 - Precalculus [textbook]('https://openstax.org/details/books/precalculus-2e')
+
 - Precalculus Lecture [videos]('https://www.youtube.com/watch?v=9OOrhA2iKak&list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP') by Professor Leonard
 
 - Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1') 
+
+# Todo 📝
+
+1. Making a blog out of it?
 
