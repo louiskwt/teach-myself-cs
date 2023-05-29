@@ -134,4 +134,14 @@ def hailstone(x):
     7
     """
     "*** YOUR CODE HERE ***"
-
+    count, curr = 1, x
+    while curr !== 1:
+        if curr % 2 == 0:
+            count += 1
+            curr = curr / 2
+            print(curr)
+        else:
+            count += 1
+            curr = (curr * 3) + 1
+            print(curr)
+    return count
