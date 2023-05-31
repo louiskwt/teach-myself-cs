@@ -40,7 +40,12 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
-
+    digits = str(y)
+    ans = 0
+    
+    for d in digits:
+        ans += int(d)
+    return ans
 
 
 def double_eights(n):
