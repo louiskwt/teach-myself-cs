@@ -11,16 +11,18 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
-    ans = 1
-    depth = k
 
-    if depth == 0:
-        return ans
+    if k == 0:
+        return 1
+    
+    curr = 0
+    ans = n
 
-    while n > depth:
-        ans *= n
-        n -= 1
-
+    while curr < k:
+        if curr != 0:
+            ans *= (n - curr)
+        curr += 1
+    
     return ans
 
 
