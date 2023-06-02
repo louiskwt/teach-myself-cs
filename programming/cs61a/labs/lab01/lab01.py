@@ -62,6 +62,8 @@ def double_eights(n):
     False
     >>> double_eights(80808080)
     False
+    >>> double_eights(9088)
+    True
     """
     "*** YOUR CODE HERE ***"
     digits = str(n)
