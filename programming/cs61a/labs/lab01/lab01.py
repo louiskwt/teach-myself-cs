@@ -64,5 +64,17 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
+    digits = str(n)
+    ans = False
+    for i, v in enumerate(digits):
+        if i + 1 == len(digits):
+            break
+        curr = int(v)
+        adj = int(digits[i+1])
+        if curr == 8 and adj == 8:
+            ans = True
+            break
+    return ans
+
 
 
