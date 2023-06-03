@@ -61,6 +61,10 @@ def accumulate(combiner, base, n, term):
     16
     """
     "*** YOUR CODE HERE ***"
+    total, k = base, 1
+    while k <= n:
+        total, k = combiner(total, term(k)), k + 1
+    return total
 
 def summation_using_accumulate(n, term):
     """Returns the sum of term(1) + ... + term(n). The implementation
