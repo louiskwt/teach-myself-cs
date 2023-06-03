@@ -120,7 +120,13 @@ def make_repeater(func, n):
     5
     """
     "*** YOUR CODE HERE ***"
-
+    def h(x):
+        k, t = n, x
+        while k > 0:
+            k -= 1
+            t = func(t)
+        return t
+    return h
 
 def zero(f):
     return lambda x: x
