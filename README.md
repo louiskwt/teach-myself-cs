@@ -18,13 +18,11 @@ Some information about myself:
 
 ## Programming
 
-    - SICP Book and lecture (5/8 - 8/5)
-
-    - Revisiting the C Programming Portion of CS50 (5/7 - 6/7)
+    - CS61A - SICP (Python) Book and lecture (5/8 - 8/5)
 
 ## Mathematics for Computer Science
 
-    - Precalculus (Brusing up my math skills) (5/8 - 8/5)
+    - Precalculus (5/8 - 8/5)
 
 # Reflection Section 💭
 
