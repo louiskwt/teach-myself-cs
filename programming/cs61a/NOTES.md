@@ -28,6 +28,15 @@
 
 - Closure referes to the locally defined functions that enclose information in the function scope
 
-- Currying - convert a function that takes multiple arguments into a chain of functions that each take a single argument. Mapping one argument to another function and return that function.
+- Currying - Transforming a multi-argument function into a single-argument, higher-order function
+
+> E.g  make_adder(2)(3)
+  
 
 - lambda exoressions - anonymous function that has a single expression as its body. assignment and control statements are not allowed.
+
+- functional abstractions
+
+    1. def: binding computational process to a name
+    2. you don't have to worry about the implementation, but you should know the expected behaviour
+    3. naming doesn't matter in terms of correctness, but it matters for composition
