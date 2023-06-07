@@ -14,7 +14,7 @@ def roll_dice(num_rolls, dice=six_sided):
     """Simulate rolling the DICE exactly NUM_ROLLS > 0 times. Return the sum of
     the outcomes unless any of the outcomes is 1. In that case, return 1.
 
-    num_rolls:  The number of dice rolls that will be made.
+    num_rolls:  The number of dice rollsethat will be made.
     dice:       A function that simulates a single dice roll outcome.
     """
     # These assert statements ensure that num_rolls is a positive integer.
@@ -41,6 +41,12 @@ def free_bacon(score):
     assert score < 100, 'The game should be over.'
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    if score < 10:
+        return 10 - score + 0
+    else:
+        tens = (score % 100) // 10
+        ones = (score % 10)
+        return 10 - ones + tens 
     # END PROBLEM 2
 
 
