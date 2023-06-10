@@ -77,7 +77,15 @@ def is_swap(player_score, opponent_score):
     """
     # BEGIN PROBLEM 4
     "*** YOUR CODE HERE ***"
+    p_ones = player_score % 10
+    o_ones = opponent_score % 10
+    o_tens = (opponent_score % 100) // 10
+
+    if abs(p_ones - o_ones) == o_tens:
+        return True
+    return False
     # END PROBLEM 4
+
 
 
 def other(who):
