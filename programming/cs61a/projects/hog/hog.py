@@ -127,16 +127,19 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     "*** YOUR CODE HERE ***"
     p0_win = score0 >= goal
     p1_win = score1 >= goal
+    game_over = False
 
-    while not p0_win or p1_win:
+    while not game_over:
         if who == 0:
             num_rolls = strategy0(score0, score1)
-            score0 = take_turn(num_rolls, score1, dice)
+            score0 += take_turn(num_rolls, score1, dice)
         else:
             num_rolls = strategy1(score1, score0)
-            score1 = take_turn(num_rolls, score0, dice)
+            score1 += take_turn(num_rolls, score0, dice)
         
-        other(who)
+        who = other(who)
+        if score0 >= goal or score1 >= goal:
+            game_over = True
 
     # END PROBLEM 5
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
