@@ -133,11 +133,16 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
         if who == 0:
             num_rolls = strategy0(score0, score1)
             score0 += take_turn(num_rolls, score1, dice)
+            if is_swap(score0, score1):
+                score0, score1 = score1, score0
         else:
             num_rolls = strategy1(score1, score0)
             score1 += take_turn(num_rolls, score0, dice)
-        
+            if is_swap(score1, score0):
+                score1, score0 = score0, score1
+
         who = other(who)
+
         if score0 >= goal or score1 >= goal:
             game_over = True
 
