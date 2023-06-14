@@ -92,6 +92,15 @@ result = add_ten(n)
     3. the value bounded to result in the global frame is 19
 """
 
+# Q7 Notes
+a = lambda x: x * 2 + 1  # λ
+def b(b, x):
+    return b(x + a(x))   # this one is tricky: b should've been written as f / y for easier understanding
+
+x = 3
+b(a, x)
+# return 21
+
 
 def compose1(f, g):
     """Return the composition function which given x, computes f(g(x)).
