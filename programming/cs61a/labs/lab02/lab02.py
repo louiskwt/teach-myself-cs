@@ -70,16 +70,10 @@ def both_paths(sofar="S"):
     SUU
     """
     "*** YOUR CODE HERE ***"
-    def up():
-        return both_paths(sofar + "U")
-
-    def down():
-        return both_paths(sofar + "D")
-
     print(sofar)
     
-    u = up
-    d = down
+    u = lambda: both_paths(sofar + "U")
+    d = lambda: both_paths(sofar + "D")
 
     return u, d 
 
