@@ -127,8 +127,8 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     "*** YOUR CODE HERE ***"
     p0_win = score0 >= goal
     p1_win = score1 >= goal
-    p0_prev_score = -999
-    p1_prev_score = -999
+    p0_prev_score = score0
+    p1_prev_score = score1
     curr_p0_score = score0
     curr_p1_score = score1
 
@@ -137,40 +137,32 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     while not game_over:
         if who == 0:
             num_rolls = strategy0(score0, score1)
-            curr_p0_score = take_turn(num_rolls, score1, dice)
-
-            score0 += curr_p0_score
             
             if feral_hogs and abs(num_rolls - p0_prev_score) == 2:
                 score0 += 3
-            
+
+            curr_p0_score = take_turn(num_rolls, score1, dice)
+
+            score0 += curr_p0_score
+                        
             p0_prev_score = curr_p0_score
 
             if is_swap(score0, score1):
                 score0, score1 = score1, score0
         else:
             num_rolls = strategy1(score1, score0)
+            if feral_hogs and abs(num_rolls - p1_prev_score) == 2:
+                score1 += 3
+
             curr_p1_score = take_turn(num_rolls, score0, dice)
             
             score1 += curr_p1_score
             
-            if feral_hogs and abs(num_rolls - p1_prev_score) == 2:
-                score1 += 3
             p1_prev_score = curr_p1_score
 
             if is_swap(score1, score0):
                 score1, score0 = score0, score1
-
-        #if feral_hogs and abs(num_rolls - p0_prev_score) == 2:
-         #   if curr_p0_score != score0:
-          #      score0 += 3
-           #     p0_prev_score = curr_p0_score
-
-        #if feral_hogs and abs(num_rolls - p1_prev_score) == 2:
-         #   if curr_p1_score != score1:
-          #      score1 += 3
-           #     p1_prev_score = curr_p1_score
-
+            
         who = other(who)
 
         if score0 >= goal or score1 >= goal:
