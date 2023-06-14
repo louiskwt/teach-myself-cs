@@ -70,6 +70,18 @@ def both_paths(sofar="S"):
     SUU
     """
     "*** YOUR CODE HERE ***"
+    def up():
+        return both_paths(sofar + "U")
+
+    def down():
+        return both_paths(sofar + "D")
+
+    print(sofar)
+    
+    u = up
+    d = down
+
+    return u, d 
 
 
 
