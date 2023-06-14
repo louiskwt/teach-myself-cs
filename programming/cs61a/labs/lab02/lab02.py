@@ -77,6 +77,20 @@ def both_paths(sofar="S"):
 
     return u, d 
 
+# Q6 Notes
+n = 9
+def make_adder(n):
+    return lambda k: k + n
+add_ten = make_adder(n+1)
+result = add_ten(n)
+
+"""
+    1. the intrinsic name of add_ten's function object = λ(k) [the lambda returned in make_adder
+       the parent frame is f1 from make_adder
+
+    2. the name of frame 2: λ; f1 is the parent of f2
+    3. the value bounded to result in the global frame is 19
+"""
 
 
 def compose1(f, g):
