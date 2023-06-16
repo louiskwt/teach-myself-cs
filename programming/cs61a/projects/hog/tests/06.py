@@ -5,14 +5,14 @@ test = {
     {
       'cases': [
         {
-          'answer': '5e0e1a4c94a7429afae6399105d34f05',
+          'answer': 'Another commentary function.',
           'choices': [
             'Another commentary function.',
             'An integer representing the score.',
             'None.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': 'What does a commentary function return?'
         }
       ],
@@ -28,13 +28,12 @@ test = {
           ...     print(s0, s1)
           ...     return echo
           >>> s0, s1 = play(always_roll(1), always_roll(1), dice=make_test_dice(3), goal=5, say=echo)
-          d7882c94106188a2f424c5383b507923
-          b706c6a1e63c19ed82e4eb95fc6ba1cf
-          b57f18b04748377f05b1484da01f28e5
-          # locked
+          3 0
+          3 3
+          9 3
           """,
           'hidden': False,
-          'locked': True
+          'locked': False
         },
         {
           'code': r"""
