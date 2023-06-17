@@ -165,6 +165,8 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             
         who = other(who)
 
+        say = say(score0, score1)
+
         if score0 >= goal or score1 >= goal:
             game_over = True
 
@@ -172,7 +174,9 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
     "*** YOUR CODE HERE ***"
+
     # END PROBLEM 6
+
     return score0, score1
 
 
