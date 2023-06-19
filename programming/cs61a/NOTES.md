@@ -1,5 +1,7 @@
 # Course Notes
 
+## Functions and Abstractions Ch 1.1 - 1.6 
+
 > A language isn't something you learn so much as something you join. -- Arkia Okrent
 
 - A powerful programming language has three mechanisms:
@@ -40,3 +42,33 @@
     1. def: binding computational process to a name
     2. you don't have to worry about the implementation, but you should know the expected behaviour
     3. naming doesn't matter in terms of correctness, but it matters for composition
+
+## Recursion
+
+A function is called recursive if the body of the function calls the funciton itself, either directly or indirectly
+
+- Anatomy of Recursive Functions
+
+    1. A base case
+    2. The recursive call
+
+Main point
+
+> Recursive functions express computation by simplifying problems incrementally.
+
+Verifying the correctness of a recursive function is a form of proof by induction
+
+    1. start by verifying the base case
+    2. substitute it with k + 1 to verify that it can work for k + 1 temrs
+
+Iterative Approach vs Recursive Approach
+
+    - In general, iterative functions must maintain some local state that changes throughout the course of implemntation
+    - Recursive functions, on the other hand, bind the values in different frames (recurive calls) without tracking the state. It avoids the nuisance of corretly assigning local names during iteration.
+
+Recursive fucntions can be easier to define correctly, but it's hard to recognize the process evolved by recursive functions.
+
+When a recursive procedure is divided among two funcitons that call each other, the functions are said to be mutually recurisve. (flipping back-and-forth between two functions in recursive calls)
+
+
+Mutually recursive functions can be turned into a single recursive function by breaking the abstraction boundary between the two functions
