@@ -28,6 +28,8 @@
     1. HOF means passing a funciton as an argument to another function
     2. a function can also return a function for further computation / generalizing computational process
 
+> All in all, a higher order functoin is a function that manipulates other functions by taking in functions as  arguments, returning a function, or both. Its aim is to delay further computation / generalize computational  process
+
 - Closure referes to the locally defined functions that enclose information in the function scope
 
 - Currying - Transforming a multi-argument function into a single-argument, higher-order function
@@ -42,6 +44,9 @@
     1. def: binding computational process to a name
     2. you don't have to worry about the implementation, but you should know the expected behaviour
     3. naming doesn't matter in terms of correctness, but it matters for composition
+
+- Self reference refers to a particular design of HOF, where a function eventually return itself. In particular, a self-referencing function will not return a function call, but rather the (evaluated) funtion object itself. This feature is very interesting an useful for dynamic language like Python and JS, and one can take advantage of that.
+
 
 ## Recursion
 
