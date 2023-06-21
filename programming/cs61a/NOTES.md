@@ -77,3 +77,11 @@ When a recursive procedure is divided among two funcitons that call each other, 
 
 
 Mutually recursive functions can be turned into a single recursive function by breaking the abstraction boundary between the two functions
+
+Tree Recursion
+
+- a function calls itself more than once
+- each call branches into multiple smaller calls, each of which branches into yet smaller calls...
+- not so efficient
+
+We can think of a tree-recursive function as exploring different possibilities
