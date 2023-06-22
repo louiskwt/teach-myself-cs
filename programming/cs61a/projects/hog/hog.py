@@ -348,6 +348,18 @@ def max_scoring_num_rolls(dice=six_sided, trials_count=1000):
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
     # END PROBLEM 9
+    avg_score = make_averaged(roll_dice, trials_count)
+    max_score = 1
+    roll_for_max_score = 1
+
+    for i in range(1, 11): 
+        avg_turn_score = avg_score(i, dice)
+        if avg_turn_score > max_score:
+            max_score, roll_for_max_score = avg_turn_score, i
+
+    return roll_for_max_score
+
+
 
 
 def winner(strategy0, strategy1):
