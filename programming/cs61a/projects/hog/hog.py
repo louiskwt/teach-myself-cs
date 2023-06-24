@@ -422,7 +422,7 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     non-beneficial swap. Otherwise, it rolls NUM_ROLLS.
     """
     # BEGIN PROBLEM 11
-    return 6  # Replace this statement
+    return 0 if is_swap(score, opponent_score) and opponent_score >= cutoff else 6
     # END PROBLEM 11
 
 
