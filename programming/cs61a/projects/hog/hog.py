@@ -423,7 +423,7 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     """
     # BEGIN PROBLEM 11
     bacon = bacon_strategy(score, opponent_score, cutoff, num_rolls)
-    b_swap = (is_swap(score, opponent_score) or is_swap(opponent_score, score)) and opponent_score > score 
+    b_swap = (is_swap(score, opponent_score) and opponent_score > score) or (is_swap(opponent_score, score) and opponent_score + cutoff >= 100 ) 
     # beneifical swaps
     if b_swap:
         return 0 
