@@ -426,16 +426,18 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     b_swap = (is_swap(score, opponent_score) and opponent_score > score) or (is_swap(opponent_score, score) and score < opponent_score) 
     # beneifical swaps
     if b_swap:
-        if (opponent_score - score) > 30 or (score + cutoff < opponent_score and abs(opponent_score - score) <= 20):
+        if abs(opponent_score - score) > 30 or (score + cutoff < opponent_score and abs(opponent_score - score) <= 20):
             return 0 
         return bacon 
     # non-beneifical swap
-    non_b_swap = (is_swap(opponent_score, score) or is_swap(score, opponent_score)) and score > opponent_score
+    non_b_swap = (is_swap(opponent_score, score) or is_swap(score, opponent_score) or is_swap(opponent_score + cutoff, score)) and score > opponent_score
 
     if not(non_b_swap):
         return bacon
 
     if non_b_swap:
+        if (num_rolls - cutoff) > 3:
+            return 0
         return num_rolls
 
 
