@@ -422,23 +422,40 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     non-beneficial swap. Otherwise, it rolls NUM_ROLLS.
     """
     # BEGIN PROBLEM 11
-    bacon = bacon_strategy(score, opponent_score, cutoff, num_rolls)
-    b_swap = (is_swap(score, opponent_score) and opponent_score > score) or (is_swap(opponent_score, score) and score < opponent_score) 
-    # beneifical swaps
-    if b_swap:
-        if abs(opponent_score - score) > 30 or (score + cutoff < opponent_score and abs(opponent_score - score) <= 20):
-            return 0 
-        return bacon 
-    # non-beneifical swap
-    non_b_swap = (is_swap(opponent_score, score) or is_swap(score, opponent_score) or is_swap(opponent_score + cutoff, score)) and score > opponent_score
+    bacon = 10 - (opponent_score // 10) + (opponent_score % 10)
+    tmp_score = bacon + score
+    #print(tmp_score, bacon)
 
-    if not(non_b_swap):
-        return bacon
-
-    if non_b_swap:
-        if (num_rolls - cutoff) > 3:
+    if opponent_score > tmp_score and is_swap(tmp_score, opponent_score):
+        print("b swap")
+        return 0
+    elif bacon >= cutoff:
+        if is_swap(tmp_score, opponent_score) and tmp_score < opponent_score:
+            # print("nb swap")
+            return num_rolls
+        else:
+            # print("
             return 0
+    else:
         return num_rolls
+
+    # bacon = bacon_strategy(score, opponent_score, cutoff, num_rolls)
+    # b_swap = (is_swap(score, opponent_score) and opponent_score > score) or (is_swap(opponent_score, score) and score < opponent_score) 
+    # beneifical swaps
+    #if b_swap:
+        #if abs(opponent_score - score) > 30 or (score + cutoff < opponent_score and abs(opponent_score - score) <= 20):
+         #   return 0 
+        #return bacon 
+    # non-beneifical swap
+    #non_b_swap = (is_swap(opponent_score, score) or is_swap(score, opponent_score) or is_swap(opponent_score + cutoff, score)) and score > opponent_score
+
+    #if not(non_b_swap) and not(b_swap):
+     #   return num_rolls 
+
+    #if non_b_swap:
+     #   if (num_rolls - cutoff) > 3:
+      #      return 0
+       # return num_rolls
 
 
     # END PROBLEM 11
