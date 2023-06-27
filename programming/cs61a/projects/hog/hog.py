@@ -417,45 +417,30 @@ def bacon_strategy(score, opponent_score, cutoff=8, num_rolls=6):
 
 
 def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
-    """This strategy rolls 0 dice when it triggers a beneficial swap. It also
+    """
+    This strategy rolls 0 dice when it triggers a beneficial swap. It also
     rolls 0 dice if it gives at least CUTOFF points and does not trigger a
     non-beneficial swap. Otherwise, it rolls NUM_ROLLS.
+
+    Extra Notes
+    For this quesiton, one should consider the bacon rule first and calculate the potential score after getting the bacon because the swine_swap will happen after bacon. That's why it is important to have a tmp_score and use it to check against is_swap
+
     """
     # BEGIN PROBLEM 11
     bacon = 10 - (opponent_score % 10) + (opponent_score // 10)
     tmp_score = bacon + score
-    #print(tmp_score, bacon)
 
     b_swap = is_swap(tmp_score, opponent_score) and (opponent_score > tmp_score)
     nb_swap = (is_swap(tmp_score, opponent_score)) and (opponent_score < tmp_score)
 
     if b_swap:
-        # print("b_swap: 0")
         return 0
 
     if not(nb_swap) and bacon >= cutoff:
-        # print(0)
         return 0
     else:
-        # print(num_rolls)
         return num_rolls
     
-              #if b_swap:
-        #if abs(opponent_score - score) > 30 or (score + cutoff < opponent_score and abs(opponent_score - score) <= 20):
-         #   return 0 
-        #return bacon 
-    # non-beneifical swap
-    #non_b_swap = (is_swap(opponent_score, score) or is_swap(score, opponent_score) or is_swap(opponent_score + cutoff, score)) and score > opponent_score
-
-    #if not(non_b_swap) and not(b_swap):
-     #   return num_rolls 
-
-    #if non_b_swap:
-     #   if (num_rolls - cutoff) > 3:
-      #      return 0
-       # return num_rolls
-
-
     # END PROBLEM 11
 
 
