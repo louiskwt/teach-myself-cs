@@ -431,7 +431,7 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     tmp_score = bacon + score
 
     b_swap = is_swap(tmp_score, opponent_score) and (opponent_score > tmp_score)
-    nb_swap = (is_swap(tmp_score, opponent_score)) and (opponent_score < tmp_score)
+    nb_swap = is_swap(tmp_score, opponent_score) and (opponent_score < tmp_score)
 
     if b_swap:
         return 0
