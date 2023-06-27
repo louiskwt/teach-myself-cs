@@ -424,13 +424,13 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     # BEGIN PROBLEM 11
     bacon = 10 - (opponent_score % 10) + (opponent_score // 10)
     tmp_score = bacon + score
-    # print(tmp_score, bacon)
+    #print(tmp_score, bacon)
 
     b_swap = is_swap(tmp_score, opponent_score) and (opponent_score > tmp_score)
-    nb_swap = (is_swap(tmp_score, opponent_score) or is_swap(opponent_score, tmp_score)) and (opponent_score < tmp_score)
+    nb_swap = (is_swap(tmp_score, opponent_score)) and (opponent_score < tmp_score)
 
     if b_swap:
-       #  print("b_swap: 0")
+        # print("b_swap: 0")
         return 0
 
     if not(nb_swap) and bacon >= cutoff:
