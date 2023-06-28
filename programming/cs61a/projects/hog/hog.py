@@ -2,6 +2,7 @@
 
 from dice import six_sided, four_sided, make_test_dice
 from ucb import main, trace, interact
+from random import randrange
 
 GOAL_SCORE = 100  # The goal of Hog is to score 100 points.
 
@@ -446,11 +447,17 @@ def swap_strategy(score, opponent_score, cutoff=8, num_rolls=6):
 
 def final_strategy(score, opponent_score):
     """Write a brief description of your final strategy.
+    start with swap_strategy, and then check to see if it's
+    close to 100
 
     *** YOUR DESCRIPTION HERE ***
     """
     # BEGIN PROBLEM 12
-    return 6  # Replace this statement
+    if score < opponent_score:
+        return swap_strategy(score, opponent_score, 8, 6)
+    if 100 - score < 12:
+        return randrange(4)
+    return 4  # Replace this statement
     # END PROBLEM 12
 
 ##########################
