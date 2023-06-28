@@ -457,7 +457,7 @@ def final_strategy(score, opponent_score):
         return swap_strategy(score, opponent_score, 8, 6)
     if 100 - score < 12:
         return randrange(4)
-    return 4  # Replace this statement
+    return 4  # always roll 4 to at least match always(4)
     # END PROBLEM 12
 
 ##########################
