@@ -140,7 +140,6 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             num_rolls = strategy0(score0, score1)
             
             if feral_hogs and abs(num_rolls - p0_prev_score) == 2:
-                #print("feral called p0")
                 score0 += 3
 
             curr_p0_score = take_turn(num_rolls, score1, dice)
@@ -149,16 +148,11 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
                         
             p0_prev_score = curr_p0_score
 
-            #print(f'p0 prev_score ${p0_prev_score} curr score ${score0}')
-
             if is_swap(score0, score1):
-                #print("swap for p0")
                 score0, score1 = score1, score0
-                #print(f'new score ${score0}, opponent: ${score1}')
         else:
             num_rolls = strategy1(score1, score0)
             if feral_hogs and abs(num_rolls - p1_prev_score) == 2:
-                #print("feral called p1")
                 score1 += 3
 
             curr_p1_score = take_turn(num_rolls, score0, dice)
@@ -167,12 +161,8 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             
             p1_prev_score = curr_p1_score
 
-            #print(f'p1 prev_score ${p1_prev_score} curr score ${score1}')
-
             if is_swap(score1, score0):
-                #print("swap for p1")
                 score1, score0 = score0, score1
-                #print(f'new score ${score1}, opponent: ${score0}')
             
         who = other(who)
 
