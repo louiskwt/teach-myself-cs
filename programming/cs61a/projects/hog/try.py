@@ -1,6 +1,11 @@
-from hog import*
+import hog
 
-swap_strategy(1, 19, 8, 6)
-swap_strategy(72, 89, 14, 9)
-swap_strategy(30, 54, 7, 6)
-swap_strategy(63, 40, 7, 9)
+always_one = hog.make_test_dice(1)
+always_two = hog.make_test_dice(2)
+always_three = hog.make_test_dice(3)
+always = hog.always_roll
+
+s0, s1 = hog.play(always(2), always(1), score0=17, score1=6, goal=21, dice=hog.make_test_dice(1, 2))
+
+print(s0)
+
