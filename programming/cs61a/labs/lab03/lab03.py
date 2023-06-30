@@ -50,6 +50,9 @@ def repeated(f, n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n == 0:
+        return lambda x: x
+    
 
 
 def num_eights(x):
