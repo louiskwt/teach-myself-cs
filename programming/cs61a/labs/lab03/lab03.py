@@ -125,6 +125,7 @@ def pingpong(n):
     if n == 1:
         return 1
 
+    # to do a helper func is needed
     if num_eights(n) > 0 or n % 8 == 0:
         return 1 - pingpong(n - 1)
 
