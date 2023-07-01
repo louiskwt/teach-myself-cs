@@ -52,7 +52,11 @@ def repeated(f, n):
     "*** YOUR CODE HERE ***"
     if n == 0:
         return lambda x: x
-    
+    if n == 1:
+        return compose1(f, lambda x: x)
+
+add_three = repeated(lambda x: x ** 2, 1)
+print(add_three(5))
 
 
 def num_eights(x):
