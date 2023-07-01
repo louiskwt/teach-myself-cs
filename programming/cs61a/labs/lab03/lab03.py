@@ -122,4 +122,13 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n == 1:
+        return 1
+
+    if num_eights(n) > 0 or n % 8 == 0:
+        return 1 - pingpong(n - 1)
+
+    return 1 + pingpong(n - 1)
+
+    
 
