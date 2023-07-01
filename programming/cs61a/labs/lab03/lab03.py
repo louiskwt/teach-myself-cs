@@ -54,10 +54,7 @@ def repeated(f, n):
         return lambda x: x
     if n == 1:
         return compose1(f, lambda x: x)
-
-add_three = repeated(lambda x: x ** 2, 1)
-print(add_three(5))
-
+    return compose1(f, repeated(f, n-1))
 
 def num_eights(x):
     """Returns the number of times 8 appears as a digit of x.
