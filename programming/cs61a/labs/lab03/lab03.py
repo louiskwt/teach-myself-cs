@@ -78,6 +78,15 @@ def num_eights(x):
     True
     """
     "*** YOUR CODE HERE ***"
+    if x % 10 == 8 and x  // 10 != 0:
+        return 1 + num_eights(x // 10)
+    
+    if x % 10 == 8 and x // 10 == 0:
+        return 1
+    elif x // 10 == 0:
+        return 0
+
+    return 0 + num_eights(x // 10) 
 
 
 def pingpong(n):
