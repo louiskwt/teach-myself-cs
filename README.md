@@ -42,6 +42,12 @@ Some information about myself:
 
 3. Moving forward, I would like to take more notes so that I can remember what I have learned.
 
+## 6/03 - 7/02
+
+1. Finished A Coursera course on Precalculus and learned a lot from it
+2. Taking SICP and reading the book continued to make me a better programmer in so many aspects
+3. Need to speed up my progress~
+
 # Resources Section 🔗
 
 ## Programming
