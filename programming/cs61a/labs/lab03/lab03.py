@@ -123,12 +123,14 @@ def pingpong(n):
     """
     "*** YOUR CODE HERE ***"
     i = 1
-    count = 1
-    while i < n:
-        i = i + 1
-        if num_eights(i) > 0 or i % 8 == 0:
-            i = i - 1
-    return i
+    value = 0
+    count = 1 
+    while i <= n:
+        value += count
+        if i % 8 == 0 or num_eights(i) > 0:
+            count = - count
+        i += 1
+    return value
 
 
 print(pingpong(2))
