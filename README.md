@@ -61,6 +61,8 @@ Some information about myself:
 
 - Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1') 
 
+- Khan Academy [Precalculus Course]('https://www.khanacademy.org/math/precalculus')
+
 # Todo 📝
 
 1. Making a blog out of it?
