@@ -122,23 +122,14 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    i = 1
     count = 1
-    up = True
-    for i in range(1, n):
+    while i < n:
+        i = i + 1
         if num_eights(i) > 0 or i % 8 == 0:
-            up = False
-        if up == True:
-            count += 1
-        else:
-            count -= 1
+            i = i - 1
+    return i
 
-    return count
 
-# print(pingpong(1))
-print(pingpong(9))
 print(pingpong(2))
 print(pingpong(10))
-print(pingpong(8))
-
-    
-
