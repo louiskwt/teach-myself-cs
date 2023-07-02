@@ -122,16 +122,23 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
-    i = 1
-    value = 0
-    count = 1 
-    while i <= n:
-        value += count
-        if i % 8 == 0 or num_eights(i) > 0:
-            count = - count
-        i += 1
-    return value
+    #i = 1
+    #value = 0
+    #count = 1 
+    #while i <= n:
+    #    value += count
+    #    if i % 8 == 0 or num_eights(i) > 0:
+    #       count = - count
+    #   i += 1
+    #return value
+    def pp_helper(i, value, count, n):
+        # base case (stop when i == n)
+        if i == n:
+            return value
+        if i % 8 == 0 or num_eights(i) != 0:
+            # trigger the downward count
+            return pp_helper(i + 1, value - count, -count, n)
+        return pp_helper(i + 1, value + count, count, n)
 
+    return pp_helper(1, 1, 1, n)
 
-print(pingpong(2))
-print(pingpong(10))
