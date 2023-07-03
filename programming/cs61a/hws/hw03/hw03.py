@@ -21,7 +21,8 @@ def composer(func=lambda x: x):
     """
     def func_adder(g):
         "*** YOUR CODE HERE ***"
-        return composer(g)
+        return composer()
+    
     return func, func_adder
 
 
