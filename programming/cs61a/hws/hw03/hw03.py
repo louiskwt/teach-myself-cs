@@ -68,6 +68,10 @@ def g_iter(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n <= 3:
+        return n
+    
+        
 
 
 def missing_digits(n):
