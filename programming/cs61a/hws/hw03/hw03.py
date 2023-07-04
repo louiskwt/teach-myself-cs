@@ -70,8 +70,16 @@ def g_iter(n):
     "*** YOUR CODE HERE ***"
     if n <= 3:
         return n
-    
-        
+
+    n1, n2, curr = 1, 2, 3
+    i = 3
+    while i < n:
+        # todo
+        curr = curr + 2 * n2 + 3 * n1
+        n1, n2 = n2, curr
+        i += 1
+
+    return curr        
 
 
 def missing_digits(n):
