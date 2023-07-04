@@ -75,8 +75,9 @@ def g_iter(n):
     n1, n2, curr = 1, 2, 3
     i = 3
     while i < n:
+        prev_curr = curr
         curr = curr + 2 * n2 + 3 * n1
-        n1, n2 = n2, curr
+        n1, n2 = n2, prev_curr
         i += 1
 
     return curr        
