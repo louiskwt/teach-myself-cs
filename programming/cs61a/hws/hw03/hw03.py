@@ -71,10 +71,10 @@ def g_iter(n):
     if n <= 3:
         return n
 
+    # Sliding window approach
     n1, n2, curr = 1, 2, 3
     i = 3
     while i < n:
-        # todo
         curr = curr + 2 * n2 + 3 * n1
         n1, n2 = n2, curr
         i += 1
