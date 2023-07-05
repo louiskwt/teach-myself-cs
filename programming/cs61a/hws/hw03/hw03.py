@@ -117,15 +117,17 @@ def missing_digits(n):
     last_digit = n % 10
     r = n // 10
 
-    if r > 10:
-        next = r % 10
-    else:
-        next = r
+    next = r if r < 10 else r % 10
+
+    count = 0
 
     if last_digit - 1 != next:
-        return last_digit - 1 - next
+        count = (last_digit - 1) - next
 
-    return 0 + missing_digits(r)
+    if last_digit == next:
+        count += 1
+
+    return count + missing_digits(r)
     
 
 
