@@ -111,6 +111,22 @@ def missing_digits(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n < 10:
+        return 0
+
+    last_digit = n % 10
+    r = n // 10
+
+    if r > 10:
+        next = r % 10
+    else:
+        next = r
+
+    if last_digit - 1 != next:
+        return last_digit - 1 - next
+
+    return 0 + missing_digits(r)
+    
 
 
 def count_change(total):
