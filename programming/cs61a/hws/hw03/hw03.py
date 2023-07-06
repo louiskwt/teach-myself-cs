@@ -129,6 +129,15 @@ def missing_digits(n):
 
     return count + missing_digits(r)
     
+def largest_coin(t):
+        if t <= 1:
+            return 1
+        if t % 2 != 0:
+            return largest_coin(t - 1)
+        if t / 2 != 1:
+            return 2 * largest_coin(t / 2)
+
+        return t
 
 
 def count_change(total):
@@ -148,17 +157,22 @@ def count_change(total):
     True
     """
     "*** YOUR CODE HERE ***"
-    def change_helper(t, small_coin):
+    def largest_coin(t):
+        if t <= 1:
+            return 1
+        if t % 2 != 0:
+            return largest_coin(t - 1)
+        if t / 2 != 1:
+            return t + largest_coin(t / 2)
+        
+
+    def change_helper(t):
         # base case
         if t == 0:
             return 0
-        if t == 1:
-            return 1
-
-        return 
 
 
-    return change_helper(total, 1)
+    return 0 + change_helper(total, 1)
 
 
 def print_move(origin, destination):
