@@ -148,6 +148,17 @@ def count_change(total):
     True
     """
     "*** YOUR CODE HERE ***"
+    def change_helper(t, small_coin):
+        # base case
+        if t == 0:
+            return 0
+        if t == 1:
+            return 1
+
+        return 
+
+
+    return change_helper(total, 1)
 
 
 def print_move(origin, destination):
