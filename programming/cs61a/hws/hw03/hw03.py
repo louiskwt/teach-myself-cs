@@ -129,16 +129,6 @@ def missing_digits(n):
 
     return count + missing_digits(r)
     
-def largest_coin(t):
-        if t <= 1:
-            return 1
-        if t % 2 != 0:
-            return largest_coin(t - 1)
-        if t / 2 != 1:
-            return 2 * largest_coin(t / 2)
-
-        return t
-
 
 def count_change(total):
     """Return the number of ways to make change for total.
