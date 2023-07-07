@@ -161,15 +161,15 @@ def count_change(total):
         if t <= 1:
             return 1
         if t % 2 != 0:
-            return largest_coin(t - 1)
+            return find_largest_coin(t - 1)
         if t / 2 != 1:
-            return 2 * largest_coin(t / 2)
+            return 2 * find_largest_coin(t / 2)
         return t        
 
     def change_helper(t, largest_coin):
         # base case
         if t == 0:
-            return 0
+            return 1
         elif t < 0:
             return 0
         elif largest_coin == 1:
@@ -178,7 +178,6 @@ def count_change(total):
             return change_helper(t - largest_coin, largest_coin) + change_helper(t, largest_coin / 2)
 
     largest_coin = find_largest_coin(total)
-
     return change_helper(total, largest_coin)
 
 
