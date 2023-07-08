@@ -208,10 +208,11 @@ def move_stack(n, start, end):
         return
     # Hanoi pattern
     # shift n - 1 from A - B using C
-    
+    move_stack(n-1, 1, end-1)
     # shift last disc from A - C
+    print_move(start, end)
     # shift n - 1 disc from B to C using A
-
+    move_stack(n-1, 2, 3)
 
 
 
