@@ -206,6 +206,12 @@ def move_stack(n, start, end):
     "*** YOUR CODE HERE ***"
     if n == 1:
         return print_move(start, end)
+    
+    print_move(start, end - 1)
+    if n == 2:
+        print_move(start, end)
+        return move_stack(n - 1, start + 1, end)
+    
 
     return move_stack(n-1, start, end - 1)
 
