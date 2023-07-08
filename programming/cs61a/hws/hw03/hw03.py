@@ -204,16 +204,14 @@ def move_stack(n, start, end):
     """
     assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
     "*** YOUR CODE HERE ***"
-    if n == 1:
-        return print_move(start, end)
+    if n == 0:
+        return
+    # Hanoi pattern
+    # shift n - 1 from A - B using C
     
-    print_move(start, end - 1)
-    if n == 2:
-        print_move(start, end)
-        return move_stack(n - 1, start + 1, end)
-    
+    # shift last disc from A - C
+    # shift n - 1 disc from B to C using A
 
-    return move_stack(n-1, start, end - 1)
 
 
 
