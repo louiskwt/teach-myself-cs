@@ -211,14 +211,16 @@ def move_stack(n, start, end):
     # shift n - 1 from A - B using C
     aux = 2
     if aux == start or aux == end:
+        print(n, start, end)
+        move_stack(n-1, start, aux+1)
         print_move(start, end)
-        return
-
-    move_stack(n-1, start, aux)
-    # shift last disc from A - C
-    print_move(start, end)
-    # shift n - 1 disc from B to C using A
-    move_stack(n-1, aux, end) 
+        move_stack(n-1, aux-1, end)
+    else:
+        move_stack(n-1, start, aux)
+        # shift last disc from A - C
+        print_move(start, end)
+        # shift n - 1 disc from B to C using A
+        move_stack(n-1, aux, end) 
 
 
 
