@@ -176,14 +176,14 @@ def print_move(origin, destination):
     print("Move the top disk from rod", origin, "to rod", destination)
 
 def hanoi(d, start, to):
-        def pick_aux_start(start, to):
-            if start != to and start == 1:
+        def pick_aux_start(d, start, to):
+            if d - 1 >= 2 and start == 1:
                 return 2
             else:
                 return 1
 
-        def pick_aux_to(start, to):
-            if to != start and to == 3:
+        def pick_aux_to(d, start, to):
+            if d - 1 >= 2 and to == 3:
                 return 2
             else:
                 return 3
@@ -191,12 +191,14 @@ def hanoi(d, start, to):
         if d == 0:
             return
         
-        aux_to = pick_aux_to(start,to)
+        aux_to = pick_aux_to(d, start,to)
+        print(f"current {start}, {to}, {d}")
+
         hanoi(d-1, start, aux_to)
-        
+       
         print_move(start, to)
 
-        aux_start = pick_aux_start(start, to)
+        aux_start = pick_aux_start(d, start, to)
         hanoi(d-1, aux_start, to)
 
 
@@ -268,4 +270,3 @@ def make_anonymous_factorial():
     True
     """
     return 'YOUR_EXPRESSION_HERE'
-
