@@ -175,6 +175,31 @@ def print_move(origin, destination):
     """Print instructions to move a disk."""
     print("Move the top disk from rod", origin, "to rod", destination)
 
+def hanoi(d, start, to):
+        def pick_aux_start(start, to):
+            if start != to and start == 1:
+                return 2
+            else:
+                return 1
+
+        def pick_aux_to(start, to):
+            if to != start and to == 3:
+                return 2
+            else:
+                return 3
+
+        if d == 0:
+            return
+        
+        aux_to = pick_aux_to(start,to)
+        hanoi(d-1, start, aux_to)
+        
+        print_move(start, to)
+
+        aux_start = pick_aux_start(start, to)
+        hanoi(d-1, aux_start, to)
+
+
 def move_stack(n, start, end):
     """Print the moves required to move n disks on the start pole to the end
     pole without violating the rules of Towers of Hanoi.
