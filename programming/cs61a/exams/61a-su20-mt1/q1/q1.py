@@ -81,11 +81,14 @@ def kv(prev=lambda x: 0):
 #     >>> get3('cup')
 #     0
 #     """
+#     the prev should be considered
+#
 #     def put(k, v):
 #         def get(k2):
 #             if ______:
 #                 ______
 #             else:
 #                 ______
-#         return ______
+#         return get, put
+#     need to find a way to keep check of prev and check if there is a value
 #     return ______
