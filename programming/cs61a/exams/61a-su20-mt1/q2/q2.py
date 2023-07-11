@@ -25,30 +25,27 @@ def storeroom(radium, fn_even, fn_odd):
     """
     evens_defined, odds_defined = False, False
     evens, odds = None, None
-    # assumn at least one odd and even
     cur_num = radium
     while cur_num // 10 != 0 or (cur_num > 0 and cur_num < 10):
         single_digit = cur_num % 10
-        print(f'top: {cur_num}, {single_digit}')
         if single_digit % 2 == 0:
-            if evens_defined == False:
-                evens = single_digit
-                evens_defined = single_digit
+            if evens_defined:
+                evens = fn_even(evens, single_digit)
             else:
-                evens = fn_even(single_digit, evens_defined)
-                evens_defined = evens
+                evens = single_digit 
+                evens_defined = True
+            #print(f"even: {evens}, {evens_defined}")
         else:
-            if odds_defined == False:
-                odds = single_digit 
-                odds_defined = single_digit
+            if odds_defined:
+                odds = fn_odd(odds, single_digit)
             else:
-                odds = fn_odd(single_digit, odds_defined)
-                odds_defined = odds
+                odds = single_digit 
+                odds_defined = True
 
-            print(f"odd: {odds}, {odds_defined}")
+            #print(f"odd: {odds}, {odds_defined}")
         cur_num = cur_num //10
 
-    print(f'end: {evens}, {odds}')
+    #print(f'end: {evens}, {odds}')
     return evens > odds
 
 # ORIGINAL SKELETON FOLLOWS
