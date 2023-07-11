@@ -34,7 +34,6 @@ def storeroom(radium, fn_even, fn_odd):
             else:
                 evens = single_digit 
                 evens_defined = True
-            #print(f"even: {evens}, {evens_defined}")
         else:
             if odds_defined:
                 odds = fn_odd(odds, single_digit)
@@ -42,10 +41,8 @@ def storeroom(radium, fn_even, fn_odd):
                 odds = single_digit 
                 odds_defined = True
 
-            #print(f"odd: {odds}, {odds_defined}")
         cur_num = cur_num //10
 
-    #print(f'end: {evens}, {odds}')
     return evens > odds
 
 # ORIGINAL SKELETON FOLLOWS
