@@ -34,7 +34,6 @@ def maxkd(meteor, k):
         d = meteor % 10
         meteor = meteor // 10
         if bool(prev_defined):
-            #print("hey")
             if d > prev and (result is None):
                 result = d
                 prev = d
@@ -42,7 +41,6 @@ def maxkd(meteor, k):
                 result = prev
 
             if d > prev and (result is not None):
-               # print("here")
                 result = concat(d, result)
 
             prev = d
@@ -50,7 +48,6 @@ def maxkd(meteor, k):
             prev = d
             prev_defined = True
 
-        #print(f"result {result}, prev {prev}")
         if len(str(result)) == k:
             break
 
