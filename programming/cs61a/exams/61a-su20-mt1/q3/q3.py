@@ -25,27 +25,26 @@ def maxkd(meteor, k):
     if total < k:
         return meteor
 
-
     result = None
 
     while meteor // 10 >= 1:
         d = meteor % 10
         meteor = meteor // 10
-        curr_largest_defined = False
-        curr_largest = None
-        
-        
-        if curr_largest_defined:
-            if d > curr_largest:
-                result = concat(d, curr_largest)
-                curr_lergest = d
+        prev_defined = False
+        prev = None
+        if prev_defined:
+            if d > prev and len(str(result)) < k:
+                result = concat(d, result)
+            prev = d
         else:
-            curr_largest = d
+            prev = d
             result = d
-            curr_largest_defined = True
+            prev_defined = True
 
+        print(f"result {result}, prev {prev}")
         if len(str(result)) == k:
             break
+
 
     return result
 
