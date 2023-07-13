@@ -35,16 +35,14 @@ def kv(prev=lambda x: 0):
     def put(k, v):
         def get(k2):
             if k2 == k:
-                return v
+                print(v)
+                return prev
             else:
-                return prev(k)
+                return 0
 
         prev = lambda k: v
         return get, put
     
-    def store(prev: lambda x: 0):
-        return prev()
-
     return put
 
 # ORIGINAL SKELETON FOLLOWS
