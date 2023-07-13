@@ -93,15 +93,14 @@ def kv(prev=lambda x: 0):
 #     need to find a way to keep check of prev and check if there is a value
 #     return ______
 
-def kv2(prev: lambda x: 0):
+def kv2(prev=lambda x: 0):
 
     def put(k, v):
         def get(k2):
             if k2 == k:
                 return v
             else:
-                prev(k2)
+                return prev(k2)
         return get, put
 
-    init_get, init_put = put(k,v)
-
+    return put
