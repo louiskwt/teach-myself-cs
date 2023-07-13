@@ -33,14 +33,15 @@ def kv(prev=lambda x: 0):
     0
     """
     def put(k, v):
+        prev = lambda k: v
+
         def get(k2):
             if k2 == k:
                 print(v)
                 return prev
             else:
-                return 0
-
-        prev = get
+                print(0)
+            
 
         return get, put
     
