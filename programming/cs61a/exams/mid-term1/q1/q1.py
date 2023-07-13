@@ -40,7 +40,8 @@ def kv(prev=lambda x: 0):
             else:
                 return 0
 
-        prev = lambda k: v
+        prev = get
+
         return get, put
     
     return put
