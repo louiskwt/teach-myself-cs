@@ -32,16 +32,18 @@ def kv(prev=lambda x: 0):
     >>> get3('cup')
     0
     """
-    def put(k, v):
-        prev = lambda k: v
+    prev_k = 0
+    prev_v = 0
 
+    def put(k, v):
+        prev_k = k
         def get(k2):
+            print(prev_k)
             if k2 == k:
-                print(v)
-                return prev
+                return v
             else:
-                print(0)
-            
+                return 0
+
 
         return get, put
     
