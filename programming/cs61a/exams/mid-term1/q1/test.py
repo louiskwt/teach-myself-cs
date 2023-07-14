@@ -6,7 +6,6 @@ get3, put3 = put2('table', 'furniture')
 get4, put4 = put3('cup', 'utensil')
 get5, put5 = put4('thesis', 'paper')
 
-print(get5('thesis'))  #paper
 print(get5('cup')) # utensil
 print(get5('table')) #'furniture
 print(get5('cat')) # animal

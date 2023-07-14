@@ -32,20 +32,13 @@ def kv(prev=lambda x: 0):
     >>> get3('cup')
     0
     """
-    prev_k = 0
-    prev_v = 0
-
     def put(k, v):
-        prev_k = k
         def get(k2):
-            print(prev_k)
             if k2 == k:
                 return v
             else:
-                return 0
-
-
-        return get, put
+                return prev(k2)
+        return get, kv(get) 
     
     return put
 
@@ -95,14 +88,4 @@ def kv(prev=lambda x: 0):
 #     need to find a way to keep check of prev and check if there is a value
 #     return ______
 
-def kv2(prev=lambda x: 0):
-
-    def put(k, v):
-        def get(k2):
-            if k2 == k:
-                return v
-            else:
-                return prev(k2)
-        return get, put
-
-    return put
+#
