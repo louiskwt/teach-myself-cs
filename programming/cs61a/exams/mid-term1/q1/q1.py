@@ -35,7 +35,7 @@ def kv(prev=lambda x: 0):
     0
     """
     def put(k, v):
-        def get(k2):
+        def get(k2):    # this get is recursive
             if k2 == k:
                 return v
             else:
