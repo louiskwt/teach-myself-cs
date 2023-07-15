@@ -1,5 +1,7 @@
 email = 'example_key'
 
+
+
 def kv(prev=lambda x: 0):
     """
     A kv store is a store that associates keys with values.
@@ -37,11 +39,13 @@ def kv(prev=lambda x: 0):
             if k2 == k:
                 return v
             else:
-                return prev(k2)
-        return get, kv(get) 
-    
-    return put
+                return prev(k2) # calling previous gets with current values
 
+        # to keep track of the previous get (state), return a new kv with the current get as param
+        # this ensures that you can continue to put and and can get the prev get function to retrieve the key value pairs
+        return get, kv(get)
+    return put
+    
 # ORIGINAL SKELETON FOLLOWS
 
 # def kv(prev=lambda x: 0):
