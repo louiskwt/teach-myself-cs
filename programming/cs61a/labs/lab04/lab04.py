@@ -1,9 +1,8 @@
 LAB_SOURCE_FILE = __file__
 
-
 def reverse_iter(lst):
-    """Returns the reverse of the given list.
-
+    """
+    Returns the reverse of the given list.
     >>> reverse_iter([1, 2, 3, 4])
     [4, 3, 2, 1]
     >>> import inspect, re
@@ -11,6 +10,14 @@ def reverse_iter(lst):
     >>> print("Do not use lst[::-1], lst.reverse(), or reversed(lst)!") if any([r in cleaned for r in ["[::", ".reverse", "reversed"]]) else None
     """
     "*** YOUR CODE HERE ***"
+    total, index = len(lst), 0
+    while index < total // 2:
+        target = total - (index + 1)
+        lst[index], lst[target] = lst[target], lst[index] 
+        index += 1
+    return lst
+        
+    
 
 
 def reverse_recursive(lst):
@@ -23,6 +30,8 @@ def reverse_recursive(lst):
     >>> print("Do not use lst[::-1], lst.reverse(), or reversed(lst)!") if any([r in cleaned for r in ["[::", ".reverse", "reversed"]]) else None
     """
     "*** YOUR CODE HERE ***"
+                                                        
+
 
 
 from math import sqrt
