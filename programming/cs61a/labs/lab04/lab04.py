@@ -29,22 +29,11 @@ def reverse_recursive(lst):
     >>> cleaned = re.sub(r"#.*\\n", '', re.sub(r'"{3}[\s\S]*?"{3}', '', inspect.getsource(reverse_recursive)))
     >>> print("Do not use lst[::-1], lst.reverse(), or reversed(lst)!") if any([r in cleaned for r in ["[::", ".reverse", "reversed"]]) else None
     """
-    reversed_lst = []
-    lst_total = len(lst)
-    curr_index = 0
+    if len(lst) == 0:
+        return []
+    else:
+        return [lst.pop()] + reverse_recursive(lst)
     
-    def recur_append(total, curr_index):
-        print(total, curr_index)
-        if curr_index == total - 1:
-            return reversed_lst
-        else:
-            reversed_lst[curr_index] = lst[total - 1]
-            total -= 1
-            curr_index += 1
-            return recur_append(total, curr_index)
-
-    return recur_append(lst_total, curr_index)
-
 
 from math import sqrt
 def distance(city_a, city_b):
