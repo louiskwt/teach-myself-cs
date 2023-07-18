@@ -29,10 +29,11 @@ def reverse_recursive(lst):
     >>> cleaned = re.sub(r"#.*\\n", '', re.sub(r'"{3}[\s\S]*?"{3}', '', inspect.getsource(reverse_recursive)))
     >>> print("Do not use lst[::-1], lst.reverse(), or reversed(lst)!") if any([r in cleaned for r in ["[::", ".reverse", "reversed"]]) else None
     """
-    if len(lst) == 0:
-        return []
+    # using divide and conqueor algorithms
+    if len(lst) == 0:    # base case
+        return [] 
     else:
-        return [lst.pop()] + reverse_recursive(lst)
+        return [lst.pop()] + reverse_recursive(lst)  # moving toward the base case list pop get the last item out and put concat that to the front with [] + []
     
 
 from math import sqrt
