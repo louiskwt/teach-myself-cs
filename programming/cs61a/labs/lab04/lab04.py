@@ -31,16 +31,19 @@ def reverse_recursive(lst):
     """
     reversed_lst = []
     lst_total = len(lst)
+    curr_index = 0
     
-    def recur_append(total):
-        if len(lst) == len(reversed_lst):
+    def recur_append(total, curr_index):
+        print(total, curr_index)
+        if curr_index == total - 1:
             return reversed_lst
         else:
-            reversed_lst.append(lst[total -1])
+            reversed_lst[curr_index] = lst[total - 1]
             total -= 1
-            return recur_append(total)
+            curr_index += 1
+            return recur_append(total, curr_index)
 
-    return recur_append(lst_total)
+    return recur_append(lst_total, curr_index)
 
 
 from math import sqrt
