@@ -1,11 +1,20 @@
 def myfunc():
     """
-    >>> myfunc() 
-    "Hello"
-    >>> import inspect, re
-    >>> cleaned = re.sub(r"#.*\\n", '', re.sub(r'"{3}[\s\S]*?"{3}', '', inspect.getsource(reverse_iter)))
-    >>> print("Do not use lst[::-1], lst.reverse(), or reversed(lst)!") if any([r in cleaned for r in ["[::", ".reverse", "reversed"]]) else None
     """
 
+# summing recursive list
+def lst_sum(lst):
+    # another D&Q algorithms
+
+    if len(lst) == 0:
+        return 0
+    if len(lst) == 1:
+        return lst[0]
+    last_item = lst.pop()
+    if type(last_item) is list:
+        sum = last_item.pop() + lst_sum(last_item)
+        return sum + lst_sum(lst)
+    
+    return last_item + lst_sum(lst)
 
                                                                             
