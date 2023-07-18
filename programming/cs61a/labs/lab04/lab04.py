@@ -16,7 +16,7 @@ def reverse_iter(lst):
         lst[index], lst[target] = lst[target], lst[index] 
         index += 1
     return lst
-        
+
     
 
 
@@ -29,9 +29,18 @@ def reverse_recursive(lst):
     >>> cleaned = re.sub(r"#.*\\n", '', re.sub(r'"{3}[\s\S]*?"{3}', '', inspect.getsource(reverse_recursive)))
     >>> print("Do not use lst[::-1], lst.reverse(), or reversed(lst)!") if any([r in cleaned for r in ["[::", ".reverse", "reversed"]]) else None
     """
-    "*** YOUR CODE HERE ***"
-                                                        
+    reversed_lst = []
+    lst_total = len(lst)
+    
+    def recur_append(total):
+        if len(lst) == len(reversed_lst):
+            return reversed_lst
+        else:
+            reversed_lst.append(lst[total -1])
+            total -= 1
+            return recur_append(total)
 
+    return recur_append(lst_total)
 
 
 from math import sqrt
