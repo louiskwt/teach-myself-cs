@@ -34,7 +34,6 @@ def reverse_recursive(lst):
         return [] 
     else:
         return [lst.pop()] + reverse_recursive(lst)  # moving toward the base case list pop get the last item out and put concat that to the front with [] + []
-    
 
 from math import sqrt
 def distance(city_a, city_b):
@@ -49,6 +48,11 @@ def distance(city_a, city_b):
     5.0
     """
     "*** YOUR CODE HERE ***"
+    x1, x2 = get_lat(city_a), get_lat(city_b)
+    y1, y2 = get_lon(city_a), get_lon(city_b)
+    return sqrt((x1 - x2)**2 + (y1 - y2)**2)
+
+
 
 def closer_city(lat, lon, city_a, city_b):
     """
