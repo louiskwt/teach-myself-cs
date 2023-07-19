@@ -73,8 +73,6 @@ def closer_city(lat, lon, city_a, city_b):
     a_to_dest = distance(city_a, destination)
     b_to_dest = distance(city_b, destination)
 
-    print(f'a to d: {a_to_dest}, b to d: {b_to_dest}')
-
     if a_to_dest < b_to_dest:
         return get_name(city_a)
     else:
