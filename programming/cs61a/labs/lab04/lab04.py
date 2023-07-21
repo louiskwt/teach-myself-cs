@@ -186,4 +186,22 @@ def add_chars(w1, w2):
     True
     """
     "*** YOUR CODE HERE ***"
+    w1_len = len(w1)
+    w2_len = len(w2)
+    lst_w1 = list(w1)
+    lst_w2 = list(w2)
+
+    if w1_len == 0:
+        return w2
+
+    last_char = lst_w1.pop(w1_len-1)
+
+    if lst_w1.pop(w1_len-1) in lst_w2:
+        lst_w2.pop(lst_w2.index(last_char))
+
+    return add_chars
+
+
+
+    
 
