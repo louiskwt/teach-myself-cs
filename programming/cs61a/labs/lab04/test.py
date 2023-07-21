@@ -25,3 +25,5 @@ from lab04 import*
 #print(test_2) # Bucharest
 
 print(add_chars("owl", "howl"))
+print(add_chars("want", "wanton"))
+print(add_chars("rat", "radiate"))
