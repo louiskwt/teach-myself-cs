@@ -196,10 +196,10 @@ def add_chars(w1, w2):
 
     last_char = lst_w1.pop(w1_len-1)
 
-    if lst_w1.pop(w1_len-1) in lst_w2:
+    if last_char in lst_w2:
         lst_w2.pop(lst_w2.index(last_char))
 
-    return add_chars
+    return add_chars("".join(lst_w1), "".join(lst_w2))
 
 
 
