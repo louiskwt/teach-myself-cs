@@ -20,7 +20,7 @@ def is_prime(n):
     True
     >>> is_prime(10)
     False
-    >>> is_primt(1)
+    >>> is_prime(1)
     False
 
     """
