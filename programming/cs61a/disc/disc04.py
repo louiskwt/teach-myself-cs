@@ -36,7 +36,28 @@ def is_prime(n):
             return prime_helper(n, k+1)
     return prime_helper(n, 2)
 
-print(is_prime(7))
-print(is_prime(3))
-print(is_prime(4))
-print(is_prime(10))
+# print(is_prime(7))
+# print(is_prime(3))
+# print(is_prime(4))
+# print(is_prime(10))
+
+# n stairs problem with tree recursion
+def count_stair_ways(n):
+    """
+    >>> count_stair_ways(2)
+    2
+    >>> count_stair_ways(3)
+    3
+    >>> count_stair_ways(4)
+    5
+    """
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    return count_stair_ways(n - 1) + count_stair_ways(n - 2)
+
+print(count_stair_ways(4))
+print(count_stair_ways(3))
+
+
