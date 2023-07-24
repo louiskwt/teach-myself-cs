@@ -73,10 +73,17 @@ def count_k(n, k):
     >>> count_k(300, 1) # Only one step at a time
     1
     """
-    if n < 3:
-        return n
-    if k == 1:
-        return k
-    return count_k(n, k-1)
+        
+    count = 0
+    while k >= 1:
+        if k == 1 or k == n:
+            count += 1
+        else:
+            count += count_stair_ways(k)
+
+        k -= 1
+
+    return count 
 
 print(count_k(3,3))
+print(count_k(4,4))
