@@ -85,4 +85,16 @@ def count_k(n, k):
     
     return count_helper(n, k)
 
-print(count_k(300, 1))
+# print(count_k(300, 1))
+
+
+print("______________End of Q2________________")
+#3.1 What would python display
+a = [1, 5, 4, [2, 3], 3]
+print(a[0], a[-1])  # >>> 1, 3
+
+len(a) # >>> 5
+print(2 in a) # >>> False
+print(4 in a) # >>> True
+print(a[3][0]) # >>> 2
+
