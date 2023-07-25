@@ -75,19 +75,21 @@ def count_k(n, k):
     1
     """
     def count_ways(n, k):
-        if n == 0 or k == 1:
-            return 1
+        count = 0
+        if n < 3 and n >= 0:
+            count = n
+            return count
         elif n < 0:
             return 0
+        elif k == 1:
+            return 1
         else:
-            count = 0
-            while k > 0:
-                if k == n:
-                    count += 1
-                count += count_ways(n-k, k-1)
-                k -= 1
+            step = 1
+            while step <= k:
+                count += count_ways(n-step, k)
+                step += 1
         return count
-            
+
     return count_ways(n, k)
 
 print(count_k(300, 1))
