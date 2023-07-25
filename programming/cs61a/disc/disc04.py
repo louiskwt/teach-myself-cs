@@ -98,3 +98,15 @@ print(2 in a) # >>> False
 print(4 in a) # >>> True
 print(a[3][0]) # >>> 2
 
+print("_______________End of Q3.1_______________")
+
+def even_weighted(s):
+    """
+    >>> x = [1, 2, 3, 4, 5, 6]
+    >>> even_weighted(x)
+    [0, 6, 20]
+    """
+    return [value * index for index, value in enumerate(s) if index % 2 == 0]
+
+x = [1, 2, 3, 4, 5, 6]
+print(even_weighted(x))
