@@ -80,6 +80,7 @@ def count_k(n, k):
                 count += 1
             else:
                 count += count_helper(n, k-1)
+            k -= 1
 
         return count
     
