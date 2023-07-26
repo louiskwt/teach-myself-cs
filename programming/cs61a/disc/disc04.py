@@ -74,7 +74,7 @@ def count_k(n, k):
     >>> count_k(300, 1) # Only one step at a time
     1
     """
-    def count_ways(n, k):
+    def count_ways(n, k): # you need to keep track of the step
         if k == 1:
             return 1
 
@@ -82,11 +82,11 @@ def count_k(n, k):
         step = 1
         while step <= k:
                 if n < 3:
-                    count += n
-                elif n == k:
-                    count += 1
+                    count =n + count_ways(n-step, k)
+                elif n == step:
+                    count = 1
                 elif n < 0:
-                    return 0
+                    count = 0
                 else:
                     count += count_ways(n-step, k)
                 step += 1
