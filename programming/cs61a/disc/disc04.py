@@ -74,22 +74,27 @@ def count_k(n, k):
     >>> count_k(300, 1) # Only one step at a time
     1
     """
-    if k == 1:
-        return 1
-
+    # no overstep, see how many way to reach n(0) / stop at 0
+    #       n = 4, k = 2
+    #               4
+    #            2       3
+    #         0 1         2   1
+    #    -2 -1  0 -1   0 1     0 -1
+    #                    -1 0
+    # count the 0 => ways to reach n usuing up to k
+    if n < 0:
+        return 0 # stop
     if n == 0:
         return 1
-    elif n < 0:
-        return 0
-    else:
-        total = 0
-        step = 1
-        while step <= k:
-            total += count_k(n-step, k)
-            step += 1
+    count = 0
+    step = 1
+    while step < k:
+        count += count_k(n-step, k)
+        step += 1
 
-    return total
+    return count
 
+print(count_k(4, 2)) # => 5
 print(count_k(300, 1))
 print(count_k(3, 3))
 print(count_k(4, 4))
