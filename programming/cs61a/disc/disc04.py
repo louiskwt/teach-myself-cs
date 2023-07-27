@@ -91,7 +91,6 @@ def count_k(n, k):
     while step <= k:    # up to k (inclusive <=)
         count += count_k(n-step, k)
         step += 1
-
     return count
 
 print(count_k(4, 2)) # => 5
