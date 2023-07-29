@@ -142,9 +142,12 @@ def max_product(s):
         elif i == 1:
             products[1] = max(products[0], s[i])
         else:
-            products [i] = max(products[i-2] * s[i], products[i-2])
+            products[i] = max(products[i-2] * s[i], products[i-1])
+
+    print(products)
 
     return products[-1]
 
 print(max_product([10,3,1,9,2]))
+print(max_product([5,10,5,10,5]))
 
