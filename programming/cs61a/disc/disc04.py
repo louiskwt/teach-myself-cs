@@ -134,9 +134,14 @@ def max_product(s):
     >>> max_product([])
     1
     """
-    products = [0]*len(s)
+    total = len(s)
+    if total == 0:
+        return 1
+
+    products = [0]*total
     product_list = []
-    for i in range(len(s)):
+
+    for i in range(total):
         if i == 0:
             products[0] = s[i]
         elif i == 1:
@@ -144,10 +149,9 @@ def max_product(s):
         else:
             products[i] = max(products[i-2] * s[i], products[i-1])
 
-    print(products)
-
     return products[-1]
 
 print(max_product([10,3,1,9,2]))
 print(max_product([5,10,5,10,5]))
+print(max_product([]))
 
