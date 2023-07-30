@@ -174,3 +174,50 @@ def check_hole_number(n):
 
 print(check_hole_number(123))
 print(check_hole_number(968))
+
+print("_______________End of Whole Number_______________")
+# Check mountain number
+def check_mountain_number(n):
+    """
+    >>> check_mountain_number(103)
+    False
+    >>> check_mountain_number(153)
+    True
+    >>> check_mountain_number(123456)
+    True
+    >>> check_mountain_number(2345986)
+    True
+    """
+    # the mountain should have a width 3
+    n_lst = [int(i) for i in str(n)]
+    w = len(n_lst)
+
+    if w < 3:
+        return False
+
+    def helper(width, m_range):
+        climb = 0
+        # Going uphill
+        while climb < width - 1 and m_range[climb] < m_range[climb+1]:
+            climb += 1
+        
+        if climb == 0:
+            return False
+
+        # Going downhill
+        while climb < width - 1 and m_range[climb] > m_range[climb+1]:
+            climb += 1
+
+        if climb == 1:
+            return False
+
+        return True
+
+    return helper(w, n_lst)
+
+print(check_mountain_number(153))
+print(check_mountain_number(103))
+print(check_mountain_number(123456))
+
+
+
