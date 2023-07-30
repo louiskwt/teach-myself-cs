@@ -138,18 +138,17 @@ def max_product(s):
     if total == 0:
         return 1
 
-    products = [0]*total
-    product_list = []
+    product_list = [0]*total # create a list of product
 
     for i in range(total):
         if i == 0:
-            products[0] = s[i]
+            product_list[i] = s[i]
         elif i == 1:
-            products[1] = max(products[0], s[i])
+            product_list[i] = max(product_list[i-1], s[i]) # compare the two and take the larger one
         else:
-            products[i] = max(products[i-2] * s[i], products[i-1])
-
-    return products[-1]
+            product_list[i] = max(product_list[i-2] * s[i], product_list[i-1]) 
+            # compare non-consecutive product against the one before and take the larger one
+    return product_list[-1]
 
 print(max_product([10,3,1,9,2]))
 print(max_product([5,10,5,10,5]))
