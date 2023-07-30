@@ -154,3 +154,23 @@ print(max_product([10,3,1,9,2]))
 print(max_product([5,10,5,10,5]))
 print(max_product([]))
 
+print("_______________End of Q3.3_______________")
+# Whole number
+def check_hole_number(n):
+    """
+    >>> check_hole_number(123)
+    False
+    >>> check_hole_number(3241968)
+    True
+    >>> check_hole_number(3245968)
+    False
+    """
+    n_lst = [int(x) for x in str(n)]
+    is_hole = True
+    for i, num in enumerate(n_lst):
+        if i < len(n_lst) - 2 and (i+1) % 2 != 0 and n_lst[i+1] > num:
+            is_hole = False
+    return is_hole
+
+print(check_hole_number(123))
+print(check_hole_number(968))
