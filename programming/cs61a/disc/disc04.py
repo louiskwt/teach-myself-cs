@@ -187,25 +187,27 @@ def check_mountain_number(n):
     True
     >>> check_mountain_number(2345986)
     True
+    >>> check_mountain_number(12)
+    False
     """
-    # the mountain should have a width 3
+    # the mountain should have a width of at least 3
     n_lst = [int(i) for i in str(n)]
     w = len(n_lst)
-
     if w < 3:
         return False
 
     def helper(width, m_range):
-        climb = 0
+        climb = 0 # keep track of position
+
         # Going uphill
-        while climb < width - 1 and m_range[climb] < m_range[climb+1]:
+        while climb < width-1 and m_range[climb] < m_range[climb+1]:
             climb += 1
         
         if climb == 0:
-            return False
+            return False 
 
         # Going downhill
-        while climb < width - 1 and m_range[climb] > m_range[climb+1]:
+        while climb < width-1 and m_range[climb] > m_range[climb+1]:
             climb += 1
 
         if climb == 1:
@@ -215,9 +217,8 @@ def check_mountain_number(n):
 
     return helper(w, n_lst)
 
-print(check_mountain_number(153))
-print(check_mountain_number(103))
-print(check_mountain_number(123456))
-
-
-
+print(check_mountain_number(153)) # True
+print(check_mountain_number(103)) # False
+print(check_mountain_number(123456)) #True
+print(check_mountain_number(2345986)) # True
+print(check_mountain_number(12)) # False
