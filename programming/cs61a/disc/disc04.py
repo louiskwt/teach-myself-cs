@@ -138,7 +138,7 @@ def max_product(s):
     if total == 0:
         return 1
 
-    product_list = [0]*total # create a list of product
+    product_list = [0]*total # create a list of product that has the length of the s
 
     for i in range(total):
         if i == 0:
