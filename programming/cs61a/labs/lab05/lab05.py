@@ -25,7 +25,10 @@ def riffle(deck):
     "*** YOUR CODE HERE ***"
     # original:  0 1  2  3
     # result:    0 2  1  3
-    # guess:     0 M  1  M + 1
+    # guess:     0 M  1  M + 1  M --> the item starting from the mid point (second half)
+    # pattern: [0, M, 1, M+1, 2, M+2]
+    # use [:] to split the deck in to 2 groups, and then use zip() to join them as a tuple
+    # finally iterate over the item one by one (unpacking them)
     return [card for group in zip(deck[:len(deck)//2], deck[len(deck)//2:]) for card in group]
 
 
