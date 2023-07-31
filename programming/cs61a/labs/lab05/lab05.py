@@ -25,8 +25,8 @@ def riffle(deck):
     "*** YOUR CODE HERE ***"
     # original:  0 1  2  3
     # result:    0 2  1  3
-    # guess:     0 M  1  M+ (3//2)
-    return [deck[n] for n in range(len(deck))]
+    # guess:     0 M  1  M + 1
+    return [card for group in zip(deck[:len(deck)//2], deck[len(deck)//2:]) for card in group]
 
 
 def berry_finder(t):
