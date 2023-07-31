@@ -23,7 +23,10 @@ def riffle(deck):
     [0, 10, 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19]
     """
     "*** YOUR CODE HERE ***"
-    return _______
+    # original:  0 1  2  3
+    # result:    0 2  1  3
+    # guess:     0 M  1  M+ (3//2)
+    return [deck[n] for n in range(len(deck))]
 
 
 def berry_finder(t):
