@@ -4,6 +4,10 @@ def coords(fn, seq, lower, upper):
     >>> fn = lambda x: x**2
     >>> coords(fn, seq, 1, 9)
     [[-2, 4], [1, 1], [3, 9]]
+    >>> seq2 = [0, 1, 3, 4, 5, 6]
+    >>> fn2 = lambda x: x*3
+    >>> coords(fn2, seq2, 15, 21)
+    [[5, 15], [6, 18]]
     """
     "*** YOUR CODE HERE ***"
     return [[i, fn(i)] for i in seq if fn(i) >= lower and fn(i) <= upper]
