@@ -105,14 +105,15 @@ def sprout_leaves(t, leaves):
     "*** YOUR CODE HERE ***"
     l = label(t)
     b = branches(t)
-    print(l)
-    print(b)
     new_branch = []
     new_leaves = [tree(n) for n in leaves]
+
     print(new_leaves)
+    
     for i in b:
         if len(i) == 1:
-            new_branch.append(tree(i[0], new_leaves))
+            new_branch.append(tree(i[0], new_leaves)) # this only work with single branch tree?
+
     print(new_branch)
     return tree(l, new_branch)
             
