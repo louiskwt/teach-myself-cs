@@ -51,9 +51,11 @@ def berry_finder(t):
     """
     "*** YOUR CODE HERE ***"
     def has_berry(b):
-        # check if it's a list
+        # always check if it's a list to recursively traverse the branch or check the nodes
         if type(b) is list and len(b) > 1 and 'berry' not in b:
             return berry_finder(b)
+        elif type(b) is list and len(b) > 1 and 'berry' in b:
+            return True
         elif type(b) is list and len(b) == 1:
             return b[0] == 'berry'
         else:
@@ -61,7 +63,6 @@ def berry_finder(t):
     
     result = False
     for b in range(len(t)):
-        # first check if the thing is berry
         if has_berry(t[b]):
             result = True
             break
