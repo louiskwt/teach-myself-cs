@@ -50,6 +50,24 @@ def berry_finder(t):
     True
     """
     "*** YOUR CODE HERE ***"
+    def has_berry(b):
+        if len(b) == 1 and t[0] == 'berry':
+            return True
+        elif 'berry' in t:
+            return True
+        elif type(b) is list:
+            return berry_finder(b)
+        else:
+            return False
+    
+    result = False
+
+    for b in range(len(t)):
+        if has_berry(b):
+            result = True
+            break
+    return result
+
 
 
 def sprout_leaves(t, leaves):
