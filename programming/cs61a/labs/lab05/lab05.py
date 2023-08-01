@@ -51,11 +51,13 @@ def berry_finder(t):
     """
     "*** YOUR CODE HERE ***"
     def has_berry(b):
+        # check if it's a list
         if len(b) == 1 and t[0] == 'berry':
             return True
         else len(b) == 1 and 'berry' not in b:
             return True
-        
+
+        # not a list check if it's berry
         if type(b) is list:
             return berry_finder(b)
         else:
@@ -64,6 +66,7 @@ def berry_finder(t):
     result = False
 
     for b in range(len(t)):
+        # first check if the thing is berry
         if has_berry(t[b]):
             result = True
             break
