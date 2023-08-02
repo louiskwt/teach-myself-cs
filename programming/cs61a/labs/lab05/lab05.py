@@ -50,15 +50,6 @@ def berry_finder(t):
     True
     """
     "*** YOUR CODE HERE ***"
-    def has_berry(b):
-        # always check if it's a list to recursively traverse the branch or check the nodes
-        if is_tree(b):
-            return berry_finder(b)
-        if is_leaf(b):
-            return b == 'berry'
-        if not is_leaf(b) and not is_tree(b):
-            return b == 'berry'
-
         #if is_tree(b) and len(b) > 1 and 'berry' not in b:
         #    return berry_finder(b)
         #elif is_tree(b) and len(b) > 1 and 'berry' in b:
@@ -69,14 +60,20 @@ def berry_finder(t):
         #    return b == 'berry'
         #else:
         #    return b == 'berry'
-    
-    result = False
-    for b in range(len(t)):
-        if has_berry(t[b]):
-            result = True
-            break
-    return result
+    if label(t) == 'berry':
+        return True
+    elif 'berry' in branches(t):
+        return True
+    else:
+        result = False
+        for n in branches(t):
+            if is_leaf(t):
+                result = t[0] == "berry"
+            elif berry_finder(n) == True:
+                return True
+                break
 
+    return result
 
 def sprout_leaves(t, leaves):
     """Sprout new leaves containing the data in leaves at each leaf in
