@@ -72,7 +72,6 @@ def berry_finder(t):
             elif berry_finder(n) == True:
                 return True
                 break
-
     return result
 
 def sprout_leaves(t, leaves):
