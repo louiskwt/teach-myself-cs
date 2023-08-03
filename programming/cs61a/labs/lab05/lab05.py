@@ -109,8 +109,9 @@ def sprout_leaves(t, leaves):
     """
     "*** YOUR CODE HERE ***"
     if is_leaf(t):
-        return tree(label(t), [tree(n) for n in leaves])
-    return tree(label(t), [sprout_leaves(n, leaves) for n in branches(t)])
+        return tree(label(t), [tree(n) for n in leaves]) # if is_leaf --> create a tree with t as label and each leaf as tree
+    else:
+        return tree(label(t), [sprout_leaves(n, leaves) for n in branches(t)])  # recursively attach each branch with leaves until it gets to the end
             
     
 
