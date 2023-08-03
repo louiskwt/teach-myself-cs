@@ -108,18 +108,9 @@ def sprout_leaves(t, leaves):
           2
     """
     "*** YOUR CODE HERE ***"
-    l = label(t)
-    b = branches(t)
-    new_branch = []
-    new_leaves = [tree(n) for n in leaves]
-
-    for i in b:
-        if is_leaf(i):
-            new_branch.append(tree(label(i), new_leaves))
-        else:
-            new_branch.append(tree(label(i), [tree(label([n[0] for n in branches(i) if is_leaf(i)]), new_leaves)]))
-
-    return tree(l, new_branch)
+    if is_leaf(t):
+        return tree(label(t), [tree(n) for n in leaves])
+    return tree(label(t), [sprout_leaves(n, leaves) for n in branches(t)])
             
     
 
