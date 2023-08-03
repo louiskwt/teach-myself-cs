@@ -50,16 +50,6 @@ def berry_finder(t):
     True
     """
     "*** YOUR CODE HERE ***"
-        #if is_tree(b) and len(b) > 1 and 'berry' not in b:
-        #    return berry_finder(b)
-        #elif is_tree(b) and len(b) > 1 and 'berry' in b:
-        #    return True
-        #elif is_tree(b) and len(b) == 1:
-        #    return b[0] == 'berry'
-        #elif not is_tree(b):
-        #    return b == 'berry'
-        #else:
-        #    return b == 'berry'
     if label(t) == 'berry':
         return True
     elif 'berry' in branches(t):
