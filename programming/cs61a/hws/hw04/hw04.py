@@ -107,7 +107,7 @@ def balanced(m):
     True
     """
     "*** YOUR CODE HERE ***"
-    if total_weight(m) == 0:
+    if not is_mobile(end(right(m))) and not is_mobile(end(left(m))):
         return True
     return length(left(m)) * size(end(left(m))) == length(right(m)) * size(end(right(m)))
 
