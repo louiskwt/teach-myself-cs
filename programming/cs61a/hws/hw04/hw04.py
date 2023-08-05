@@ -115,7 +115,8 @@ def balanced(m):
     if left_len * total_weight(end(left(m))) == right_len * total_weight(end(right(m))):
         return True    
     # cond 2: Each of the mobiles hanging at the end of its arms is balanced
-    return False
+    if is_mobile(end(right(m))) and is_mobile(end(left(m))):
+        return balanced(end(right(m))) and balanced(end(left(m)))
 
 
 def totals_tree(m):
