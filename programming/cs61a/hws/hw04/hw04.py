@@ -107,6 +107,10 @@ def balanced(m):
     True
     """
     "*** YOUR CODE HERE ***"
+    if total_weight(m) == 0:
+        return True
+    return length(left(m)) * size(end(left(m))) == length(right(m)) * size(end(right(m)))
+
 
 def totals_tree(m):
     """Return a tree representing the mobile with its total weight at the root.
