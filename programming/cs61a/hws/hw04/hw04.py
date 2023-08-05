@@ -109,7 +109,13 @@ def balanced(m):
     "*** YOUR CODE HERE ***"
     if not is_mobile(end(right(m))) and not is_mobile(end(left(m))):
         return True
-    return length(left(m)) * size(end(left(m))) == length(right(m)) * size(end(right(m)))
+    # cond 1: The torque of the left arm is the length of the left rod multiplied by the total weight hanging from that rod.
+    _, left_len, _ = left(m)
+    _, right_len, _ = right(m)
+    if left_len * total_weight(end(left(m))) == right_len * total_weight(end(right(m))):
+        return True    
+    # cond 2: Each of the mobiles hanging at the end of its arms is balanced
+    return False
 
 
 def totals_tree(m):
