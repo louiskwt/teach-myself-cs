@@ -1,8 +1,8 @@
 # Intro
 
-This repo serves as the public record / transcript of my self-taught CS Degree and my learning journey.
+This repo serves to record my (self-taught) CS learning journey.
 
-My current curriculum is based on [Teach Yourself CS]('https://teachyourselfcs.com/') and the [Open Source CD Degree]('https://github.com/ossu/computer-science').
+My current curriculum is based on [Teach Yourself CS]('https://teachyourselfcs.com/') and the [Open Source CS Degree]('https://github.com/ossu/computer-science').
 
 The official start date of my self-taught CS program is May 6, 2023
 
@@ -18,11 +18,11 @@ Some information about myself:
 
 ## Programming
 
-    - CS61A - SICP (Python) Book and lecture (5/8 - 8/5)
+    - CS61A Summer 2023
 
 ## Mathematics for Computer Science
 
-    - Precalculus (5/8 - 8/5)
+    - Precalculus
 
 # Reflection Section 💭
 
