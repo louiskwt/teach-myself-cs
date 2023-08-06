@@ -54,7 +54,7 @@ Some information about myself:
 
 - Composing Program [book]('http://composingprograms.com/')
 
-- CS61A [lecture video]('https://inst.eecs.berkeley.edu/~cs61a/su20/')
+- CS61A [lecture video]('https://cs61a.org/')
 
 
 *After a few week working with Scheme and the old version of CS61A, I switched to a more modern version of SICP with Python and the CS61A 2020 summer lecture series because the newer version of the book and lectures are easier for me to follow and more relevant to me*
