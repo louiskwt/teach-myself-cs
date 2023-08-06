@@ -71,5 +71,5 @@ Some information about myself:
 
 # Todo 📝
 
-1. Making a blog out of it?
+1. Turning it into a GitHub Pages for Better Presentation
 
