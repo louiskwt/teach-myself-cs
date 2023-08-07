@@ -7,6 +7,6 @@ words = set(shakespeare.read().decode().split())
 
 print(len(words))
 
-results = { w for w in words if len(w) == 6 and w[::-1] in words }
+results = { w for w in words if len(w) == 6 and w[::-1] in words and "*" not in w }
 
 print(results)
