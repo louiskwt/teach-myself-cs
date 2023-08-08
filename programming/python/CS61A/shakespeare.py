@@ -7,6 +7,7 @@ words = set(shakespeare.read().decode().split())
 
 print(len(words))
 
+# a compound expression that evaluates to the set of all Shakespearian words that are simultaneously a word spelled in reverse
 results = { w for w in words if len(w) == 6 and w[::-1] in words and "*" not in w }
 
 print(results)
