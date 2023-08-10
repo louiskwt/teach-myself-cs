@@ -17,6 +17,8 @@ for index, elf in enumerate(elfs_lst):
         elf_index = index
         max_cal = total_cal
 
-print(elf, max_cal) 
 
+print(elf_index, max_cal) 
+
+# 183rd elf has the most calories
 # max_cal = 67450
