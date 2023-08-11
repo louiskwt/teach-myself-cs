@@ -1,7 +1,5 @@
 elfs = open('input.txt').read().split("\n\n")
 
-print(len(elfs))
-
 cleaned_elfs = [e.split("\n") for e in elfs]
 elfs_lst = []
 
