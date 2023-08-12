@@ -23,6 +23,22 @@
 
 - every variable and function exists in the global frame of the program, but each function created   can generate a local frame for the function. Be careful of scoping issue
 
+
+## Control Statement
+
+- Rather than being evaluated, statements are executed. Each statement describes some change to the interpreter state, and executing a statement applies that change. As we have seen for return and assignment statements, executing statements can involve evaluating subexpressions contained within them.
+
+- At its highest level, the Python interpreter's job is to execute programs, composed of statements. However, much of the interesting work of computation comes from evaluating expressions. Statements govern the relationship among different expressions in a program and what happens to their results.
+
+
+- Desigining Functions
+  
+  - Each function should have exactly one job. That job should be identifiable with a short name and characterizable in a single line of text. Functions that perform multiple jobs in sequence should be divided into multiple functions.
+
+  - Don't repeat yourself is a central tenet of software engineering.
+
+  - Functions should be defined generally
+
 - Higher order functions: a means to generalise the pattern of computational process
 
     1. HOF means passing a funciton as an argument to another function
@@ -66,7 +82,7 @@ Verifying the correctness of a recursive function is a form of proof by inductio
     1. start by verifying the base case
     2. substitute it with k + 1 to verify that it can work for k + 1 temrs
 
-Iterative Approach vs Recursive Approach
+Iterative Approach vs Recursive Approach:`
 
     - In general, iterative functions must maintain some local state that changes throughout the course of implemntation
     - Recursive functions, on the other hand, bind the values in different frames (recurive calls) without tracking the state. It avoids the nuisance of corretly assigning local names during iteration.
