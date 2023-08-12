@@ -48,6 +48,11 @@ Some information about myself:
 2. Taking SICP and reading the book continued to make me a better programmer in so many aspects
 3. Need to speed up my progress~
 
+## 08/12
+
+1. Struggled to find time to learn and study due to hectic schedule
+2. Found the CS61A course to be more difficult than I think
+
 # Resources Section 🔗
 
 ## Programming
