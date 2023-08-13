@@ -14,7 +14,16 @@ Some information about myself:
 
     3. My goal for doing this program is to fill in the gap of my computer science knowledge and gain a deeper understanding of how computer actually works so that I can build sophisticated systems or applications.
 
-# Structure of the Course (Current Coursework)
+# Motivations / Objectives for Learning 🎯
+
+- Build an open source learning management system for tutors and self-employed teachers
+
+- Develop an open courseware for DSE and IELTS students
+
+- Conduct research on using AI and Machine Learning to help students keep track of their learning progress with feedback
+ 
+
+# Curriculum & Courses 📖
 
 ## Programming
 
