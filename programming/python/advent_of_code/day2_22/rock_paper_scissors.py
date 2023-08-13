@@ -12,7 +12,6 @@ def check_strategy():
         }
 
         total_score = 0
-        print(len(strategy_lst))
         for round in strategy_lst:
             opp, me = round
             print(opp, me, options_dict[me], calculate_outcome(opp, me))
@@ -24,15 +23,21 @@ def check_strategy():
         return 0
 
 def calculate_outcome(opp, me):
-    out_come_dict = {
+    win_dict = {
         "Y": "A",
         "X": "C",
         "Z": "B"
     }
 
-    if opp == me:
+    draw_dict = {
+        "X": "A",
+        "Y": "B",
+        "Z": "C"
+    }
+
+    if draw_dict[me] == opp:
         return 3
-    elif out_come_dict[me] == opp:
+    elif win_dict[me] == opp:
         return 6
     else:
         return 0
