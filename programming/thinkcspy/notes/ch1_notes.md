@@ -21,3 +21,9 @@ An error in a program that makes it do something other than what the programmer 
 
 ## syntax error
 An error in a program that makes it impossible to parse — and therefore impossible to interpret.
+
+## Aditional Reading for Interpreted and Complied language implementation
+
+[Executing the python Script](https://rahul-saini.medium.com/executing-the-python-script-afb5f45ffa41)
+
+[Machine Code vs ByteCode vs Object Code vs Source Code](https://rahul-saini.medium.com/machine-code-vs-byte-code-vs-object-code-vs-source-code-vs-assembly-code-812c9780f24c)
