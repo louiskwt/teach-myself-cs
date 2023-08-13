@@ -10,11 +10,9 @@ def check_strategy():
             "Y": 2,
             "Z": 3
         }
-
         total_score = 0
         for round in strategy_lst:
             opp, me = round
-            print(opp, me, options_dict[me], calculate_outcome(opp, me))
             total_score += (options_dict[me] + calculate_outcome(opp, me))
             
         return total_score 
