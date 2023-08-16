@@ -36,7 +36,7 @@ trial_rucksack = [list(r) for r in trial_data]
 rucksack_data = open("input.txt", 'r').read().splitlines()
 rucksacks = [list(r) for r in rucksack_data]
 
-sum_priority(trial_rucksack)
-sum_priority(rucksacks)
+sum_priority(trial_rucksack) #157
+sum_priority(rucksacks) #7785
 
 
