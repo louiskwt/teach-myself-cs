@@ -33,10 +33,10 @@ trial_data = [
 trial_rucksack = [list(r) for r in trial_data]
 
 
-rucksack = open("input.txt", 'r').read().splitlines()
-rucksack_with_splited_items = [[*r] for r in rucksack]
+rucksack_data = open("input.txt", 'r').read().splitlines()
+rucksacks = [list(r) for r in rucksack_data]
 
 sum_priority(trial_rucksack)
-
+sum_priority(rucksacks)
 
 
