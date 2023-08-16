@@ -8,6 +8,10 @@ try:
 
     rucksack = open("input.txt", 'r').read().splitlines()
     rucksack_with_splited_items = [[*r] for r in rucksack]
+    priority_lst = [priority_dict[item] for sublist in rucksack_with_splited_items for n, item in enumerate(sublist) if item in sublist[:n]]
+
+    priority_sum = sum(priority_lst)
+    print(priority_sum)
     
 except:
     print("Error when loading file")
