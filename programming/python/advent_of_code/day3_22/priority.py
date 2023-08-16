@@ -20,19 +20,14 @@ try:
 
     dup = []
     for r in trial_rucksack:
+        # c represents the compartment in the rucksack (r)
         c1 = r[len(r)//2:]
         c2 = r[:len(r)//2]
-        dup.append(set(c1) & set(c2))
+        d = set(c1) & set(c2)
+        for i in d:
+            dup.append(priority_dict[i])
     
-    print([s for s in dup])
-    
-        
-    
+    print(sum(dup))
 
-    # print(dup)
-
-    # priority_sum = sum(priority_lst)
-    # print(priority_sum)
-    
 except:
     print("Error when loading file")
