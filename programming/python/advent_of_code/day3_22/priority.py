@@ -1,13 +1,13 @@
 import string
 
+# priority dictionary        
+weight_list = [i for i in range(1, 52+1)]
+item_list = list(string.ascii_letters)
+priority_dict = dict(zip(item_list, weight_list))
+
 
 def sum_priority(rucksacks):
     try:
-        # priority dictionary
-        weight_list = [i for i in range(1, 52+1)]
-        item_list = list(string.ascii_letters)
-        priority_dict = dict(zip(item_list, weight_list))
-
         dup = []
         for r in rucksacks:
             # c represents the compartments in the rucksack (r)
@@ -16,8 +16,6 @@ def sum_priority(rucksacks):
             d = set(c1) & set(c2)
             for i in d:
                 dup.append(priority_dict[i])
-        
-        print(sum(dup))
     except:
         print("An error occurred")
 
