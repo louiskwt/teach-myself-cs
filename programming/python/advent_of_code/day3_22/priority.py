@@ -20,8 +20,17 @@ def sum_rucksack_priority(rucksacks):
     except:
         print("An error occurred")
 
-def sum_badge_priority(rucksack):
-    pass
+def sum_badge_priority(groups):
+    shared_badge_priority = []
+    for group in groups:
+        e1 = set(group[0])
+        e2 = set(group[1])
+        e3 = set(group(2))
+
+        for b in e1 & e2 & e3:
+            shared_badge_priority.append(priority_dict[b])
+    print(sum(shared_badge_priority))
+
 
 
 trial_data = [
@@ -32,13 +41,18 @@ trial_data = [
             "ttgJtRGJQctTZtZT",
             "CrZsJsPPZsGzwwsLwLmpwMDw",
         ]
+
 trial_rucksack = [list(r) for r in trial_data]
 
 
 rucksack_data = open("input.txt", 'r').read().splitlines()
 rucksacks = [list(r) for r in rucksack_data]
 
+groups = [rucksack_data[i:i+3] for i in range(0, len(rucksack_data), 3)]
+trial_group = [trial_data[i:i+3] for i in range(0, len(trial_data), 3)]
+
+
 sum_rucksack_priority(trial_rucksack) #157
 sum_rucksack_priority(rucksacks) #7785
 
-
+sum_badge_priority(trial_group) #72
