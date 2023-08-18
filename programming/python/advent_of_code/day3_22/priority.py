@@ -6,7 +6,7 @@ item_list = list(string.ascii_letters)
 priority_dict = dict(zip(item_list, weight_list))
 
 
-def sum_priority(rucksacks):
+def sum_rucksack_priority(rucksacks):
     try:
         dup = []
         for r in rucksacks:
@@ -16,8 +16,12 @@ def sum_priority(rucksacks):
             d = set(c1) & set(c2)
             for i in d:
                 dup.append(priority_dict[i])
+        print(sum(dup))
     except:
         print("An error occurred")
+
+def sum_badge_priority(rucksack):
+    pass
 
 
 trial_data = [
@@ -34,7 +38,7 @@ trial_rucksack = [list(r) for r in trial_data]
 rucksack_data = open("input.txt", 'r').read().splitlines()
 rucksacks = [list(r) for r in rucksack_data]
 
-sum_priority(trial_rucksack) #157
-sum_priority(rucksacks) #7785
+sum_rucksack_priority(trial_rucksack) #157
+sum_rucksack_priority(rucksacks) #7785
 
 
