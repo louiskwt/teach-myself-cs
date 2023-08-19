@@ -23,13 +23,13 @@ def sum_rucksack_priority(rucksacks):
 def sum_badge_priority(groups):
     shared_badge_priority = []
     for group in groups:
-        e1 = set(group[0])
-        e2 = set(group[1])
-        e3 = set(group(2))
+        shared_badge = set(group[0]) & set(group[1]) & set(group[2])
+    
+        for b in shared_badge:
+             shared_badge_priority.append(priority_dict[b])
 
-        for b in e1 & e2 & e3:
-            shared_badge_priority.append(priority_dict[b])
     print(sum(shared_badge_priority))
+   
 
 
 
@@ -55,4 +55,5 @@ trial_group = [trial_data[i:i+3] for i in range(0, len(trial_data), 3)]
 sum_rucksack_priority(trial_rucksack) #157
 sum_rucksack_priority(rucksacks) #7785
 
-sum_badge_priority(trial_group) #72
+sum_badge_priority(trial_group) #70
+sum_badge_priority(groups) # 2633
