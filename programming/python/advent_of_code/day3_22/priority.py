@@ -6,25 +6,22 @@ item_list = list(string.ascii_letters)
 priority_dict = dict(zip(item_list, weight_list))
 
 def sum_rucksack_priority(rucksacks):
-    dup = []
+    priority = 0
     for r in rucksacks:
         # c represents the compartments in the rucksack (r)
         c1 = r[len(r)//2:]
         c2 = r[:len(r)//2]
-        d = set(c1) & set(c2)
-        for i in d:
-            dup.append(priority_dict[i])
-    print(sum(dup))
+        duplicate = list(set(c1) & set(c2))
+        priority += priority_dict[duplicate[0]]
+    print(priority)
 
 def sum_badge_priority(groups):
-    shared_badge_priority = []
+    shared_badge_priority = 0
     for group in groups:
-        shared_badge = set(group[0]) & set(group[1]) & set(group[2])
-    
-        for b in shared_badge:
-             shared_badge_priority.append(priority_dict[b])
+        shared_badge = list(set(group[0]) & set(group[1]) & set(group[2]))
+        shared_badge_priority += priority_dict[shared_badge[0]]
 
-    print(sum(shared_badge_priority))
+    print(shared_badge_priority)
    
 try:
     trial_data = [
