@@ -21,23 +21,26 @@ Some information about myself:
 - Develop an open courseware for DSE and IELTS students
 
 - Conduct research on using AI and Machine Learning to help students keep track of their learning progress with feedback
- 
 
 # Curriculum & Courses 📖
 
 ## Programming
 
-    - CS61A Summer 2023
+| Course Title      | Finish Date | Verification |
+| ----------------- | ----------- | ------------ |
+| CS61A Summer 2023 | In progress | /            |
 
 ## Mathematics for Computer Science
 
-    - Precalculus
+| Course Title | Finish Date | Verification |
+| ------------ | ----------- | ------------ |
+| Precalculus  | In progress | /            |
 
 # Reflection Section 💭
 
 ## 5/8 - 5/19
 
-1. Going through SICP and CS61A lectures made me rethink the fundamental concepts of programming 
+1. Going through SICP and CS61A lectures made me rethink the fundamental concepts of programming
 
 2. Picking up Precal help me understand more about functions and its raltion to programming in general
 
@@ -70,20 +73,18 @@ Some information about myself:
 
 - CS61A [lecture video]('https://cs61a.org/')
 
+_After a few week working with Scheme and the old version of CS61A, I switched to a more modern version of SICP with Python and the CS61A 2020 summer lecture series because the newer version of the book and lectures are easier for me to follow and more relevant to me_
 
-*After a few week working with Scheme and the old version of CS61A, I switched to a more modern version of SICP with Python and the CS61A 2020 summer lecture series because the newer version of the book and lectures are easier for me to follow and more relevant to me*
-
-## Math 
+## Math
 
 - Precalculus [textbook]('https://openstax.org/details/books/precalculus-2e')
 
 - Precalculus Lecture [videos]('https://www.youtube.com/watch?v=9OOrhA2iKak&list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP') by Professor Leonard
 
-- Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1') 
+- Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1')
 
 - Khan Academy [Precalculus Course]('https://www.khanacademy.org/math/precalculus')
 
 # Todo 📝
 
 1. Turning it into a GitHub Pages for Better Presentation
-
