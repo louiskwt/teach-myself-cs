@@ -32,9 +32,10 @@ Some information about myself:
 
 ## Mathematics for Computer Science
 
-| Course Title | Finish Date | Verification |
-| ------------ | ----------- | ------------ |
-| Precalculus  | In progress | /            |
+| Course Title                         | Finish Date  | Verification                                                          |
+| ------------------------------------ | ------------ | --------------------------------------------------------------------- |
+| Precalculus: Relations and Functions | June 18 2023 | [Link]('https://coursera.org/share/c8174ec1d19e76ee33b89c451dacd3e7') |
+| Intorduction to Calculus             | In progress  | /                                                                     |
 
 # Reflection Section 💭
 
