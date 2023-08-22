@@ -1,7 +1,15 @@
 def find_duplicated_pair(lst):
     count = 0
     for pair in lst:
-        if all(room in pair[0] for room in pair[1]) or all(room in pair[1] for room in pair[0]):
+        if all(section in pair[0] for section in pair[1]) or all(section in pair[1] for section in pair[0]):
+            count += 1
+    return count
+
+def find_overlapped_pair(lst):
+    count = 0
+    for pair in lst:
+        overlapped = [s for s in pair[0] if s in pair[1]]
+        if len(overlapped) >= 1:
             count += 1
     return count
 
@@ -14,5 +22,6 @@ try:
         formatted_assignment_list.append(section_range)
 
     print(find_duplicated_pair(formatted_assignment_list)) # 560
+    print(find_overlapped_pair(formatted_assignment_list)) # 839
 except:
     print("Fail to process")
