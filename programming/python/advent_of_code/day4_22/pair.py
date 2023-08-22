@@ -1,16 +1,15 @@
 def find_duplicated_pair(lst):
     count = 0
     for pair in lst:
-        if all(section in pair[0] for section in pair[1]) or all(section in pair[1] for section in pair[0]):
-            count += 1
+        has_duplicated = all(section in pair[0] for section in pair[1]) or all(section in pair[1] for section in pair[0])
+        count += 1 if has_duplicated else 0
     return count
 
 def find_overlapped_pair(lst):
     count = 0
     for pair in lst:
-        overlapped = [s for s in pair[0] if s in pair[1]]
-        if len(overlapped) >= 1:
-            count += 1
+        has_overlapped = len([s for s in pair[0] if s in pair[1]]) >= 1
+        count += 1 if has_overlapped else 0
     return count
 
 try:
