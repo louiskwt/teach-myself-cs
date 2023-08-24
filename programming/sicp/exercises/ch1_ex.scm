@@ -12,7 +12,7 @@ false
 ; ex 1.2
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
 
-; Sum of Square
+; ex 1.3 Sum of Square
 (define (square x) (* x x))
 
 (define (getlarger x y)
@@ -36,3 +36,14 @@ false
 )
 
 (define (solution x y z) (+ (square (getlargest x y z)) (square (getsecondlargest x y z))))
+
+; ex 1.4
+(define (mystery a b)
+  ((if (> b 0) + -) a b))
+
+;Describe the behavior of the procedure by selecting which descriptions are equivalent. If you think that the procedure definition is invalid, choose the reasons why.
+
+; no errors
+; equivalent: (+ a (abs b)) | (if (> b 0) (+ a b) (- a b)) | (+ a (if (> b 0) b (- b)))
+
+
