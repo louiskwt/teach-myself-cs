@@ -35,4 +35,4 @@ false
     )
 )
 
-(define (solution x y z) (+ (square (getlargest(x y z))) (square (getsecondlargest x y z))))
+(define (solution x y z) (+ (square (getlargest x y z)) (square (getsecondlargest x y z))))
