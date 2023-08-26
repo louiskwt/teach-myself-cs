@@ -64,3 +64,22 @@ false
   (cond (predicate then-clause)
         (else else-clause)))
 ; the problem of not using the special form if is that it will lead to an infinite loop where sqrt-iter always evaluates itself
+
+;ex 1.7
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x)
+                 x)))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.1))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
