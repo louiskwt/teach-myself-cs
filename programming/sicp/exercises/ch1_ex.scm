@@ -85,3 +85,28 @@ false
 (define (square-root x)
   (sqrt-iter 1.0 x)
 )
+
+; ex 1.1.8 cube-root
+  ; (display "guess: ")
+  ;(display guess)
+  ; (newline)
+      ;(begin
+      ;  (display "improved guess: ")
+      ;  (display (improve-cube-root guess x))
+      ;  (newline))
+
+(define (cube x) (* x x x))
+
+(define (good-enough? guess x)
+  (< (abs (- (cube guess) x)) (* guess 0.001))) 
+
+(define (cube-root-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (cube-root-iter (improve-cube-root guess x) x)))
+
+(define (improve-cube-root guess x)
+  (/ (+ (/ x (square guess)) (* guess 2)) 3))
+
+(define (cube-root x)
+  (cube-root-iter 1.0 x))
