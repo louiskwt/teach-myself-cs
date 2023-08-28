@@ -79,7 +79,9 @@ false
   (/ (+ x y) 2))
 
 (define (good-enough? guess x)
-  (< (abs (- (square guess) x)) 0.001)) ; the 0.001 is already a faction_threshold
+  (< (abs (- (square guess) x)) (* guess 0.001))) ; the 0.001 is already a faction_threshold
 
-(define (sqrt x)
-  (sqrt-iter 1.0 x))
+; solution
+(define (square-root x)
+  (sqrt-iter 1.0 x)
+)
