@@ -110,3 +110,15 @@ false
 
 (define (cube-root x)
   (cube-root-iter 1.0 x))
+
+; ex 1.1.9
+(define (+ a b)
+  (if (= a 0)
+      b
+      (inc (+ (dec a) b))))  ; it's recursive
+
+(define (+ a b)
+  (if (= a 0)
+      b
+      (+ (dec a) (inc b)))) ; it's iterative
+  
