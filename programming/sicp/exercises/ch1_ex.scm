@@ -141,3 +141,8 @@ false
 (define (h n) (A 2 n))
 
 (define (k n) (* 5 n n))
+
+;f(n) = 2n
+; g(n) = 2
+; h(n) = A(n-1, A(n-1, A(n-1, ... A(n-1, 2)...)))
+; k(n) = 5n^2
