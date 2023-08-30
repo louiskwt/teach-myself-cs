@@ -167,3 +167,14 @@ false
 (define (f n)
   (cond ((< n 3) n)
         (else (+ (f (- n 1)) (* 2 (f (- n 2))) (* 3 (f (- n 3)))))))
+
+
+(define (f-iter n)
+  (define (iter-helper count prev3 prev2 prev1)
+    (if (= count n)
+        prev1
+        (iter-helper (+ count 1) prev2 prev1 (+ prev1 (* 2 prev2) (* 3 prev3)))))
+
+  (if (< n 3)
+      n
+      (iter-helper 3 0 1 2)))
