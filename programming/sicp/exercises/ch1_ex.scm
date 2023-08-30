@@ -162,3 +162,8 @@ false
   (if (= count 0)
       b
       (fib-iter (+ a b) a (- count 1))))
+
+; ex 1.1.11
+(define (f n)
+  (cond ((< n 3) n)
+        (else (+ (f (- n 1)) (* 2 (f (- n 2))) (* 3 (f (- n 3)))))))
