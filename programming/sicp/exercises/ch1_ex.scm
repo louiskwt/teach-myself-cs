@@ -176,4 +176,12 @@ false
         (iter-helper (+ a (* 2 b) (* 3 c)) a b (- count 1))))
   (iter-helper 2 1 0 n))    
 
+;ex 1.1.12
+(define (solution row col)
+  (cond ((= row 1) 1)
+        ((= col 1) 1)
+        (else (+ (solution (- row 1) col) (solution row (- col 1))))
+  )
+)
+
  
