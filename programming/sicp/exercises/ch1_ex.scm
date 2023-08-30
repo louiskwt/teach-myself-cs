@@ -170,11 +170,10 @@ false
 
 
 (define (f-iter n)
-  (define (iter-helper count prev3 prev2 prev1)
-    (if (= count n)
-        prev1
-        (iter-helper (+ count 1) prev2 prev1 (+ prev1 (* 2 prev2) (* 3 prev3)))))
+  (define (iter-helper a b c count)
+    (if (= count 0)
+        c
+        (iter-helper (+ a (* 2 b) (* 3 c)) a b (- count 1))))
+  (iter-helper 2 1 0 n))    
 
-  (if (< n 3)
-      n
-      (iter-helper 3 0 1 2)))
+ 
