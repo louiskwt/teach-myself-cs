@@ -243,4 +243,8 @@ false
 
 ; Now, let's examine the expression (φ^n - ψ^n)/√5. We know that ψ < 1, and as n gets larger, ψ^n approaches 0. Therefore, the term ψ^n becomes negligible.
 
+; ex 1.1.14
+; space complexity: n --> 3
+; time complexity: 2^n --> 2^3 = 8
+
  
