@@ -178,10 +178,69 @@ false
 
 ;ex 1.1.12
 (define (solution row col)
-  (cond ((= row 1) 1)
+  (cond ((= row 0) 0)
         ((= col 1) 1)
-        (else (+ (solution (- row 1) col) (solution row (- col 1))))
+        ((= col row) 1)
+        ((> col row) 0)
+        ((< col 1) 0)
+        (else (+ (solution (- row 1) col) (solution (- row 1) (- col 1))))
   )
-)
+) 
+
+; ex 1.1.13
+; Step 1: Base cases
+; We start with the base cases of the Fibonacci sequence:
+; Fib(0) = 0
+; Fib(1) = 1
+
+; Step 2: Inductive hypothesis
+; Assume that for some k ≥ 1, Fib(k) = (φ^k - ψ^k)/√5, where ψ = (1 - √5)/2.
+
+; Step 3: Inductive step
+; We need to show that Fib(k+1) = (φ^(k+1) - ψ^(k+1))/√5.
+
+; Using the definition of the Fibonacci sequence, Fib(k+1) = Fib(k) + Fib(k-1).
+
+; Substituting the inductive hypothesis:
+; Fib(k+1) = (φ^k - ψ^k)/√5 + (φ^(k-1) - ψ^(k-1))/√5
+
+; Simplifying, we get:
+; Fib(k+1) = (φ^k + φ^(k-1) - ψ^k - ψ^(k-1))/√5
+
+; Next, we'll manipulate the expression to simplify it further.
+
+; Step 4: Manipulation
+; We know that φ and ψ are solutions to the quadratic equation x^2 = x + 1.
+
+; For φ, we have:
+; φ^2 = φ + 1
+
+; Rearranging, we get:
+; φ^2 - φ - 1 = 0
+
+; Similarly, for ψ, we have:
+; ψ^2 = ψ + 1
+
+; Rearranging, we get:
+; ψ^2 - ψ - 1 = 0
+
+; Now, let's express φ^k and ψ^k in terms of φ and ψ:
+; φ^k = φ^(k-1) * φ
+; ψ^k = ψ^(k-1) * ψ
+
+; Substituting these expressions into our previous equation, we get:
+; Fib(k+1) = (φ^k + φ^(k-1) - ψ^k - ψ^(k-1))/√5
+; = φ^(k-1) * (φ + 1) - ψ^(k-1) * (ψ + 1))/√5
+; = φ^(k-1) * φ^2 - ψ^(k-1) * ψ^2)/√5
+
+; Using the quadratic equations for φ and ψ, we can simplify further:
+; Fib(k+1) = φ^(k+1) - ψ^(k+1))/√5
+
+; Therefore, we have shown that Fib(k+1) = (φ^(k+1) - ψ^(k+1))/√5, assuming that Fib(k) = (φ^k - ψ^k)/√5.
+
+; Step 5: Conclusion
+; By induction, we have proven that for all n ≥ 0, Fib(n) = (φ^n - ψ^n)/√5.
+
+; Now, let's examine the expression (φ^n - ψ^n)/√5. We know that ψ < 1, and as n gets larger, ψ^n approaches 0. Therefore, the term ψ^n becomes negligible.
 
  
