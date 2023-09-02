@@ -267,3 +267,21 @@ false
 (define (fast-expt b n)
   (fast-expt-iter b n 1)
 )
+
+; ex 1.1.17
+(define (even? n)
+  (= (remainder n 2) 0))
+
+(define (double x) 
+  (+ x x))
+
+(define (halve x)
+  (/ x 2))
+
+(define (fast-mul a b)
+  (define (multiply-iter a b acc)
+    (cond ((= b 0) acc)
+          ((even? b) (multiply-iter (double a) (halve b) acc))
+          (else (multiply-iter a (- b 1) (+ acc a)))))
+  (multiply-iter a b 0))
+
