@@ -285,3 +285,12 @@ false
           (else (multiply-iter a (- b 1) (+ acc a)))))
   (multiply-iter a b 0))
 
+; ex 1.1.18
+(define (mul-iter a b) 
+  (define (multiply-iter a b acc)
+    (cond ((= b 0) acc)
+          ((even? b) (multiply-iter (double a) (halve b) acc))
+          (else (multiply-iter a (- b 1) (+ acc a)))))
+  (multiply-iter a b 0))
+
+
