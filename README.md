@@ -26,9 +26,9 @@ Some information about myself:
 
 ## Programming
 
-| Course Title      | Finish Date | Verification |
-| ----------------- | ----------- | ------------ |
-| CS61A Summer 2023 | In progress | /            |
+| Course Title                                          | Finish Date | Verification |
+| ----------------------------------------------------- | ----------- | ------------ |
+| Programming Languages (From University of Washington) | In progress | /            |
 
 ## Mathematics for Computer Science
 
@@ -85,6 +85,8 @@ _After a few week working with Scheme and the old version of CS61A, I switched t
 - Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1')
 
 - Khan Academy [Precalculus Course]('https://www.khanacademy.org/math/precalculus')
+
+- Introduction to Calculus on [Coursera]('https://www.coursera.org/learn/introduction-to-calculus')
 
 # Todo 📝
 
