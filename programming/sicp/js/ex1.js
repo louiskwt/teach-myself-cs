@@ -43,3 +43,14 @@ function sumLargeSquare(x, y, z) {
   return square(largest) + square(secondLargest)
 }
 
+// ex1.1.4
+
+function plus(a, b) { return a + b; } 
+function minus(a, b) { return a - b; } 
+
+function a_plus_abs_b(a, b) {
+  return (b >= 0 ? plus : minus)(a, b);
+}
+
+// in a_plus_abs_b, b is first evaluated to determine whether the function of plus or minus should be returned and apply to the argumets (a, b); at the final return, either the plus or mins function is invoked with the arguments of a and b to return the solution.
+
