@@ -19,3 +19,27 @@ a === 4
 // ex 1.1.2
 (5 + 4 + (2 - (3 - (6 + 4/5)))) / (3 * (6-2) * (2-7))
 
+// ex 1.1.3
+function square(x) { return x * x }
+
+function sumLargeSquare(x, y, z) {
+  let largest;
+  let secondLargest;
+
+  if (x >= y && x >= z) {
+    largest = x;
+    secondLargest = y > z ? y : z
+  };
+
+  if (y >= x && y >= z) {
+    largest = y
+    secondLargest = x > z ? x : z
+  } 
+  if (z >= x && z >= y) {
+    largest = z
+    secondLargest = x > y ? x : y
+  }
+
+  return square(largest) + square(secondLargest)
+}
+
