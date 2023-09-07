@@ -61,5 +61,6 @@ function test(x, y) { return x === 0 ? 0 : y;
 
 test(0, p());
 
-// if the programming is using applicative order evaluation, the program will hang as it experiences an infinite loop when evaluating the argument p()
+// if the programming is using applicative order evaluation, the program will hang as it experiences an infinite loop when evaluating the argument p() --> The exact error will be Maximum Call Stack Size Exceeded.
 // On the other hand, if the programming language uses the normal-order (lazy) evaluation, it will simply return 0 and p() is never evaluated
+// As it turns out, JS uses applicative order evaluation.
