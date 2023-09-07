@@ -54,3 +54,12 @@ function a_plus_abs_b(a, b) {
 
 // in a_plus_abs_b, b is first evaluated to determine whether the function of plus or minus should be returned and apply to the argumets (a, b); at the final return, either the plus or mins function is invoked with the arguments of a and b to return the solution.
 
+// ex 1,1,5
+function p() { return p(); }
+function test(x, y) { return x === 0 ? 0 : y;
+}
+
+test(0, p());
+
+// if the programming is using applicative order evaluation, the program will hang as it experiences an infinite loop when evaluating the argument p()
+// On the other hand, if the programming language uses the normal-order (lazy) evaluation, it will simply return 0 and p() is never evaluated
