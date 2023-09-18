@@ -43,6 +43,14 @@ function sumLargeSquare(x, y, z) {
   return square(largest) + square(secondLargest);
 }
 
+function sumOfSquaresOfTwoLargest(x, y, z) {
+  const s1 = square(x);
+  const s2 = square(y);
+  const s3 = square(z);
+
+  return s1 + s2 + s3 - Math.min(s1, s2, s3);
+}
+
 // ex1.1.4
 
 function plus(a, b) {
