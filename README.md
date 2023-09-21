@@ -74,11 +74,9 @@ Some information about myself:
 
 - CS61A [lecture video]('https://cs61a.org/')
 
-_After a few week working with Scheme and the old version of CS61A, I switched to a more modern version of SICP with Python and the CS61A 2020 summer lecture series because the newer version of the book and lectures are easier for me to follow and more relevant to me_
+After a few week working with Scheme and the old version of CS61A, I switched to a more modern version of SICP with Python and the CS61A 2020 summer lecture series because the newer version of the book and lectures are easier for me to follow and more relevant to me_
 
 ## Math
-
-- Precalculus [textbook]('https://openstax.org/details/books/precalculus-2e')
 
 - Precalculus Lecture [videos]('https://www.youtube.com/watch?v=9OOrhA2iKak&list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP') by Professor Leonard
 
