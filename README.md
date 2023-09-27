@@ -37,35 +37,6 @@ Some information about myself:
 | Precalculus: Relations and Functions | June 18 2023 | [Link]('https://coursera.org/share/c8174ec1d19e76ee33b89c451dacd3e7') |
 | Intorduction to Calculus             | In progress  | /                                                                     |
 
-# Reflection Section 💭
-
-## 5/8 - 5/19
-
-1. Going through SICP and CS61A lectures made me rethink the fundamental concepts of programming
-
-2. Picking up Precal help me understand more about functions and its raltion to programming in general
-
-3. As the week progresses, I feel like I need to focus more on building projects and actually doing something practical with the materials I'm learning.
-
-## 5 / 20 - 6 / 03
-
-1. SICP and CS61A offered me a better framework to reason about abstraction and tackle programming problems. Overall, I really enjoy doing the homework problems and lab assignments.
-
-2. Studying Math somehow helps me understand better about Higher Order Function.
-
-3. Moving forward, I would like to take more notes so that I can remember what I have learned.
-
-## 6/03 - 7/02
-
-1. Finished A Coursera course on Precalculus and learned a lot from it
-2. Taking SICP and reading the book continued to make me a better programmer in so many aspects
-3. Need to speed up my progress~
-
-## 08/12
-
-1. Struggled to find time to learn and study due to hectic schedule
-2. Found the CS61A course to be more difficult than I think
-
 # Resources Section 🔗
 
 ## Programming
@@ -73,8 +44,6 @@ Some information about myself:
 - Composing Program [book]('http://composingprograms.com/')
 
 - CS61A [lecture video]('https://cs61a.org/')
-
-After a few week working with Scheme and the old version of CS61A, I switched to a more modern version of SICP with Python and the CS61A 2020 summer lecture series because the newer version of the book and lectures are easier for me to follow and more relevant to me_
 
 ## Math
 
