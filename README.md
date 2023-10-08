@@ -28,7 +28,7 @@ Some information about myself:
 
 | Course Title                                          | Finish Date | Verification |
 | ----------------------------------------------------- | ----------- | ------------ |
-| Programming Languages (From University of Washington) | In progress | /            |
+| / | / | /            |
 
 ## Mathematics for Computer Science
 
