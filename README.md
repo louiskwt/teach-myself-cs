@@ -35,7 +35,7 @@ Some information about myself:
 | Course Title                         | Finish Date  | Verification                                                          |
 | ------------------------------------ | ------------ | --------------------------------------------------------------------- |
 | Precalculus: Relations and Functions | June 18 2023 | [Link]('https://coursera.org/share/c8174ec1d19e76ee33b89c451dacd3e7') |
-| Intorduction to Calculus             | In progress  | /                                                                     |
+| Intorduction to Calculus             | September 28 2023| [Link]('https://coursera.org/share/6e4fcf4fd4426bb683510601d6170154')                                                                     |
 
 # Resources Section 🔗
 
