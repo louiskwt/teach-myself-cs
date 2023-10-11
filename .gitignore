@@ -1,0 +1,4 @@
+.ok_history
+*.db
+
+__pycache__/
