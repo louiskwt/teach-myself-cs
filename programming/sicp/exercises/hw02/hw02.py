@@ -190,7 +190,7 @@ def mod_maker():
     >>> check(HW_SOURCE_FILE, 'mod_maker', ['If', 'IfExp']) # no if / if-else statements
     True
     """
-    return ______
+    return lambda x, y: not x % y or x % y
 
 
 def lambda_math_syntax_check():
