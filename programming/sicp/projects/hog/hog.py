@@ -1,7 +1,7 @@
 """The Game of Hog."""
 
-from dice import six_sided, make_test_dice
-from ucb import main, trace, interact
+from dice import make_test_dice, six_sided
+from ucb import interact, main, trace
 
 GOAL = 100  # The goal of Hog is to score 100 points.
 
@@ -21,7 +21,18 @@ def roll_dice(num_rolls, dice=six_sided):
     assert type(num_rolls) == int, 'num_rolls must be an integer.'
     assert num_rolls > 0, 'Must roll at least once.'
     # BEGIN PROBLEM 1
-    "*** YOUR CODE HERE ***"
+    sum, is_sow_sad = 0, False
+    while num_rolls >= 1:
+        outcome = dice()
+        if outcome == 1:
+            is_sow_sad = True
+        sum += outcome
+        num_rolls -= 1
+    
+    if is_sow_sad:
+        return 1
+    else:
+        return sum
     # END PROBLEM 1
 
 
