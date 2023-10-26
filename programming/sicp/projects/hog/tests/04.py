@@ -180,27 +180,23 @@ test = {
         {
           'code': r"""
           >>> simple_update(0, 15, 37) # what happens when you roll 0 dice?
-          6790f7070fa643e868f99363486b6275
-          # locked
+          21
           >>> sus_update(0, 15, 37) # is 21 a sus number?
-          d4e635123d3bf027954fb7a6e4ca8cdb
-          # locked
+          23
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {
           'code': r"""
           >>> simple_update(2, 2, 3, make_test_dice(4))
-          70e71b420a966665c548a3bb2cb30d7d
-          # locked
+          10
           >>> sus_update(2, 2, 3, make_test_dice(4)) # is 10 a sus number?
-          ebb85ed86e75db9ccb48b9592f867cc1
-          # locked
+          11
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {
