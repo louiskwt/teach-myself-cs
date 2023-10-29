@@ -228,7 +228,21 @@ def is_always_roll(strategy, goal=GOAL):
     False
     """
     # BEGIN PROBLEM 7
-    "*** YOUR CODE HERE ***"
+    score0 = 0
+    score1 = 0
+    default_roll = strategy(score0, score1)
+    always_the_same = True
+
+    game_over = score0 >= goal 
+    while not game_over:
+        score0 += 1
+        if strategy(score0, score1) != default_roll or strategy(score1, score0) != default_roll or strategy(score0, score0) != default_roll:
+            always_the_same = False
+            break
+        game_over = score0 >= goal
+    return always_the_same
+
+
     # END PROBLEM 7
 
 
