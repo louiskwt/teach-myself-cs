@@ -162,7 +162,17 @@ def play(strategy0, strategy1, update,
     """
     who = 0  # Who is about to take a turn, 0 (first) or 1 (second)
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
+    game_over = score0 >= goal or score1 >= goal
+    while not game_over:
+        if who == 0:
+            p0_num_roll = strategy0(score0, score1)
+            score0 = update(p0_num_roll, score0, score1, dice)
+        else:
+            p1_num_roll = strategy1(score1, score0)
+            score1 = update(p1_num_roll, score1, score0, dice)
+        
+        game_over = score0 >= goal or score1 >= goal
+        who = 1 - who
     # END PROBLEM 5
     return score0, score1
 
