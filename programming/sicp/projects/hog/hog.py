@@ -227,22 +227,19 @@ def is_always_roll(strategy, goal=GOAL):
     >>> is_always_roll(catch_up)
     False
     """
-    # BEGIN PROBLEM 7
-    score0 = 0
-    score1 = 0
-    default_roll = strategy(score0, score1)
+    # BEGIN PROBLEM 1
+    default_roll = strategy(0, 0)
     always_the_same = True
 
-    game_over = score0 >= goal 
-    while not game_over:
-        score0 += 1
-        if strategy(score0, score1) != default_roll or strategy(score1, score0) != default_roll or strategy(score0, score0) != default_roll:
-            always_the_same = False
-            break
-        game_over = score0 >= goal
-    return always_the_same
-
-
+    for i in range(goal):
+        opponent_score = 0
+        while opponent_score != goal:
+            new_roll = strategy(i, opponent_score)
+            if new_roll != default_roll:
+                always_the_same = False
+                return always_the_same
+            opponent_score += 1
+    return always_the_same   
     # END PROBLEM 7
 
 
