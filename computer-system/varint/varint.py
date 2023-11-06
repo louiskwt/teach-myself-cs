@@ -11,11 +11,12 @@ def encode(n):
     return byte sequence 
     """
     out = []
-    while n > 0:
+    while n > 0:    #TODO avoid double checking with if
         part = n % 128 # TODO use bitmask
-        # TODO add msb
-        out.append(part)
         n >>= 7
+        if n > 0:    
+            part |= 0x80    
+        out.append(part)
     return bytes(out)
 
 # Open the test files
