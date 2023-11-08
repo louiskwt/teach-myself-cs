@@ -55,6 +55,19 @@ def digit_distance(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    d = 0
+    if n < 10:
+        return d
+    
+    one_digit = n % 10
+    rest = n // 10
+    if rest > 10:
+        d = abs(rest % 10 - one_digit)
+        return d + digit_distance(rest)
+    else:
+        d = abs(rest - one_digit)
+        return d
+    
 
 
 def interleaved_sum(n, odd_term, even_term):
