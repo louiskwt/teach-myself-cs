@@ -90,6 +90,14 @@ def interleaved_sum(n, odd_term, even_term):
     True
     """
     "*** YOUR CODE HERE ***"
+    def sum(n, curr = 1):
+        if curr + 1 > n:
+            return curr
+        if curr > 1:
+            return curr + sum(n, curr+1)
+        return 1 + sum(n, curr+1)
+
+    return sum(n)
 
 
 def next_larger_coin(coin):
