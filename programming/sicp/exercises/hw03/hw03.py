@@ -149,6 +149,24 @@ def count_coins(total):
     True
     """
     "*** YOUR CODE HERE ***"
+    n = total
+    m = 1
+    if n >= 25:
+        m = 25
+    elif n >= 10 and n < 25:
+        m = 10
+    elif n >=5 and n < 10:
+        m = 5
+
+    def coin_partitions(n, m):
+        if n == 0 or m == 1:
+            return 1
+        elif n < 0 or next_smaller_coin(m) is None:
+            return 0
+        else:
+            return coin_partitions(n-m, m) + coin_partitions(n, next_smaller_coin(m))
+
+    return coin_partitions(n, m)
 
 
 def print_move(origin, destination):
