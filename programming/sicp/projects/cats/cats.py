@@ -30,13 +30,12 @@ def pick(paragraphs, select, k):
     ''
     """
     # BEGIN PROBLEM 1
-    if len(paragraphs) < k:
-        return ''
     for p in paragraphs:
         if select(p):
             index = paragraphs.index(p)
             paragraphs.pop(index)
             return p
+    return ''
     # END PROBLEM 1
 
 
