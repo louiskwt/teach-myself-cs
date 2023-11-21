@@ -1,9 +1,9 @@
 """Typing test implementation"""
 
-from utils import lower, split, remove_punctuation, lines_from_file
-from ucb import main, interact, trace
 from datetime import datetime
 
+from ucb import interact, main, trace
+from utils import lines_from_file, lower, remove_punctuation, split
 
 ###########
 # Phase 1 #
@@ -30,7 +30,13 @@ def pick(paragraphs, select, k):
     ''
     """
     # BEGIN PROBLEM 1
-    "*** YOUR CODE HERE ***"
+    if len(paragraphs) < k:
+        return ''
+    for p in paragraphs:
+        if select(p):
+            index = paragraphs.index(p)
+            paragraphs.pop(index)
+            return p
     # END PROBLEM 1
 
 
