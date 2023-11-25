@@ -43,15 +43,16 @@ def deep_map_mut(func, lst):
     def mut_helper(el):
         if type(el) == list:
             for e in el:
-                mut_helper(e)
+                index = el.index(e)
+                el[index] = mut_helper(e)
+            return el
         else:
-            return func(el)
+            return func(el) 
      
     for el in lst:
         index = lst.index(el)
         mutated_el = mut_helper(el)
         lst[index] = mutated_el
-
 
 
 HW_SOURCE_FILE=__file__
