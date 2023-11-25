@@ -68,7 +68,28 @@ def max_path_sum(t):
     17
     """
     "*** YOUR CODE HERE ***"
+    def path_sum(p):
+        b_label = label(p)
+        if is_leaf(p):
+            return b_label
+        
+        node_sums = []
+        for node in branches(p):
+            sum = b_label + path_sum(node)
+            node_sums.append(sum)
 
+        return max(node_sums)
+    
+    origin = label(t)
+    sum = []
+
+    for b in branches(t):
+        p_sum = origin + path_sum(b)
+        sum.append(p_sum)
+    
+    return max(sum)
+        
+    
 
 HW_SOURCE_FILE=__file__
 
