@@ -81,14 +81,13 @@ def max_path_sum(t):
         return max(node_sums)
     
     origin = label(t)
-    sum = []
+    path_sums = []
 
     for b in branches(t):
         p_sum = origin + path_sum(b)
-        sum.append(p_sum)
+        path_sums.append(p_sum)
     
-    return max(sum)
-        
+    return max(path_sums)
     
 
 HW_SOURCE_FILE=__file__
