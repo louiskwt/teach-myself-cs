@@ -124,7 +124,34 @@ def has_path(t, word):
     False
     """
     assert len(word) > 0, 'no path for empty word.'
-    "*** YOUR CODE HERE ***"
+    def find_matches(b, matches):
+        if len(matches) == len(word):
+            return matches
+        
+        b_label = label(b)
+
+        if is_leaf(b) and b_label in word:
+            matches.append(b_label)
+            return matches
+        
+        for n in branches(b):
+            matches = matches + find_matches(n, matches)
+
+        return matches        
+
+    matches = []
+    t_label = label(t)
+    if t_label in word:
+        matches.append(t_label)
+
+    if len(matches) == len(word):
+        return True    
+
+    for b in branches(t):
+        matches = matches + find_matches(b, matches)
+
+    return len(matches) == len(word) and matches[0] == t_label   
+            
 
 
 
