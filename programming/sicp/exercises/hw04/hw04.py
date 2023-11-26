@@ -135,7 +135,7 @@ def has_path(t, word):
             return [b_label]
         
         for n in branches(b):
-            matches = [] + find_matches(n, m)
+            matches = [] + find_matches(n, matches)
 
         return matches        
 
