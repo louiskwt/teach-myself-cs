@@ -149,7 +149,13 @@ def autocorrect(typed_word, word_list, diff_function, limit):
     'testing'
     """
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
+    word_to_return = typed_word
+    for w in word_list:
+        diff = diff_function(typed_word, w)
+        if diff < limit:
+            word_to_return = w
+            return word_to_return
+    return word_to_return
     # END PROBLEM 5
 
 
