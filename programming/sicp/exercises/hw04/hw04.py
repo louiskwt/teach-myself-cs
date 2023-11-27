@@ -153,8 +153,6 @@ def has_path(t, word):
     for b in branches(t):
         matches = matches + find_matches(b, matches)
     
-    print(matches)
-
     return len(matches) == len(word) and matches[0] == t_label   
             
 
