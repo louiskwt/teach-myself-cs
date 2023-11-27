@@ -131,11 +131,14 @@ def has_path(t, word):
         matches = []
         b_label = label(b)
 
-        if is_leaf(b) and b_label in word:
-            return [b_label]
+        if b_label in word:
+            matches.append(b_label)
         
+        if is_leaf(b):
+            return matches
+
         for n in branches(b):
-            matches = [] + find_matches(n, matches)
+            matches = matches + find_matches(n, matches)
 
         return matches        
 
