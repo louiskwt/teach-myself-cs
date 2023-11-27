@@ -125,10 +125,12 @@ def has_path(t, word):
     """
     assert len(word) > 0, 'no path for empty word.'
     def find_matches(b, m):
-        if len(m) == len(word):
-            return []
-        
+        match_found = len(m) == len(word)
         matches = []
+        
+        if match_found:
+            return matches
+        
         b_label = label(b)
 
         if b_label in word:
