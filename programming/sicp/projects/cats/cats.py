@@ -192,7 +192,8 @@ def feline_fixes(typed, source, limit):
     5
     """
     # BEGIN PROBLEM 6
-    assert False, 'Remove this line'
+    ## no helper function; use recursion
+    ## no while, no list comprehension
     # END PROBLEM 6
 
 
