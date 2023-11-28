@@ -150,11 +150,21 @@ def autocorrect(typed_word, word_list, diff_function, limit):
     """
     # BEGIN PROBLEM 5
     word_to_return = typed_word
+    word_diffs = []
     for w in word_list:
-        diff = diff_function(typed_word, w)
-        if diff < limit:
-            word_to_return = w
-            return word_to_return
+        diff = diff_function(typed_word, w, limit)
+        word_diffs.append(diff)
+    
+    min_diff = min(word_diffs, key=abs)
+    max_diff = max(word_diffs, key=abs)
+    if min_diff > limit:
+        return word_to_return
+    else:
+        index = word_diffs.index(min_diff)
+        if max_diff == min_diff:
+            word_list.reverse()
+        word_to_return = word_list[index]
+    
     return word_to_return
     # END PROBLEM 5
 
