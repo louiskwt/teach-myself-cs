@@ -159,7 +159,6 @@ def autocorrect(typed_word, word_list, diff_function, limit):
         word_diffs.append(diff)
     
     min_diff = min(word_diffs, key=abs)
-    max_diff = max(word_diffs, key=abs)
     if min_diff > limit:
         return word_to_return
     else:
