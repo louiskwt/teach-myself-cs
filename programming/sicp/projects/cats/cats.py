@@ -192,8 +192,6 @@ def feline_fixes(typed, source, limit):
     5
     """
     # BEGIN PROBLEM 6
-    ## no helper function; use recursion
-    ## no while, no list comprehension
     new_limit = limit
     source_len = len(source)
     typed_len = len(typed)
