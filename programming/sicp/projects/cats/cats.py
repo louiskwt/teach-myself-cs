@@ -197,24 +197,23 @@ def feline_fixes(typed, source, limit):
     new_limit = limit
     source_len = len(source)
     typed_len = len(typed)
+    sub = 0
     if new_limit < 0:
         print(f'limit exceed: {limit}')
         return limit + 1
     
-    if (typed_len == 0 and source_len > 0) or (source_len == 0 and typed_len > 0):
-        print(f'longer word: nl {new_limit}, diff: {abs(typed_len - source_len)}')
-        return new_limit - abs(typed_len - source_len)
+    if source_len > 0 and typed_len > 0:
+        if typed[0] != source[0]:
+            sub += 1
+            new_limit -= 1
     
-    if typed[0] != source[0]:
-        new_limit -= 1
-
     new_typed = typed[1:]
     new_source = source[1:]
 
-    print(f'nt: {new_typed}, ns: {new_source}')
-
-  
-    return limit - feline_fixes(new_typed, new_source, new_limit)
+    if len(new_source) == 0 and len(new_typed) == 0:
+        return sub
+      
+    return sub + feline_fixes(new_typed, new_source, new_limit)
     # END PROBLEM 6
 
 
