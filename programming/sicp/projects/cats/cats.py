@@ -199,13 +199,15 @@ def feline_fixes(typed, source, limit):
     typed_len = len(typed)
     sub = 0
     if new_limit < 0:
-        print(f'limit exceed: {limit}')
         return limit + 1
     
     if source_len > 0 and typed_len > 0:
         if typed[0] != source[0]:
             sub += 1
             new_limit -= 1
+    
+    if source_len > 0 and typed_len == 0 or typed_len > 0 and source_len == 0:
+        return abs(source_len - typed_len)
     
     new_typed = typed[1:]
     new_source = source[1:]
