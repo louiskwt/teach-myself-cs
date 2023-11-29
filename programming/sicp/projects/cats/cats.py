@@ -194,6 +194,27 @@ def feline_fixes(typed, source, limit):
     # BEGIN PROBLEM 6
     ## no helper function; use recursion
     ## no while, no list comprehension
+    new_limit = limit
+    source_len = len(source)
+    typed_len = len(typed)
+    if new_limit < 0:
+        print(f'limit exceed: {limit}')
+        return limit + 1
+    
+    if (typed_len == 0 and source_len > 0) or (source_len == 0 and typed_len > 0):
+        print(f'longer word: nl {new_limit}, diff: {abs(typed_len - source_len)}')
+        return new_limit - abs(typed_len - source_len)
+    
+    if typed[0] != source[0]:
+        new_limit -= 1
+
+    new_typed = typed[1:]
+    new_source = source[1:]
+
+    print(f'nt: {new_typed}, ns: {new_source}')
+
+  
+    return limit - feline_fixes(new_typed, new_source, new_limit)
     # END PROBLEM 6
 
 
