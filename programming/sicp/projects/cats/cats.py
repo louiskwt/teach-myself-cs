@@ -245,8 +245,8 @@ def minimum_mewtations(typed, source, limit):
     else:
         new_typed = typed
         new_source = source
-        
-        add = source[0]  
+
+        add = source[0]  not in typed
         remove = source[0] not in typed
         substitute = typed[0] != source[0]
         if substitute:
