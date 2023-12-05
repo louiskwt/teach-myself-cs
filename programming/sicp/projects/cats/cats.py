@@ -243,8 +243,9 @@ def minimum_mewtations(typed, source, limit):
         return edit
     # Recursive cases should go below here
     else:
-        new_typed = typed[0] !
+        new_typed = typed
         new_source = source
+        
         add = source[0]  
         remove = source[0] not in typed
         substitute = typed[0] != source[0]
