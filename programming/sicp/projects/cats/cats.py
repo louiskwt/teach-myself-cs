@@ -238,18 +238,21 @@ def minimum_mewtations(typed, source, limit):
     3
     """
     new_limit = limit
-    edit = 0
     if typed == source:
-        return edit
+        return 0
     if len(typed) - len(source) > limit:
-        return new_limit
+        return new_limit + 1
     else:
+        print(f't: {typed}, s: {source}')
         new_typed = typed
         new_source = source
 
         add = source[0] not in typed
         remove = typed[0] not in source
         substitute = typed[0] != source[0]
+
+        print(f'a: {add}, r: {remove}, sub: {substitute}')
+
         if add or remove or substitute:
             new_typed = typed[1:]
             new_source = source[1:]
