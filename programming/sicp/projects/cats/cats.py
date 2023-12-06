@@ -241,7 +241,8 @@ def minimum_mewtations(typed, source, limit):
     edit = 0
     if typed == source:
         return edit
-    # Recursive cases should go below here
+    if len(typed) - len(source) > limit:
+        return new_limit
     else:
         new_typed = typed
         new_source = source
@@ -249,22 +250,27 @@ def minimum_mewtations(typed, source, limit):
         add = source[0] not in typed
         remove = typed[0] not in source
         substitute = typed[0] != source[0]
-        if substitute:
-            edit += 1
-            new_typed = source[0] + typed
-            new_limit -= 1
-        
-        if add:
-            edit += 1
-            new_typed = source[0] + typed
-            new_limit -= 1
-        
-        if remove:
-            edit +=1
+        if add or remove or substitute:
             new_typed = typed[1:]
-            new_limit -= 1
+            new_source = source[1:]
+            return feline_fixes(new_typed, new_source, new_limit)
         
-        return edit + minimum_mewtations(new_typed, new_source, new_limit) 
+        return minimum_mewtations(new_typed, new_source, new_limit)
+        # if substitute:
+        #     edit += 1
+        #     new_typed = source[0] + typed
+        #     new_limit -= 1
+        
+        # if add:
+        #     edit += 1
+        #     new_typed = source[0] + typed
+        #     new_limit -= 1
+        
+        # if remove:
+        #     edit +=1
+        #     new_typed = typed[1:]
+        #     new_limit -= 1
+        
 
 
 def final_diff(typed, source, limit):
