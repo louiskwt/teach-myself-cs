@@ -197,6 +197,7 @@ def feline_fixes(typed, source, limit):
     typed_len = len(typed)
     sub = 0
     if new_limit < 0:
+        print(f're: {limit + 1}')
         return limit + 1
     
     if source_len > 0 and typed_len > 0:
@@ -205,12 +206,14 @@ def feline_fixes(typed, source, limit):
             new_limit -= 1
     
     if source_len > 0 and typed_len == 0 or typed_len > 0 and source_len == 0:
+        print(f're: {abs(source_len - typed_len)}')
         return abs(source_len - typed_len)
     
     new_typed = typed[1:]
     new_source = source[1:]
 
     if len(new_source) == 0 and len(new_typed) == 0:
+        print(f's: {sub}')
         return sub
       
     return sub + feline_fixes(new_typed, new_source, new_limit)
@@ -238,9 +241,11 @@ def minimum_mewtations(typed, source, limit):
     3
     """
     new_limit = limit
+    edit = 0
     if typed == source:
         return 0
     if len(typed) - len(source) > limit:
+        print('add')
         return new_limit + 1
     else:
         print(f't: {typed}, s: {source}')
@@ -249,16 +254,25 @@ def minimum_mewtations(typed, source, limit):
 
         add = source[0] not in typed
         remove = typed[0] not in source
-        substitute = typed[0] != source[0]
+        substitute = typed[0] != source[0] or len(typed) != len(source)
 
         print(f'a: {add}, r: {remove}, sub: {substitute}')
 
-        if add or remove or substitute:
+        if add or remove:
             new_typed = typed[1:]
             new_source = source[1:]
-            return feline_fixes(new_typed, new_source, new_limit)
+            edit += 1
+            print(f'here')
+            return edit + feline_fixes(new_typed, new_source, new_limit)
         
-        return minimum_mewtations(new_typed, new_source, new_limit)
+        if substitute:
+            new_typed = source[0] + typed
+            edit += 1
+            return edit + feline_fixes(new_typed, new_source, new_limit)
+
+        print(f're')
+        
+        return edit + minimum_mewtations(new_typed, new_source, new_limit)
         # if substitute:
         #     edit += 1
         #     new_typed = source[0] + typed
