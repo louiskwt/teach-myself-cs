@@ -246,19 +246,24 @@ def minimum_mewtations(typed, source, limit):
         new_typed = typed
         new_source = source
 
-        add = source[0]  not in typed
-        remove = source[0] not in typed
+        add = source[0] not in typed
+        remove = typed[0] not in source
         substitute = typed[0] != source[0]
         if substitute:
             edit += 1
             new_typed = source[0] + typed
-            new_source = source[1:]
             new_limit -= 1
         
-            
+        if add:
+            edit += 1
+            new_typed = source[0] + typed
+            new_limit -= 1
         
-        if len(new_source) == 0 and len(new_typed) == 0:
-            return edit
+        if remove:
+            edit +=1
+            new_typed = typed[1:]
+            new_limit -= 1
+        
         return edit + minimum_mewtations(new_typed, new_source, new_limit) 
 
 
