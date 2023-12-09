@@ -269,7 +269,7 @@ def minimum_mewtations(typed, source, limit):
             return edit + minimum_mewtations(new_typed, new_source, new_limit)
         
         if substitute:
-            new_typed = new_source[0] + new_typed
+            new_typed = new_source[0] + new_typed[1:]
             edit += 1
             new_limit -=1
             if new_typed == new_source:
