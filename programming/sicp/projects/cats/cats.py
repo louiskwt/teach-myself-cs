@@ -256,9 +256,9 @@ def minimum_mewtations(typed, source, limit):
         has_typed = len(new_typed) > 0
         has_both_typed_and_source = has_source and has_source
 
-        add = has_source and source[0] not in typed
-        remove = has_typed and typed[0] not in source
-        substitute = has_both_typed_and_source and typed[0] != source[0]
+        add = len(new_source) > 2 and source[0] not in typed
+        remove = len(new_typed) > 2 and typed[0] not in source or not has_source
+        substitute = not remove and not add and has_both_typed_and_source and typed[0] != source[0]
 
         print(f'a: {add}, r: {remove}, sub: {substitute}')
 
@@ -267,8 +267,15 @@ def minimum_mewtations(typed, source, limit):
             new_source = new_source[1:]
             new_typed = new_typed[1:]
             return edit + minimum_mewtations(new_typed, new_source, new_limit)
+        
+        if substitute:
+            new_typed = new_source[0] + new_typed
+            edit += 1
+            new_limit -=1
+            if new_typed == new_source:
+                return edit
 
-        if add or substitute:
+        if add:
             new_typed = new_source[0] + new_typed
             edit += 1
             new_limit -= 1
@@ -276,11 +283,11 @@ def minimum_mewtations(typed, source, limit):
         if remove:
             new_typed = new_typed[1:]
             edit += 1
-            new_limit -= 1
+            new_limit -= 1        
         
         print(f're')
 
-        if new_typed == new_source or len(new_typed) == 0:
+        if new_typed == new_source:
             return edit
         
         return edit + minimum_mewtations(new_typed, new_source, new_limit)
