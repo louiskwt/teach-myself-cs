@@ -240,57 +240,19 @@ def minimum_mewtations(typed, source, limit):
     >>> minimum_mewtations("ckiteus", "kittens", big_limit) # ckiteus -> kiteus -> kitteus -> kittens
     3
     """
-    new_limit = limit
-    edit = 0
-    if typed == source:
+    if limit < 0:
+        return 1
+    elif typed == source:
         return 0
-    if len(typed) - len(source) > limit:
-        print('add')
-        return new_limit + 1
+    elif len(typed) == 0 or len(source) == 0:
+        return len(typed) + len(source)
+    elif typed[0] == source[0]:
+        return minimum_mewtations(typed[1:], source[1:], limit)
     else:
-        print(f't: {typed}, s: {source}')
-        new_typed = typed
-        new_source = source
-
-        has_source = len(new_source) > 0
-        has_typed = len(new_typed) > 0
-        has_both_typed_and_source = has_source and has_source
-
-        add = len(new_source) > 2 and source[0] not in typed
-        remove = len(new_typed) > 2 and typed[0] not in source or not has_source
-        substitute = not remove and not add and has_both_typed_and_source and typed[0] != source[0]
-
-        print(f'a: {add}, r: {remove}, sub: {substitute}')
-
-        if has_both_typed_and_source and new_source[0] == new_typed[0]:
-            print('here')
-            new_source = new_source[1:]
-            new_typed = new_typed[1:]
-            return edit + minimum_mewtations(new_typed, new_source, new_limit)
-        
-        if substitute:
-            new_typed = new_source[0] + new_typed[1:]
-            edit += 1
-            new_limit -=1
-            if new_typed == new_source:
-                return edit
-
-        if add:
-            new_typed = new_source[0] + new_typed
-            edit += 1
-            new_limit -= 1
-        
-        if remove:
-            new_typed = new_typed[1:]
-            edit += 1
-            new_limit -= 1        
-        
-        print(f're')
-
-        if new_typed == new_source:
-            return edit
-        
-        return edit + minimum_mewtations(new_typed, new_source, new_limit)
+        add = minimum_mewtations(typed, source[1:], limit-1)
+        remove = minimum_mewtations(typed[1:], source, limit-1)
+        sub = minimum_mewtations(typed[1:], source[1:], limit-1)
+        return 1 + min(add, remove, sub)
 
 def final_diff(typed, source, limit):
     """A diff function that takes in a string TYPED, a string SOURCE, and a number LIMIT.
