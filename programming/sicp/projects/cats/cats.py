@@ -206,7 +206,7 @@ def feline_fixes(typed, source, limit):
             new_limit -= 1
     
     if source_len > 0 and typed_len == 0 or typed_len > 0 and source_len == 0:
-        print(f're: {abs(source_len - typed_len)}')
+        print(f're abs: {abs(source_len - typed_len)}')
         return abs(source_len - typed_len)
     
     new_typed = typed[1:]
@@ -252,43 +252,38 @@ def minimum_mewtations(typed, source, limit):
         new_typed = typed
         new_source = source
 
-        add = source[0] not in typed
-        remove = typed[0] not in source
-        substitute = typed[0] != source[0] or len(typed) != len(source)
+        has_source = len(new_source) > 0
+        has_typed = len(new_typed) > 0
+        has_both_typed_and_source = has_source and has_source
+
+        add = has_source and source[0] not in typed
+        remove = has_typed and typed[0] not in source
+        substitute = has_both_typed_and_source and typed[0] != source[0]
 
         print(f'a: {add}, r: {remove}, sub: {substitute}')
 
-        if add or remove:
-            new_typed = typed[1:]
-            new_source = source[1:]
-            edit += 1
-            print(f'here')
-            return edit + feline_fixes(new_typed, new_source, new_limit)
-        
-        if substitute:
-            new_typed = source[0] + typed
-            edit += 1
-            return edit + feline_fixes(new_typed, new_source, new_limit)
+        if has_both_typed_and_source and new_source[0] == new_typed[0]:
+            print('here')
+            new_source = new_source[1:]
+            new_typed = new_typed[1:]
+            return edit + minimum_mewtations(new_typed, new_source, new_limit)
 
+        if add or substitute:
+            new_typed = new_source[0] + new_typed
+            edit += 1
+            new_limit -= 1
+        
+        if remove:
+            new_typed = new_typed[1:]
+            edit += 1
+            new_limit -= 1
+        
         print(f're')
+
+        if new_typed == new_source or len(new_typed) == 0:
+            return edit
         
         return edit + minimum_mewtations(new_typed, new_source, new_limit)
-        # if substitute:
-        #     edit += 1
-        #     new_typed = source[0] + typed
-        #     new_limit -= 1
-        
-        # if add:
-        #     edit += 1
-        #     new_typed = source[0] + typed
-        #     new_limit -= 1
-        
-        # if remove:
-        #     edit +=1
-        #     new_typed = typed[1:]
-        #     new_limit -= 1
-        
-
 
 def final_diff(typed, source, limit):
     """A diff function that takes in a string TYPED, a string SOURCE, and a number LIMIT.
