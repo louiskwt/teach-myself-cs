@@ -288,7 +288,7 @@ def report_progress(typed, source, user_id, upload):
     0.2
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    
     # END PROBLEM 8
 
 
