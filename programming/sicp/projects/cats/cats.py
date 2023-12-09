@@ -197,7 +197,6 @@ def feline_fixes(typed, source, limit):
     typed_len = len(typed)
     sub = 0
     if new_limit < 0:
-        print(f're: {limit + 1}')
         return limit + 1
     
     if source_len > 0 and typed_len > 0:
@@ -206,14 +205,12 @@ def feline_fixes(typed, source, limit):
             new_limit -= 1
     
     if source_len > 0 and typed_len == 0 or typed_len > 0 and source_len == 0:
-        print(f're abs: {abs(source_len - typed_len)}')
         return abs(source_len - typed_len)
     
     new_typed = typed[1:]
     new_source = source[1:]
 
     if len(new_source) == 0 and len(new_typed) == 0:
-        print(f's: {sub}')
         return sub
       
     return sub + feline_fixes(new_typed, new_source, new_limit)
