@@ -320,7 +320,12 @@ def time_per_word(words, timestamps_per_player):
     [[6, 3, 6, 2], [10, 6, 1, 2]]
     """
     # BEGIN PROBLEM 9
-    
+    time_diff = []
+    for p in timestamps_per_player:
+        time_unit = [p[n]-p[n-1] for n in range(1, len(p))]
+        time_diff.append(time_unit)
+
+    return match(words, time_diff)
     # END PROBLEM 9
 
 
