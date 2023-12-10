@@ -291,8 +291,7 @@ def report_progress(typed, source, user_id, upload):
     for i in range(len(source)):
         if i >= len(typed) or source[i] != typed[i]:
             break
-
-    # print(index)
+    
     progress = len(typed[:i]) / len(source)
     d = {
         "id": user_id,
