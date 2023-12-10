@@ -288,7 +288,13 @@ def report_progress(typed, source, user_id, upload):
     0.2
     """
     # BEGIN PROBLEM 8
-    
+    progress = len([w for w in typed if w in source]) / len(source)
+    d = {
+        "id": user_id,
+        "progress": progress 
+    }
+    upload(d)
+    return progress
     # END PROBLEM 8
 
 
