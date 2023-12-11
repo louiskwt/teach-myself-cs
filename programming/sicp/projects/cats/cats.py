@@ -346,8 +346,7 @@ def fastest_words(match):
     player_indices = range(len(get_all_times(match)))  # contains an *index* for each player
     word_indices = range(len(get_all_words(match)))    # contains an *index* for each word
     # BEGIN PROBLEM 10
-    # print(f'p: {player_indices}, w: {word_indices}')
-    out = [list() for pi in player_indices]
+    out = [list() for _ in player_indices]
 
     for wi in word_indices:
         word = get_word(match, wi)
@@ -361,9 +360,7 @@ def fastest_words(match):
         
         out[p].append(word) 
     
-    return out
-
-            
+    return out            
     # END PROBLEM 10
 
 
