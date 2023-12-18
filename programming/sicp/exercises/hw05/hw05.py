@@ -12,6 +12,7 @@ def hailstone(n):
     while True:
         if curr == n:
             yield curr
+            
         if curr % 2 == 0:
             curr = curr / 2
             yield int(curr)
