@@ -8,8 +8,21 @@ def hailstone(n):
     >>> next(hail_gen)
     1
     """
-    "*** YOUR CODE HERE ***"
+    curr = n
+    while True:
+        if curr == n:
+            yield curr
+        if curr % 2 == 0:
+            curr = curr / 2
+            yield int(curr)
+        
+        if curr != 1 and curr % 2 != 0:
+            curr = (curr * 3) + 1
+            yield int(curr)
 
+        if curr == 1:
+            yield int(curr) 
+        
 
 def merge(a, b):
     """Q2:
