@@ -43,6 +43,25 @@ def merge(a, b):
     [2, 3, 5, 7, 8, 9, 11, 13, 14, 15]
     """
     "*** YOUR CODE HERE ***"
+    last = 0
+    index = 0
+    while True:
+        if index == 0:
+            curr = next(a)
+            if curr == last:
+                index = abs(index - 1)
+                continue
+            else:
+                yield curr
+                index = abs(index - 1)
+        else:
+            curr = next(b)
+            if curr == last:
+                index = abs(index - 1)
+                continue
+            else:
+                yield curr
+                index = abs(index - 1)
 
 
 
