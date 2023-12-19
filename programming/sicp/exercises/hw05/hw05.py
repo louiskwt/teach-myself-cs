@@ -43,19 +43,18 @@ def merge(a, b):
     [2, 3, 5, 7, 8, 9, 11, 13, 14, 15]
     """
     "*** YOUR CODE HERE ***"
-    index, prev, val_a, val_b = 0, 
+    val_a, val_b = next(a), next(b) 
     while True:
-        curr = next(seqs[index])
-        if curr == prev:
-            index = abs(index - 1)
-            curr = next(seqs[index])
-            prev = curr
-            yield curr
-        else:
-            yield curr
-            prev = curr
-            index = abs(index - 1)
-           
+        if val_a < val_b:
+            yield val_a
+            val_a = next(a)
+        elif val_b < val_a:
+            yield val_b
+            val_b = next(b)
+        elif val_a == val_b:
+            yield val_b
+            val_a = next(a)
+            val_b = next(b) 
 
 
 
