@@ -25,11 +25,6 @@ def hailstone(n):
             yield int(curr) 
         
 
-def sequence(start, step):
-    while True:
-        yield start
-        start += step
-
 def merge(a, b):
     """Q2:
     >>> def sequence(start, step):
