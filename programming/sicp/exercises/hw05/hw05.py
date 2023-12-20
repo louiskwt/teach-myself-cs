@@ -122,10 +122,12 @@ def yield_paths(t, value):
     [[0, 2], [0, 2, 1, 2]]
     """
     "*** YOUR CODE HERE ***"
-    
-    for _______________ in _________________:
-        for _______________ in _________________:
-            "*** YOUR CODE HERE ***"
+    if is_leaf(t) and label(t) == value:
+        yield [value]
+
+    for b in branches(t):
+        for p in yield_paths(b, value):
+            yield [label(t)] + p
 
 
 def remainders_generator(m):
