@@ -83,7 +83,6 @@ def perms(seq):
     if seq_len > 1:
         for e in perms(seq[1:]):
             for i in range(seq_len):
-                # print(f'e: {e}, seq: {seq[0:1]}')
                 yield e[:i] + seq[0:1] + e[i:]
     else:
         yield seq
