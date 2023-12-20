@@ -76,14 +76,14 @@ def perms(seq):
     [['a', 'b'], ['b', 'a']]
     """
     "*** YOUR CODE HERE ***"
-    if isinstance(seq, str):
+    if not isinstance(seq, list):
         seq = list(seq)
-        
+
     seq_len = len(seq)
     if seq_len > 1:
         for e in perms(seq[1:]):
             for i in range(seq_len):
-                print(f'e: {e}, seq: {seq[0:1]}')
+                # print(f'e: {e}, seq: {seq[0:1]}')
                 yield e[:i] + seq[0:1] + e[i:]
     else:
         yield seq
