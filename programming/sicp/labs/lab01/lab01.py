@@ -45,6 +45,14 @@ def divisible_by_k(n, k):
     0
     """
     "*** YOUR CODE HERE ***"
+    curr, total = 1, 0
+    while curr <= n:
+        if curr % k == 0:
+            print(curr)
+            total += 1
+        curr += 1
+
+    return total
 
 
 def sum_digits(y):
