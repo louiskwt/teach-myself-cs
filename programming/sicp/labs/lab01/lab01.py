@@ -16,12 +16,12 @@ def falling(n, k):
     if k == 1:
         return n
     curr = 0
-    sum = 1
+    result = 1
     while k > curr:
-        sum = sum * n
+        result = result * n
         n -= 1 
         curr += 1
-    return sum
+    return result
 
 
 def divisible_by_k(n, k):
