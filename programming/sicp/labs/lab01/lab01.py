@@ -92,4 +92,17 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
+    is_eight = 0
+    reminder = n
+    while is_eight < 2 and reminder > 0:
+        curr = reminder % 10
+        if is_eight and curr == 8:
+            is_eight += 1
+        if not is_eight and curr == 8:
+            is_eight += 1
+        if is_eight and curr != 8:
+            is_eight -= 1
 
+        reminder = reminder // 10   
+
+    return is_eight == 2
