@@ -1,4 +1,3 @@
-
 def composer(f, g):
     """Return the composition function which given x, computes f(g(x)).
 
@@ -31,7 +30,9 @@ def composite_identity(f, g):
     False
     """
     "*** YOUR CODE HERE ***"
-
+    comp1 = composer(f, g)
+    comp2 = composer(g, f)
+    return lambda x: comp1(x) == comp2(x)
 
 def sum_digits(y):
     total = 0
