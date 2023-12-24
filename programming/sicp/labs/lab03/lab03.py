@@ -1,3 +1,4 @@
+import math
 from operator import add, mul
 
 square = lambda x: x * x
@@ -93,9 +94,21 @@ def nearest_two(x):
     2.0
 
     """
-    power_of_two = 1.0
-    "*** YOUR CODE HERE ***"
-    return power_of_two
+    power_of_two = math.log2(x) // 1
+    curr = 2 ** power_of_two
+
+    if curr == x:
+        return curr 
+    
+    next_pow = 2 ** (power_of_two + 1)
+
+    curr_diff = x - curr
+    next_diff = next_pow - x 
+
+    if curr_diff < next_diff:
+        return curr
+    else:
+        return next_pow 
 
 
 def make_repeater(func, n):
