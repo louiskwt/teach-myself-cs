@@ -166,6 +166,7 @@ class HarvesterAnt(Ant):
         gamestate -- The GameState, used to access game state information.
         """
         # BEGIN Problem 1
+        gamestate.food += 1
         # END Problem 1
 
 
