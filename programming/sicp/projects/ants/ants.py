@@ -1,8 +1,9 @@
 """CS 61A presents Ants Vs. SomeBees."""
 
 import random
-from ucb import main, interact, trace
 from collections import OrderedDict
+
+from ucb import interact, main, trace
 
 ################
 # Core Classes #
@@ -157,7 +158,7 @@ class HarvesterAnt(Ant):
 
     name = 'Harvester'
     implemented = True
-    # OVERRIDE CLASS ATTRIBUTES HERE
+    food_cost = 2
 
     def action(self, gamestate):
         """Produce 1 additional food for the colony.
@@ -165,7 +166,6 @@ class HarvesterAnt(Ant):
         gamestate -- The GameState, used to access game state information.
         """
         # BEGIN Problem 1
-        "*** YOUR CODE HERE ***"
         # END Problem 1
 
 
@@ -175,7 +175,7 @@ class ThrowerAnt(Ant):
     name = 'Thrower'
     implemented = True
     damage = 1
-    # ADD/OVERRIDE CLASS ATTRIBUTES HERE
+    food_cost = 3
 
     def nearest_bee(self):
         """Return the nearest Bee in a Place that is not the HIVE, connected to
