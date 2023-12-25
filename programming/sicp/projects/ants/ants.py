@@ -187,25 +187,23 @@ class ThrowerAnt(Ant):
         """
         # BEGIN Problem 3 and 4
         # return random_bee(self.place.bees) # REPLACE THIS LINE
-        targets = None
-        if len(self.place.bees) != 0:
+        if len(self.place.bees) != 0 and not self.place.is_hive:
             return random_bee(self.place.bees)
         else:
             end = False
             next_place = self.place.entrance
             while not end:
                 if next_place.is_hive:
-                    end = True
+                    return None 
 
-                if len(next_place.bees) != 0:
-                    targets = random_bee(next_place.bees)
-                    end = True
-                
+                if len(next_place.bees) != 0 and not self.place.is_hive:
+                    return random_bee(next_place.bees)
+                    
                 if next_place.entrance is None:
                     end = True
+
                 next_place = next_place.entrance
-        
-        return targets
+        return None 
         # END Problem 3 and 4
 
     def throw_at(self, target):
