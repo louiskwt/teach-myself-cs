@@ -127,6 +127,13 @@ def make_repeater(func, n):
     5
     """
     "*** YOUR CODE HERE ***"
+    def repeater(x, n=n):
+        total = x
+        while n != 0:
+            total = func(total)
+            n -= 1
+        return total
+    return repeater
 
 def composer(func1, func2):
     """Returns a function f, such that f(x) = func1(func2(x))."""
