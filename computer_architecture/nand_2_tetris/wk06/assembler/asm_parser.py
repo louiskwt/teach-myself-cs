@@ -34,9 +34,16 @@ def command_type(code):
     else:
         return L_COMMAND
 
+def symbol(command):
+    return command.split("@")[1]
+
 def parse(code_lines):
     commands = []
-    # for code in code_lines:
-    #     command = command_type(code)
-    #     if command == A_COMMAND:
-    #         # symbol(command)
+    for code in code_lines:
+        command = command_type(code)
+        if command == A_COMMAND or command == L_COMMAND:
+            code = symbol(code)
+            commands.append(code)
+        else:
+            commands.append(code)
+    return commands
