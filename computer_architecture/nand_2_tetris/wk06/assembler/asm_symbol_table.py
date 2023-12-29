@@ -29,13 +29,13 @@ class SymbolTable:
         self.symbol_table = PREDEFINED_SYMBOLS 
         self.next_addr = 16
     
-    def get_address(key, self):
+    def get_address(self, key):
         return "{0:016b}".format(self.symbol_table[key])
 
-    def contains(key, self):
+    def contains(self, key):
         return key in self.symbol_table
     
-    def add_entry(key, self):
+    def add_entry(self, key):
         self.symbol_table[key] = self.next_addr
         self.next_addr += 1
     
