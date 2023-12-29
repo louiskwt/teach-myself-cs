@@ -1,5 +1,7 @@
 import re
 
+from asm_symbol_table import SymbolTable
+
 A_COMMAND = 'A_COMMAND'
 C_COMMAND = 'C_COMMAND'
 L_COMMAND = 'L_COMMAND'
@@ -34,15 +36,18 @@ def command_type(code):
     else:
         return L_COMMAND
 
-def symbol(command):
+def get_symbol_key(command):
     return command.split("@")[1]
 
 def parse(code_lines):
     commands = []
+    symbols = SymbolTable()
     for code in code_lines:
         command = command_type(code)
         if command == A_COMMAND or command == L_COMMAND:
-            code = symbol(code)
+            key = get_symbol_key(code)
+            if symbols.contains(key):
+                code = symbols.get_address(key)
             commands.append(code)
         else:
             commands.append(code)
