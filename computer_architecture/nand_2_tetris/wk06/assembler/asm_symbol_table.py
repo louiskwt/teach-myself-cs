@@ -38,5 +38,3 @@ class SymbolTable:
     def add_entry(self, key):
         self.symbol_table[key] = self.next_addr
         self.next_addr += 1
-    
-    
