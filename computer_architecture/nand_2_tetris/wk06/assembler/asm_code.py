@@ -51,6 +51,8 @@ COMP_TABLE = {
     'D|M': 21,
 }
 
+A_LIST = ['M', '!M', '-M', 'M+1', 'M-1', 'D+M', 'D-M', 'M-D', 'D&M', 'D|M']
+
 def get_dest(key):
     return "{0:03b}".format(DEST_TABLE[key])
 
@@ -59,3 +61,6 @@ def get_jmp(key):
 
 def get_comp(key):
     return "{0:06b}".format(COMP_TABLE[key])
+
+def is_a_code(comp):
+    return comp in A_LIST 
