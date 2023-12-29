@@ -1,5 +1,6 @@
 import re
 
+from asm_code import *
 from asm_symbol_table import SymbolTable
 
 A_COMMAND = 'A_COMMAND'
@@ -50,5 +51,23 @@ def parse(code_lines):
                 code = symbols.get_address(key)
             commands.append(code)
         else:
-            commands.append(code)
+            op_code = "{0:03b}".format(7)
+            if "=" in code:
+                code_parts = code.split("=")
+                dest, right_hand_side = get_dest(code_parts[0]), code_parts[1]
+                jmp = get_jmp('null')
+                if ";" in right_hand_side:
+                    splited_rhs = right_hand_side.split(';')
+                    comp, jmp = get_comp(splited_rhs[0]), get_jmp(splited_rhs[1])
+
+                comp = get_comp(right_hand_side)
+
+
+            if ";" in code:
+                code_parts = code.split(';')
+                comp, jmp = get_comp(code_parts[0]), get_jmp(code_parts[1])
+                dest = get_dest('null')
+
+            out = op_code + comp + dest + jmp
+            commands.append(out)
     return commands
