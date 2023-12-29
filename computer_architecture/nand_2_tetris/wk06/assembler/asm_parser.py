@@ -52,6 +52,7 @@ def parse(code_lines):
             commands.append(code)
         else:
             op_code = "{0:03b}".format(7)
+            a_code = "0"
             if "=" in code:
                 code_parts = code.split("=")
                 dest, right_hand_side = get_dest(code_parts[0]), code_parts[1]
@@ -61,13 +62,16 @@ def parse(code_lines):
                     comp, jmp = get_comp(splited_rhs[0]), get_jmp(splited_rhs[1])
 
                 comp = get_comp(right_hand_side)
-
+                if is_a_code(comp):
+                    a_code = "1"
 
             if ";" in code:
                 code_parts = code.split(';')
                 comp, jmp = get_comp(code_parts[0]), get_jmp(code_parts[1])
                 dest = get_dest('null')
+                if is_a_code(comp):
+                    a_code = "1"
 
-            out = op_code + comp + dest + jmp
+            out = op_code + a_code + comp + dest + jmp
             commands.append(out)
     return commands
