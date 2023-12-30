@@ -55,8 +55,12 @@ class SymbolTable:
     def contains(self, key):
         return key in self.symbol_table
     
-    def add_entry(self, key, value, is_label: False):
+    def add_label_entry(self, key, value):
         self.symbol_table[key] = value
+
+    def add_entry(self, key, value):
+        self.symbol_table[key] = value
+        self.next_addr += 1
     
     def add_numeric_entry(self, key, value):
         self.symbol_table[key] = value

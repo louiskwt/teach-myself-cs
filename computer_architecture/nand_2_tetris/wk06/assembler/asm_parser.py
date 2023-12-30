@@ -78,7 +78,7 @@ class ASM_Parser:
             if self.is_l_command(code):
                 print(code, self.symbols.line_num)
                 label = self.get_label_key(code)
-                self.symbols.add_entry(label, self.symbols.line_num)
+                self.symbols.add_label_entry(label, self.symbols.line_num)
             else:
                 self.symbols.march()
 
