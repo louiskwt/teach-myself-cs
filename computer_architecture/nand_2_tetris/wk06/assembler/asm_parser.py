@@ -1,45 +1,67 @@
 import re
 
-from asm_code import *
+from asm_code import Code
 from asm_symbol_table import SymbolTable
 
 A_COMMAND = 'A_COMMAND'
 C_COMMAND = 'C_COMMAND'
 L_COMMAND = 'L_COMMAND'
 
-def remove_comments_and_whitespace(code):
-    if "//" in code:
-        return code.split("//")[0].strip()
-    else:      
-        return code.strip()
 
-def remove_linebreak(line):
-    return re.sub("\n", "", line)
 
-def clean_line(line):
-    l = remove_linebreak(line)
-    return remove_comments_and_whitespace(l)
+class ASM_Reader:
+    def __init__(self, path):
+        self.path = path
 
-def extract_code_from_file(path):
-    try:
-        with open(path) as file:
-            lines = [clean_line(line) for line in file.readlines()]
-            code = [line for line in lines if line]
-            return code  
-    except:
-        print('Cannot open file. Check the file path')
+    def remove_comments_and_whitespace(code):
+        if "//" in code:
+            return code.split("//")[0].strip()
+        else:      
+            return code.strip()
 
-def command_type(code):
-    if "@" in code:
-        return A_COMMAND
-    elif "=" in code or ";" in code:
-        return C_COMMAND
-    else:
-        return L_COMMAND
+    def remove_linebreak(self, line):
+        return re.sub("\n", "", line)
 
-def get_symbol_key(command):
-    # print(command)
-    return command.split("@")[1]
+    def clean_line(self, line):
+        l = self.remove_linebreak(line)
+        return self.remove_comments_and_whitespace(l)
+
+    def extract_code_from_file(self):
+        try:
+            with open(self.path) as file:
+                lines = [self.clean_line(line) for line in file.readlines()]
+                code = [line for line in lines if line]
+                return code  
+        except:
+            print('Cannot open file. Check the file path')
+
+
+class ASM_Parser:
+    def __init__(self) -> None:
+        self.A_COMMAND = A_COMMAND
+        self.C_COMMAND = C_COMMAND
+        self.L_COMMAND = A_COMMAND
+        self.code_lines = []
+        self.output = []
+
+    def command_type(code):
+        if "@" in code:
+            return A_COMMAND
+        elif "=" in code or ";" in code:
+            return C_COMMAND
+        else:
+            return L_COMMAND
+
+    def get_symbol_key(command):
+        # print(command)
+        return command.split("@")[1]
+    
+    def load_code_lines(self, code_lines):
+        self.code_lines = code_lines
+
+
+
+
 
 def parse(code_lines):
     commands = []
