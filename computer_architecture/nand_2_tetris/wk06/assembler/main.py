@@ -11,7 +11,8 @@ def main():
 
     parser = ASM_Parser()
     parser.load_code_lines(code)
-    machine_code = parser.parse()
+    parser.first_parse()
+    machine_code = parser.second_parse()
     
     file_name = file_path.split('.')[0]
     with open(f'{file_name}.hack', 'w') as file:
