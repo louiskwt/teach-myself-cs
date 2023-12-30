@@ -1,4 +1,4 @@
 // Comment
-@R1
-M=D+1
+@1
+D=M
 
