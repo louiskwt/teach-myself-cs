@@ -32,12 +32,13 @@ def extract_code_from_file(path):
 def command_type(code):
     if "@" in code:
         return A_COMMAND
-    elif "=" in code:
+    elif "=" in code or ";" in code:
         return C_COMMAND
     else:
         return L_COMMAND
 
 def get_symbol_key(command):
+    # print(command)
     return command.split("@")[1]
 
 def parse(code_lines):
