@@ -1,4 +1,3 @@
-import os
 import re
 
 from asm_code import Code
@@ -43,6 +42,7 @@ class ASM_Parser:
         self.A_COMMAND = A_COMMAND
         self.C_COMMAND = C_COMMAND
         self.L_COMMAND = A_COMMAND
+        self.symbols = SymbolTable()
         self.code_lines = []
         self.output = []
 
@@ -55,36 +55,42 @@ class ASM_Parser:
             return self.L_COMMAND
 
     def get_symbol_key(self, command):
-        # print(command)
         return command.split("@")[1]
     
     def load_code_lines(self, code_lines):
         self.code_lines = code_lines
+    
+    def first_parse(self):
+        '''
+            focus on building the symbol in the first pass
+            only work on A command or adding reference
+            no code is generated in this pass
+        '''
+        for code in self.code_lines:
+            command = self.command_type(code)
+            if command == A_COMMAND:
+                key = self.get_symbol_key(code)
+                if not self.symbols.contains(key):
+                    if key.isnumeric():
+                        self.symbols.add_numeric_entry(key, int(key))
+                    else: 
+                        self.symbols.add_entry(key, self.symbols.next_addr)
 
-    def parse(self):
-        commands = []
-        symbols = SymbolTable()
+    def second_parse(self):
         code_generator = Code()
         for code in self.code_lines:
             command = self.command_type(code)
-            if command == A_COMMAND or command == L_COMMAND:
+            if command == A_COMMAND:
                 key = self.get_symbol_key(code)
-                if symbols.contains(key):
-                    code = symbols.get_address(key)
-                else:
-                    if key.isnumeric():
-                        code = symbols.add_numeric_entry(key)
-                    else:
-                        symbols.add_entry(key)
-                        code = symbols.get_address(key)
-                commands.append(code)
+                code = self.symbols.get_address(key)
+                self.output.append(code)
             else:
                 op_code = "{0:03b}".format(7)
                 a_code = "0"
                 if "=" in code:
                     code_parts = code.split("=")
                     dest, right_hand_side = code_generator.get_dest(code_parts[0]), code_parts[1]
-                    jmp = code.get_jmp('null')
+                    jmp = code_generator.get_jmp('null')
                     if ";" in right_hand_side:
                         splited_rhs = right_hand_side.split(';')
                         comp, jmp = code_generator.get_comp(splited_rhs[0]), code_generator.get_jmp(splited_rhs[1])
