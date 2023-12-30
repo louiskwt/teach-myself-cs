@@ -44,6 +44,10 @@ class SymbolTable:
     def __init__(self):
         self.symbol_table = PREDEFINED_SYMBOLS 
         self.next_addr = 16
+        self.line_num = 0
+
+    def march(self):
+        self.line_num += 1
     
     def get_address(self, key):
         return "{0:016b}".format(self.symbol_table[key])
@@ -51,9 +55,8 @@ class SymbolTable:
     def contains(self, key):
         return key in self.symbol_table
     
-    def add_entry(self, key, value):
+    def add_entry(self, key, value, is_label: False):
         self.symbol_table[key] = value
-        self.next_addr += 1
     
     def add_numeric_entry(self, key, value):
         self.symbol_table[key] = value

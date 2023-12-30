@@ -39,23 +39,30 @@ class ASM_Reader:
 
 class ASM_Parser:
     def __init__(self) -> None:
-        self.A_COMMAND = A_COMMAND
-        self.C_COMMAND = C_COMMAND
-        self.L_COMMAND = A_COMMAND
+        self.command = None
         self.symbols = SymbolTable()
         self.code_lines = []
         self.output = []
 
     def command_type(self, code):
         if "@" in code:
-            return self.A_COMMAND
+            self.command = A_COMMAND
         elif "=" in code or ";" in code:
-            return self.C_COMMAND
+            self.command = C_COMMAND
         else:
-            return self.L_COMMAND
+            self.command = L_COMMAND
+
+    def is_a_command(self, code):
+        return "@" in code
+    
+    def is_l_command(self, code):
+        return "(" in code and ")" in code
 
     def get_symbol_key(self, command):
         return command.split("@")[1]
+
+    def get_label_key(self, code):
+        return code[code.find("(")+1:code.find(")")].strip()
     
     def load_code_lines(self, code_lines):
         self.code_lines = code_lines
@@ -67,26 +74,41 @@ class ASM_Parser:
             no code is generated in this pass
         '''
         for code in self.code_lines:
-            command = self.command_type(code)
-            if command == A_COMMAND:
-                key = self.get_symbol_key(code)
-                if not self.symbols.contains(key):
-                    if key.isnumeric():
-                        self.symbols.add_numeric_entry(key, int(key))
-                    else: 
-                        self.symbols.add_entry(key, self.symbols.next_addr)
+            self.command_type(code)
+            if self.is_l_command(code):
+                print(code, self.symbols.line_num)
+                label = self.get_label_key(code)
+                self.symbols.add_entry(label, self.symbols.line_num)
+            else:
+                self.symbols.march()
 
     def second_parse(self):
         code_generator = Code()
         for code in self.code_lines:
-            command = self.command_type(code)
-            if command == A_COMMAND:
+            print(code)
+            if "(" in code and ")" in code:
+                continue
+            if self.is_a_command(code):
                 key = self.get_symbol_key(code)
-                code = self.symbols.get_address(key)
+                if not self.symbols.contains(key):
+                    if key.isnumeric():
+                        self.symbols.add_numeric_entry(key, int(key))
+                        code = self.symbols.get_address(key)
+                    else: 
+                        print(f'val: {self.symbols.next_addr}')
+                        self.symbols.add_entry(key, self.symbols.next_addr)
+                        code = self.symbols.get_address(key)
+                else:
+                    code = self.symbols.get_address(key)
+                
+                # print(f"key: {key}, code: {code}")
                 self.output.append(code)
             else:
                 op_code = "{0:03b}".format(7)
                 a_code = "0"
+                dest = code_generator.get_dest('null')
+                comp = code_generator.get_comp('0')
+                jmp = code_generator.get_jmp('null')
                 if "=" in code:
                     code_parts = code.split("=")
                     dest, right_hand_side = code_generator.get_dest(code_parts[0]), code_parts[1]
