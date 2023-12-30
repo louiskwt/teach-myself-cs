@@ -50,6 +50,9 @@ def parse(code_lines):
             key = get_symbol_key(code)
             if symbols.contains(key):
                 code = symbols.get_address(key)
+            else:
+                symbols.add_entry(key)
+                code = symbols.get_address(key)
             commands.append(code)
         else:
             op_code = "{0:03b}".format(7)
