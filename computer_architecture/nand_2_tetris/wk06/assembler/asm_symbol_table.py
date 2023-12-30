@@ -51,17 +51,10 @@ class SymbolTable:
     def contains(self, key):
         return key in self.symbol_table
     
-    def add_entry(self, key):
-        self.symbol_table[key] = self.next_addr
-        next = self.next_addr + 1
-        if self.contains(next):
-            n = next + 1
-            while self.contains(n):
-                n += 1
-            self.next_addr = n
-        else:
-            self.next_addr += 1
+    def add_entry(self, key, value):
+        self.symbol_table[key] = value
+        self.next_addr += 1
     
-    def add_numeric_entry(self, key):
-        self.symbol_table[key] = key
+    def add_numeric_entry(self, key, value):
+        self.symbol_table[key] = value
 
