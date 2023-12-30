@@ -1,12 +1,18 @@
 import sys
 
-from asm_parser import extract_code_from_file, parse
+from asm_parser import ASM_Parser, ASM_Reader
 
 
 def main():
     file_path = sys.argv[1]
-    code = extract_code_from_file(file_path)
-    machine_code = parse(code)
+    reader = ASM_Reader(file_path)
+    reader.extract_code_from_file()
+    code = reader.code
+
+    parser = ASM_Parser()
+    parser.load_code_lines(code)
+    machine_code = parser.parse()
+    
     file_name = file_path.split('.')[0]
     with open(f'{file_name}.hack', 'w') as file:
         for code_line in machine_code:
