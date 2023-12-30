@@ -64,9 +64,11 @@ def parse(code_lines):
                 if ";" in right_hand_side:
                     splited_rhs = right_hand_side.split(';')
                     comp, jmp = get_comp(splited_rhs[0]), get_jmp(splited_rhs[1])
-
+                    if is_a_code(splited_rhs[0]):
+                        a_code = "1"
+                
                 comp = get_comp(right_hand_side)
-                if is_a_code(comp):
+                if is_a_code(right_hand_side):
                     a_code = "1"
 
             if ";" in code:
@@ -77,5 +79,6 @@ def parse(code_lines):
                     a_code = "1"
 
             out = op_code + a_code + comp + dest + jmp
+            print(f'a_code: {a_code}, comp: {comp}')
             commands.append(out)
     return commands
