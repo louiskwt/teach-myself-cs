@@ -64,7 +64,7 @@ class Code:
         return "{0:03b}".format(self.DEST_TABLE[key])
 
     def get_jmp(self, key):
-        return "{0:03b}".format(self.JMP_TABLE[key])
+        return "{0:03b}".format(self.JUMP_TABLE[key])
 
     def get_comp(self, key):
         return "{0:06b}".format(self.COMP_TABLE[key])
