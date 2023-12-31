@@ -3,11 +3,6 @@ import re
 from asm_code import Code
 from asm_symbol_table import SymbolTable
 
-A_COMMAND = 'A_COMMAND'
-C_COMMAND = 'C_COMMAND'
-L_COMMAND = 'L_COMMAND'
-
-
 
 class ASM_Reader:
     def __init__(self, path):
