@@ -76,7 +76,6 @@ class ASM_Parser:
         for code in self.code_lines:
             self.command_type(code)
             if self.is_l_command(code):
-                print(code, self.symbols.line_num)
                 label = self.get_label_key(code)
                 self.symbols.add_label_entry(label, self.symbols.line_num)
             else:
@@ -85,7 +84,6 @@ class ASM_Parser:
     def second_parse(self):
         code_generator = Code()
         for code in self.code_lines:
-            print(code)
             if "(" in code and ")" in code:
                 continue
             if self.is_a_command(code):
@@ -101,7 +99,6 @@ class ASM_Parser:
                 else:
                     code = self.symbols.get_address(key)
                 
-                # print(f"key: {key}, code: {code}")
                 self.output.append(code)
             else:
                 op_code = "{0:03b}".format(7)
@@ -131,7 +128,6 @@ class ASM_Parser:
                         a_code = "1"
 
                 out = op_code + a_code + comp + dest + jmp
-                print(f'a_code: {a_code}, comp: {comp}')
                 self.output.append(out)
 
         return self.output
