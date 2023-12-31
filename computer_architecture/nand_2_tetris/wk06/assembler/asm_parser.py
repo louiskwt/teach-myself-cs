@@ -39,14 +39,6 @@ class ASM_Parser:
         self.code_lines = []
         self.output = []
 
-    def command_type(self, code):
-        if "@" in code:
-            self.command = A_COMMAND
-        elif "=" in code or ";" in code:
-            self.command = C_COMMAND
-        else:
-            self.command = L_COMMAND
-
     def is_a_command(self, code):
         return "@" in code
     
