@@ -201,15 +201,14 @@ class ThrowerAnt(Ant):
             while not end:
                 within_bound = self.lower_bound <= trace_count <= self.upper_bound
                 found_bees = len(next_place.bees) != 0 and not self.place.is_hive and within_bound
-                # print(f"wb: {within_bound}, fb: {found_bees}, cb: {curr_bee}, isL: {is_longThrower}")
 
                 if next_place.is_hive:
                     return None 
 
-                if found_bees and not is_longThrower and within_bound:
+                if found_bees and not is_longThrower:
                     return random_bee(next_place.bees)
 
-                if found_bees and is_longThrower and within_bound:
+                if found_bees and is_longThrower:
                     curr_bee = random_bee(next_place.bees)
                 
                 if found_bees and is_longThrower and curr_bee:
