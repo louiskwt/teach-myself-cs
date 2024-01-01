@@ -199,34 +199,31 @@ class ThrowerAnt(Ant):
             is_longThrower = self.name == "Long"
 
             while not end:
-                within_bound = self.lower_bound < trace_count < self.upper_bound
+                within_bound = self.lower_bound <= trace_count <= self.upper_bound
                 found_bees = len(next_place.bees) != 0 and not self.place.is_hive and within_bound
-
-                if not within_bound:
-                    end = True
+                # print(f"wb: {within_bound}, fb: {found_bees}, cb: {curr_bee}, isL: {is_longThrower}")
 
                 if next_place.is_hive:
                     return None 
 
-                if  found_bees and not is_longThrower:
+                if found_bees and not is_longThrower and within_bound:
                     return random_bee(next_place.bees)
 
-                if found_bees and is_longThrower:
+                if found_bees and is_longThrower and within_bound:
                     curr_bee = random_bee(next_place.bees)
                 
                 if found_bees and is_longThrower and curr_bee:
                     return random_bee(next_place.bees)
    
                 if next_place.entrance is None:
+                    if curr_bee:
+                        return curr_bee
                     end = True
 
                 next_place = next_place.entrance
                 trace_count += 1
-
-        if curr_bee:
-            return curr_bee
-        else:
-            return None 
+            
+        return None 
         # END Problem 3 and 4
 
     def throw_at(self, target):
@@ -260,7 +257,7 @@ class ShortThrower(ThrowerAnt):
     # BEGIN Problem 4
     lower_bound = 0
     upper_bound = 3
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem 4
 
 
@@ -273,7 +270,7 @@ class LongThrower(ThrowerAnt):
     # BEGIN Problem 4
     lower_bound = 5
     upper_bound = float('inf')
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem 4
 
 
