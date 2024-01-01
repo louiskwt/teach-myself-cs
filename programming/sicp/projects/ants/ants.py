@@ -195,25 +195,38 @@ class ThrowerAnt(Ant):
             end = False
             next_place = self.place.entrance
             trace_count = 1
+            curr_bee = None
+            is_longThrower = self.name == "Long"
+
             while not end:
                 within_bound = self.lower_bound < trace_count < self.upper_bound
-                
+                found_bees = len(next_place.bees) != 0 and not self.place.is_hive and within_bound
+
                 if not within_bound:
                     end = True
 
                 if next_place.is_hive:
                     return None 
 
-                if len(next_place.bees) != 0 and not self.place.is_hive and within_bound:
+                if  found_bees and not is_longThrower:
                     return random_bee(next_place.bees)
-                    
+
+                if found_bees and is_longThrower:
+                    curr_bee = random_bee(next_place.bees)
+                
+                if found_bees and is_longThrower and curr_bee:
+                    return random_bee(next_place.bees)
+   
                 if next_place.entrance is None:
                     end = True
 
                 next_place = next_place.entrance
                 trace_count += 1
 
-        return None 
+        if curr_bee:
+            return curr_bee
+        else:
+            return None 
         # END Problem 3 and 4
 
     def throw_at(self, target):
