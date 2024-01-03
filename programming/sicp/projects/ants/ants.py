@@ -335,12 +335,9 @@ class HungryAnt(Ant):
             bee = random_bee(self.place.bees)
             bee.reduce_health(bee.health)
             self.turns_to_chew = self.chewing_turns
-            # print(f'b: {bee.health}')
         else:
             if self.turns_to_chew > 0:
                 self.turns_to_chew -= 1
-        
-        # print(f'ttc: {self.turns_to_chew}, ct: {self.chewing_turns}')
         
 # END Problem 7
 
