@@ -43,3 +43,65 @@
 ---> Physics (Mental Model)
 ---> Chemistry 
 ---> Biology
+
+
+# how to stop being mid
+
+# Information Consumption
+
+- decrease in quantity
+- improve in quality
+
+--> Multi-scales media consumption
+
+- daily (one source only / daily news summary)
+- monthly (long form articles -- New Yorkers, etc)
+- seasonal (book on the topics that interest you)
+
+--> 1 to 1 ratio for entertainment
+
+- 1 fun to 1 serious
+
+# Boredom
+
+- get comfortable in boredom  -> tolerate serious thinking
+- do a choare and be alone (no phone)
+- put a phone somewhere else -> more mini moments of boredom
+
+# Cultivate your ability to pay attention
+
+- get comfortable with sustaining attention (focus) with interval activity
+- high quality activities (start with an interval 10 minutes for start)
+- care about ritual and environment for different activities
+
+# Stengthen your working memory strength
+
+- productive meditation (walk and think about a hard problem that you want to make progress)
+
+# Practice being intellectual
+
+- engage in the world of information to draw out nuances, trying to integrate it and master it
+
+- pairing primary and secondary sources 
+
+- practice seeing multiple layers below to gain context
+
+- maintain idea documents --> through writing, you consolidate ideas
+
+- to write is to think
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
