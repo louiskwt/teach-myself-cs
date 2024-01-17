@@ -405,9 +405,24 @@ class BodyguardAnt(ContainerAnt):
     # END Problem 8c
 
 # BEGIN Problem 9
-# The TankAnt class
-# END Problem 9
+class TankAnt(ContainerAnt):
+    name = 'Tank'
+    food_cost = 6
+    damage = 1
+    implemented = True
+    
+    def __init__(self, health=2):
+        super().__init__(health)
+    
+    def action(self, gamestate):
+        if self.ant_contained is not None:
+            self.ant_contained.action(gamestate)
+        
+        target_bees = self.place.bees[:]
 
+        for bee in target_bees:
+            Insect.reduce_health(bee, self.damage)
+# END Problem 9
 
 class Water(Place):
     """Water is a place that can only hold waterproof insects."""
