@@ -90,8 +90,23 @@
 
 - to write is to think
 
+# Interview Prep
 
+- Focus on NodeJS (for a pragmatic reason)
+- Study DSA and solve neetcode
+- Tighten up loose ends
+  
+    - Network
+    - DB
+    - Computer system
+    - Design pattern
 
+- projects
+
+    - Re-deploy Wordle
+    - Deploy YoTutor
+    - Work on Web server (Micro DSE)
+    - 
 
 
 
