@@ -52,3 +52,11 @@ _ INTEGER
 - Primary Key
 - Foreign Key
 
+# Column constrains
+
+- CHECK
+- DEFAULT
+- NOT NULL
+- UNIQUE
+
+

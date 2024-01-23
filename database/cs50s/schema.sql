@@ -1,20 +1,24 @@
-CREATE TABLE "riders" (
+-- primary key is always unqiue and never null
+
+CREATE TABLE "cards" (
 	"id" INTEGER,
-	"name" TEXT,
 	PRIMARY KEY ("id")
 );
 
 CREATE TABLE "stations" (
 	"id" INTEGER,
-	"name" TEXT,
-	"line" TEXT,
+	"name" TEXT NOT NULL UNIQUE,
+	"line" TEXT NOT NULL,
 	PRIMARY KEY("id")
 );
 
-CREATE TABLE "visits" (
-	"rider_id" INTEGER,
+CREATE TABLE "swipes" (
+	"id" INTEGER,
+	"card_id" INTEGER,
 	"station_id" INTEGER,
-	FOREIGN KEY("rider_id") REFERENCES "riders"("id"),
-	FOREING KEY("station_id") REFERENCES "stations"("id")
-	
+	"type" TEXT NOT NULL CHECK("type" IN ('enter', 'exit', 'deposit')),
+	"datetime" NUMERIC NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	"amount" NUMERIC NOT NULL CHECK("amount" != 0),
+	FOREIGN KEY("card_id") REFERENCES "cards"("id"),
+	FOREIGN KEY("station_id") REFERENCES "stations"("id")
 );
