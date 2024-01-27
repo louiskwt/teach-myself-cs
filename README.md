@@ -37,4 +37,6 @@ For me (as of 2024), I want to study CS because:
 3. I found solving technical problems stimulating and rewarding and I want to be better at that
 4. I want to build SAAS products that can yield enough profit and free myself from the 9-5 rat race.
 
-See no matter how weird, silly, "wrong", or "impractical" about what I have mentioned will turn out to be in the future, at least I now have some clear and specific goals that I can use to guide me through my learning.
+See, no matter how weird, silly, "wrong", or "impractical" about what I have mentioned will turn out to be in the future, at least I now have some clear and specific goals that I can use to guide me through my learning.
+
+That being said, the motivation of this repo is to document the learning path that I craft for myself to learn the fundamentals of CS based on the goals I have; and hopefully this will inspire people who want to learn something by themselves to also do the same.
