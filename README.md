@@ -1,60 +1,46 @@
-# Intro
+# Louis's Computer Science Program
 
-This repo serves to record my (self-taught) CS learning journey.
+## Index
 
-My current curriculum is based on [Teach Yourself CS]('https://teachyourselfcs.com/') and the [Open Source CS Degree]('https://github.com/ossu/computer-science').
+- [Introduction](#Introducton)
+- [Curriculum](#Curriculum)
+- [Learning Outcomes](#Learninig Outcomes)
+- [References](#References)
+- [Contact](#Contact)
 
-The official start date of my self-taught CS program is May 6, 2023
+## Inroduction
 
-Some information about myself:
+**Who Am I**
 
-    1. Before doing this program, I have taken CS50x and CS50p from Harvard as well as several courses on Coursera and Udemy
+Hi there, this's Louis, a software developer based in Hong Kong, China.
 
-    2. While starting this program, I'm working as a full-stack developer at a startup in Hong Kong and have been programming for about 2 years.
+Before working at a startup as a developer, I taught English in Hong Kong.
 
-    3. My goal for doing this program is to fill in the gap of my computer science knowledge and gain a deeper understanding of how computer actually works so that I can build sophisticated systems or applications.
+I managed to make a career change by learning how to code and picking up web development during the Covid years.
 
-# Motivations / Objectives for Learning 🎯
+Admittedly, I dabbled in programming (a little bit of Javascript and html just for fun) while I was studying aboard in San Francisco, but I didn't take it seriously until the year of 2020.
 
-- Build an open source learning management system for tutors and self-employed teachers
+The reason I said that upfront is that I want to paint a realistic picture about how long it took me to get a job through self-study especially for people who are thinking about makign a career switch.
 
-- Develop an open courseware for DSE and IELTS students
+**Motivation**
 
-- Conduct research on using AI and Machine Learning to help students keep track of their learning progress with feedback
+This repo documents my attempt to study Computer Science by adopting an outcome-oriented approach and using mainly online resources.
 
-# Curriculum & Courses 📖
+Instead of pursing adegree (because I have alread got one) or a master degree (which I cannot afford), I have decided to study on my own since I have read and seen so many stories about how people have accomplished that on their own.
 
-## Programming
+However, there's a serious problem when it comes to teachinig yourself computer science: I'm overwhlemed with the amount of online courses, study guide, and learning resources.
 
-| Course Title                                          | Finish Date | Verification |
-| ----------------------------------------------------- | ----------- | ------------ |
-| / | / | /            |
+To address the issue, I realised that maybe I (and probably many of those who have tried to learn CS on their own) have been approachig it wrong. What does that mean? When I set out to learn computer science by taking a course and following a study guide, the goal of doing so is just to finish the course and go through the guide.
 
-## Mathematics for Computer Science
+Because of that, I found that I'm actaully distracted from my main objective (learning the fundamentals of computer science) that I had at the beginning. In other words, simply aiming to learn Computer Science / Coding / Web development, taking courses, or worse, pursuing a degree are terrible because doing these neither help you achive your goal nor equip you with practical skills to do great things.
 
-| Course Title                         | Finish Date  | Verification                                                          |
-| ------------------------------------ | ------------ | --------------------------------------------------------------------- |
-| Precalculus: Relations and Functions | June 18 2023 | [Link]('https://coursera.org/share/c8174ec1d19e76ee33b89c451dacd3e7') |
-| Intorduction to Calculus             | September 28 2023| [Link]('https://coursera.org/share/6e4fcf4fd4426bb683510601d6170154')                                                                     |
+So why don't we take a step back and think from first principle? Let's say you really want to learn how to code or study Computer Science like I do. You have to dig deeper and ask yourself why do you want that or what do you want to do by learning how to code or studying computer science.
 
-# Resources Section 🔗
+For me (as of 2024), I want to study Computer Science because:
 
-## Programming
+- I want to be able to build large scale systems for many people to use (which is something that interests and exits me)
+- I am curious about how computer and large scale systems work under the hood
+- I found solving technical problems stimulating and rewarding and I want to be better at that
+- I want to build a SAAS products that can generate me profit, freeing myself from the 9-5
 
-- Composing Program [book]('http://composingprograms.com/')
-
-- CS61A [lecture video]('https://cs61a.org/')
-
-## Math
-
-- Precalculus Lecture [videos]('https://www.youtube.com/watch?v=9OOrhA2iKak&list=PLDesaqWTN6ESsmwELdrzhcGiRhk5DjwLP') by Professor Leonard
-
-- Precalculus Course on [Coursera]('https://www.coursera.org/learn/precalculus-relations-functions/home/week/1')
-
-- Khan Academy [Precalculus Course]('https://www.khanacademy.org/math/precalculus')
-
-- Introduction to Calculus on [Coursera]('https://www.coursera.org/learn/introduction-to-calculus')
-
-# Todo 📝
-
-1. Turning it into a GitHub Pages for Better Presentation
+See no matter how weird, silly, "wrong", "impractical" about what I have mentioned will turn out to be in the future, at least I have a clear and specific goals that I can use to guide me through my learning.
