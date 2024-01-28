@@ -39,7 +39,7 @@ For me (as of 2024), I want to study CS because:
 
 See, no matter how weird, silly, "wrong", or "impractical" about what I have mentioned will turn out to be in the future, at least I now have some clear and specific goals that I can use to guide me through my learning.
 
-That being said, the motivation of this repo is to document the learning path that I craft for myself to learn the fundamentals of CS based on the goals I have; and hopefully this will inspire people who want to learn something by themselves to also do the same.
+That being said, the motivation of this repo is to document the learning path that I craft for myself to learn the fundamentals of CS based on the goals I have; hopefully this will inspire people who want to learn something by themselves to also do the same.
 
 ## Curriculum
 
@@ -69,6 +69,6 @@ While crafting my learning path, I took inspirations from the following resource
 4. [MIT-OCW](https://ocw.mit.edu/)
 5. [StudyNotes](https://github.com/krislinzhao/StudyNotes?tab=readme-ov-file)
 
-## Contect
+## Contact
 
 Find me via email: kawingt2 at gmail.com
