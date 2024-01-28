@@ -4,7 +4,7 @@
 
 - [Introduction](#Introducton)
 - [Curriculum](#Curriculum)
-- [Learning Outcomes](#Learninig Outcomes)
+- [Outcomes](#Outcomes)
 - [References](#References)
 - [Contact](#Contact)
 
@@ -40,3 +40,13 @@ For me (as of 2024), I want to study CS because:
 See, no matter how weird, silly, "wrong", or "impractical" about what I have mentioned will turn out to be in the future, at least I now have some clear and specific goals that I can use to guide me through my learning.
 
 That being said, the motivation of this repo is to document the learning path that I craft for myself to learn the fundamentals of CS based on the goals I have; and hopefully this will inspire people who want to learn something by themselves to also do the same.
+
+## References
+
+While crafting my learning path, I took inspirations from the following resources:
+
+1. [Teach Yourself CS](https://teachyourselfcs.com/)
+2. [gdut-course](https://github.com/brenner8023/gdut-course)
+3. [CS50x](https://cs50.harvard.edu/x/2024/)
+4. [MIT-OCW](https://ocw.mit.edu/)
+5. [StudyNotes](https://github.com/krislinzhao/StudyNotes?tab=readme-ov-file)
