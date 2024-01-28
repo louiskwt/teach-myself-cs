@@ -41,6 +41,24 @@ See, no matter how weird, silly, "wrong", or "impractical" about what I have men
 
 That being said, the motivation of this repo is to document the learning path that I craft for myself to learn the fundamentals of CS based on the goals I have; and hopefully this will inspire people who want to learn something by themselves to also do the same.
 
+## Curriculum
+
+**Programming**
+
+**System**
+
+**Database**
+
+**Web Development & Services**
+
+**Math**
+
+**Software Engineering**
+
+**Science**
+
+**Electives**
+
 ## References
 
 While crafting my learning path, I took inspirations from the following resources:
