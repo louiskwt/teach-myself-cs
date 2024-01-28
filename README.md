@@ -14,7 +14,7 @@
 
 Hi there, this's Louis, a software developer based in Hong Kong, China. Before working at a startup as a developer, I taught English in Hong Kong. I managed to make a career change by learning how to code and picking up web development during the Covid years.
 
-Admittedly, I dabbled in programming (a little bit of Javascript and html just for fun) while I was studying aboard in the US, but I didn't take it seriously until the year of 2020 when I started taking [CS50x](https://cs50.harvard.edu/x/2020/) and the web development program from [freeCodeCamp]("https://www.freecodecamp.org/").
+Admittedly, I dabbled in programming (a little bit of Javascript and html just for fun) while I was studying aboard in the US, but I didn't take it seriously until the year of 2020 when I started taking [CS50x](https://cs50.harvard.edu/x/2020/) and the web development program from [freeCodeCamp](https://www.freecodecamp.org/).
 
 The reason I said that upfront is to paint a realistic picture about how long it took me to get a job through self-study especially for people who are thinking about making a career switch.
 
