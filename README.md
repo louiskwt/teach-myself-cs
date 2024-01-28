@@ -68,3 +68,7 @@ While crafting my learning path, I took inspirations from the following resource
 3. [CS50x](https://cs50.harvard.edu/x/2024/)
 4. [MIT-OCW](https://ocw.mit.edu/)
 5. [StudyNotes](https://github.com/krislinzhao/StudyNotes?tab=readme-ov-file)
+
+## Contect
+
+Find me via email: kawingt2 at gmail.com
