@@ -78,6 +78,20 @@ But then, my question is can the progress made in computation spread and elevate
 	- but things have changed with the advances in computer design and memory technology
 	- a new constraint: the parallel nature of processors and the hierarchical nature of memories and how to take advantage of them
 
+- The number of embedded processors sold every year greatly outnumbers the number of PC and even post-PC processors?
+
+	- by just counting the number of embedded devices at home, it seems that I'm surrounded by them without actually knowing
+	- Some stat from Dell
+		>  The industry sold 349 million PCs in 2021 and 31 billion microprocessors, meaning 98.9% went into non-PC devices. 
+
+- Where each of the following is the right place to look for a performance bottleneck?
+
+	- The algorithm chosen --> the software is slow at performing a specific task
+	- The programming language or compiler --> the build time of a progarm is slow and some functions (like concurrency) are not supported 
+	- The operating system --> I/O operations are slow
+	- The processor --> the number of instructions and the memory needed to perform the operation are huge
+	- The I/O system and devices --> Porting a PC software to PMD 
+
 **Questions Ahead**
 
 - How are programs written in a high-level language, such as C or Java, translated into the language of the hardware, and how does the hardware execute the resulting program?
