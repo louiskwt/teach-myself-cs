@@ -71,6 +71,12 @@ But then, my question is can the progress made in computation spread and elevate
 
 		> large collections of servers that provide services over the Internet; some providers rent dynamically varying numbers of servers as a utility.
 
+- The advance of Multiprocessor
+
+	- in the 60s and 70s, a primary constraint on computer performance is memory space
+	- thus there's only one rule for programmers: minimize memory space to make things fast
+	- but things have changed with the advances in computer design and memory technology
+	- a new constraint: the parallel nature of processors and the hierarchical nature of memories and how to take advantage of them
 
 **Questions Ahead**
 
