@@ -72,3 +72,16 @@ But then, my question is can the progress made in computation spread and elevate
 		> large collections of servers that provide services over the Internet; some providers rent dynamically varying numbers of servers as a utility.
 
 
+**Questions Ahead**
+
+- How are programs written in a high-level language, such as C or Java, translated into the language of the hardware, and how does the hardware execute the resulting program?
+
+- What is the interface between the software and the hardware, and how does software instruct the hardware to perform needed functions?
+
+- What determines the performance of a program, and how can a programmer improve the performance?
+
+- What techniques can be used by hardware designers to improve performance?
+
+- What are the reasons for and the consequences of the recent switch from sequential processing to parallel processing?
+
+
