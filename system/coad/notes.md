@@ -55,4 +55,20 @@ But then, my question is can the progress made in computation spread and elevate
 
 	- apparently, TB is 21% less than TiB, GB is 7% less than Gib, MB is 5% less than Mib
 
+**Post-PC Era**
+
+- The rise of PMC (Personal Mobile Device)
+
+	- PMC are battery operated with wireless connectivity to the internet and typically only hundreds of dollars 
+	- users can download apps and run it on the device
+	- unlike PC, it is controlled using a touch-senstive screen instead of a keyboard and mouse
+
+- Cloud computing replacing servers
+
+	- large tech companies (AWC and Google) take over traditional servers by building Warehouse Scale Computers (WSC) 
+	- this leads to SaaS becuase it lowers the cost of computation for the server since they can rent the infrastructure from WSC providers
+	- Formal definition:
+
+		> large collections of servers that provide services over the Internet; some providers rent dynamically varying numbers of servers as a utility.
+
 
