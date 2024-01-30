@@ -59,4 +59,14 @@ _ INTEGER
 - NOT NULL
 - UNIQUE
 
+# Insert
 
+`
+	INSERT INTO TABLE (column name)
+	VALUES (val1...), (val2...) ...;
+`
+- id is not required when inserting
+
+# Import
+
+.import --csv --skip 1 <file_name>;
