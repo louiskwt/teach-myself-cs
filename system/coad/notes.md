@@ -104,4 +104,46 @@ But then, my question is can the progress made in computation spread and elevate
 
 - What are the reasons for and the consequences of the recent switch from sequential processing to parallel processing?
 
+**Eight Great Ideas in Computer Architecture**
 
+1. Design for Moore's Law
+
+	- Moore's Law states that the integrated circuit resources double every 18-24 months
+	- computer architects must anticipate where the technology will be when the design finishes rather than design for where it starts
+	- this is because the resouces available per chip can easily double or quadruple between start and finish
+
+2. Use Abstraction to Simplify Design
+
+	- this is more of a productivity technique
+	- lower-level details are hidden to offer a simpler model at higher levels
+
+3. Make the common case fast
+
+	- Making the common case fast will tend to enhance performance better than optimizing the rare case
+	- the common case is often simpler than the rare case and hence is easier to enhance
+	- this common sense advice implies that you know what the common case is which is only possible with careful experimentation and measurement
+
+4. Performance via parallelism
+
+	- computer architects have offered designs that get more performance by computing operations in parallel
+
+5. Performance via pipelining
+
+	- a particular pattern of parallelism
+	- chaining up the operations in small parts
+
+6. Performance via Prediction
+
+	- it can be faster on average to guess and start working rather than wait uintil you know for sure
+	- assuming that the mechanism to recover from a misprediction is not too expensive and your prediction is relatively accurate
+
+7. Hierarchy of Memories
+
+	- the fastest, smallest, and the most expensive memory per bit at the top
+	- the slowest, largest, and the least expensive memory per bit at the bottom
+	- caches give the programmer the illusion that main memory is almost as fast as the top of the hierarchy and nearly as big and cheap as the bottom of the hierarchy
+	- this has to do with cost and performance
+
+8. Dependability via redundancy
+
+	- including redundant components that can take over when a failure occurs and to help detect failures 
