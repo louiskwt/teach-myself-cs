@@ -70,3 +70,22 @@ _ INTEGER
 # Import
 
 .import --csv --skip 1 <file_name>;
+
+# Import using temp
+
+- .import --csv mfa.csv temp
+
+`
+	INSERT INTO table (col1, col2 ...) 
+	SELECT  (col1, col2 ...) FROM "table2"; 
+`
+
+- Import from CSV treat everything as string, so no NULL
+
+- sqlite treat 'yyyy-mm-dd' as a proper datestring format
+
+# Foreign Key Constraint
+
+- Delete foreign key association first
+
+- FOREIGN KEY ... ON DELETE RESTRICT / NO ACTION / SET NULL / CASCADE
