@@ -147,3 +147,35 @@ But then, my question is can the progress made in computation spread and elevate
 8. Dependability via redundancy
 
 	- including redundant components that can take over when a failure occurs and to help detect failures 
+
+**Below your program**
+
+- Sysyem softwres
+
+	- Software that provides services that are commonly useful, including operating systems, compilers, loaders, and assemblers.
+
+- Operating System
+
+	- nterfaces between a user’s program and the hardware and provides a variety of services and supervisory functions.
+	- Functions
+
+		1. handling basic input and output operations
+		2. allocating storage and memory
+		3. providing for protected sharing of the computer among multiple application using it simultaneously
+
+- Compliers 
+
+	-  the translation of a program written in a high-level language, such as C, C++, Java, or Visual Basic into instructions that the hardware can execute
+
+- Assembly langauge
+
+	- a symbolic representation of computer instructions
+
+- machine language
+
+	- a binary langauge that the machine understands
+
+- high-level langauges
+
+	- A portable language such as C, C++, Java, or Visual Basic that is composed of words and algebraic notation that can be translated by a compiler into assembly language.
+
