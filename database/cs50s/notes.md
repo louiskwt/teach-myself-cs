@@ -89,3 +89,7 @@ _ INTEGER
 - Delete foreign key association first
 
 - FOREIGN KEY ... ON DELETE RESTRICT / NO ACTION / SET NULL / CASCADE
+
+# Deleted id
+
+- if id is set to AUTO_INCREMEN, it will reuse the delete id!
