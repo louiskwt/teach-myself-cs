@@ -257,3 +257,25 @@ But then, my question is can the progress made in computation spread and elevate
 	- it can be used to connect LAN by ISP
 
 
+**Question**
+
+- Semiconductor DRAM memory, flash memory, and disk storage differ significantly. For each technology, list its volatility, approximate relative access time, and approximate relative cost compared to DRAM.
+
+	- DRAM 
+		- volatile
+		- 50 ns
+		- $0.2 per gigabyte in 2024
+	
+	- Flash memory
+		- non-volatile 
+		- 5-50 microseconds
+		- $0.09 per gigabits
+		- costs 45% of a DRAM
+
+	- magnetic disk / hard disk
+		- non-volatile
+		- 5-20 milliseconds 
+		- $0.0017 per gigabits
+		- costs 0.85% of a DRAM
+
+
