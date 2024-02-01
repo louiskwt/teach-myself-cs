@@ -93,3 +93,21 @@ _ INTEGER
 # Deleted id
 
 - if id is set to AUTO_INCREMEN, it will reuse the delete id!
+
+# update 
+
+`
+	UPDATE table SET col = ...
+	WHERE condition;
+
+`
+
+# SQL Trim
+
+- trim("col")
+
+# SQL Upper
+- upper("col")
+
+# SQL like
+- it's case insenstive
