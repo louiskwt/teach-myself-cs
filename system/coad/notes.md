@@ -179,3 +179,62 @@ But then, my question is can the progress made in computation spread and elevate
 
 	- A portable language such as C, C++, Java, or Visual Basic that is composed of words and algebraic notation that can be translated by a compiler into assembly language.
 
+**Five classic components of a computer**
+
+1. Inputing
+2. Outputing
+3. Storing data
+4. Data path (CPU)
+5. control (CPU)
+
+**Computer Parts**
+
+- The integrated circuit board
+
+	- also called a chip. 
+	- a device that combines dozens to millions of transistors
+
+- CPU
+
+	- Also called processor. 
+	- The active part of the computer, which contains the datapath and control and which adds numbers, tests numbers, signals I/O devices to activate, and so on.
+
+- Data path
+
+	- The component of the processor that performs arithmetic operations.
+	- it includes the ALU + registers + buses and control units
+
+- Control
+
+	- The component of the processor that commands the datapath, memory, and I/O devices according to the instructions of the program.
+
+- DRAM
+
+	- Memory built as an integrated circuit; it provides random access to any location. Access times are 50 nanoseconds and cost per gigabyte in 2012 was $5 to $10.
+	- the main source of memory for your device
+	- it sits at the top of the memory hierarchy
+
+- Cache Memory
+
+	- A small, fast memory that acts as a buffer for a slower, larger memory
+	- aka: a safe place to hide staff
+
+
+- Instruction set architecture
+
+	- An abstract interface between the hardware and the lowest-level software that encompasses all the information necessary to write a machine language program that will run correctly, including instructions, registers, memory access, I/O, and so on.
+
+	- An instruction set architecture allows computer designers to talk about functions independently from the hardware that performs them.
+
+- Application Binary Interface (ABI)
+
+	- The user portion of the instruction set plus the operating system interfaces used by application programmers. It defines a standard for binary portability across computers.
+	
+
+- Implementation
+
+	- an implementation is hardware that obeys the architecture abstraction
+	- Both hardware and software consist of hierarchical layers using abstraction, with each lower layer hiding details from the level above.
+	- One key interface between the levels of abstraction is the instruction set architecture—the interface between the hardware and low-level software. This abstract interface enables many implementations of varying cost and performance to run identical software.
+
+
