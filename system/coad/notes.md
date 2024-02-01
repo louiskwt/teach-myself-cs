@@ -237,4 +237,23 @@ But then, my question is can the progress made in computation spread and elevate
 	- Both hardware and software consist of hierarchical layers using abstraction, with each lower layer hiding details from the level above.
 	- One key interface between the levels of abstraction is the instruction set architecture—the interface between the hardware and low-level software. This abstract interface enables many implementations of varying cost and performance to run identical software.
 
+**Communicating with Other Computers**
+
+- Major advantages of networked computer 
+
+	1. high-speed communication
+	2. Resources sharing via sharing I/O devices
+	3. non-local access
+
+- Networks vary in length and performance, with the cost of communication increasing according to both the speed of communication and the distance that information travels.
+
+- Ethernet (Local area network / LAN)
+
+	- Local area networks are interconnected with switches that can also provide routing services and security.
+
+- Wide area networks 
+
+	- A network extended over hundreds of kilometers that can span a continent
+	- it can be used to connect LAN by ISP
+
 
