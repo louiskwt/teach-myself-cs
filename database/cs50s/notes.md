@@ -111,3 +111,18 @@ _ INTEGER
 
 # SQL like
 - it's case insenstive
+
+# Trigger
+
+- used for a log
+- a sql statement executed before or after some other statement
+
+`
+	CREATE TRIGGER name
+	BEFORE / AFTER DELETE ON table
+	FOR EACH ROW
+	BEGIN
+		...;
+	END;
+
+`
