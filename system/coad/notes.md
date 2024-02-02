@@ -278,4 +278,37 @@ But then, my question is can the progress made in computation spread and elevate
 		- $0.0017 per gigabits
 		- costs 0.85% of a DRAM
 
+**Technology For Building Processors and Memory**
+
+- Transistor
+
+	- An on/off switch controlled by an electric signal
+	- built by silicon
+
+- Very large-scale integrated (VLSI) circuit
+
+	- A device containing hundreds of thousands to millions of transistors.
+
+- Semiconductor 
+
+	- a substance that does not conduct electricty well
+	- silicon is one
+
+With a special chemical process, it is possible to add materials to silicon that allow tiny areas to transform into one of three devices:
+
+	1. Excellent conductors of electricity (using either microscopic copper or aluminum wire)
+
+	2. Excellent insulators from electricity (like plastic sheathing or glass)
+	3. Areas that can conduct or insulate under specific conditions (as a switch) <-- transistor falls into this category
+
+- Why chips have to be smaller and smaller to pump up the volumne
+
+	- A key factor in determining the cost of an integrated circuit is volume.
+
+		1. With high volumes, the manufacturing process can be tuned to a particular design, increasing the yield.
+
+		2. The masks used to make the chip are expensive, so the cost per chip is lower for higher volumes.
+
+		3. Engineering development costs are high and largely independent of volume; thus, the development cost per die is lower with high-volume parts.
+
 
