@@ -126,3 +126,7 @@ _ INTEGER
 	END;
 
 `
+
+# Soft Delection
+
+- using a deleted column to soft delete
