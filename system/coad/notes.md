@@ -5,7 +5,6 @@
 
 
 
-
 ## Chapter 1
 
 **Progress**
@@ -312,4 +311,26 @@ With a special chemical process, it is possible to add materials to silicon that
 
 		3. Engineering development costs are high and largely independent of volume; thus, the development cost per die is lower with high-volume parts.
 
+
+**Performance**
+
+- Designing Performance
+
+	- response time
+		
+		- aka execution time
+
+		- the time between the start and completion of a task including disk accesses, memory access, I/O activities, operating system over-head, cpu execution time and so on
+	
+		- this's what a user would be interested in
+	
+	- thoughput or bandwidth
+
+		- the total amount of work done in a given time
+
+- General point: Decreasing response time almost always improves throughput.
+
+- Special point
+
+> If, however, the demand for processing in the second case was almost as large as the throughput, the system might force requests to queue up. In this case, increasing the throughput could also improve response time, since it would reduce the waiting time in the queue. Thus, in many real computer systems, changing either execution time or throughput often affects the other.
 
