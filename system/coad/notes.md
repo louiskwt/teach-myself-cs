@@ -334,3 +334,19 @@ With a special chemical process, it is possible to add materials to silicon that
 
 > If, however, the demand for processing in the second case was almost as large as the throughput, the system might force requests to queue up. In this case, increasing the throughput could also improve response time, since it would reduce the waiting time in the queue. Thus, in many real computer systems, changing either execution time or throughput often affects the other.
 
+- Measuring Performance
+
+	-reponse time / wall clock time
+		-  the total time to complete a task, including disk accesses, memory accesses, input/output (I/O) activities, operating system overhead—everything.
+
+	- CPU Time
+
+		- The actual time the CPU spends computing for a specific task.
+
+	- user CPU Time
+		- The CPU time spent in a program itself.
+	
+	- system CPU time
+		- The CPU time spent in the operating system performing tasks on behalf of the program.
+
+
