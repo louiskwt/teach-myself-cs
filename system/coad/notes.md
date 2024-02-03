@@ -299,6 +299,7 @@ With a special chemical process, it is possible to add materials to silicon that
 	1. Excellent conductors of electricity (using either microscopic copper or aluminum wire)
 
 	2. Excellent insulators from electricity (like plastic sheathing or glass)
+
 	3. Areas that can conduct or insulate under specific conditions (as a switch) <-- transistor falls into this category
 
 - Why chips have to be smaller and smaller to pump up the volumne
