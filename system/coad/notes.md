@@ -393,4 +393,42 @@ With a special chemical process, it is possible to add materials to silicon that
 
 	- 7 seconds
 
+**CPU performance and Its Factor**
+
+- A simple formula relates the most basic metrics (clock cycles and clock cycle time) to CPU time:
+
+	> CPU execution time for a program = CPU clock cycle for a program * Clock cycle time
+
+- Alternatively, because clock rate and clock cycle time are inverses
+
+	> CPU execution time for a program = CPU clock cycles for a program / clockrate
+
+- The implications of the formula
+
+	> This formula makes it clear that the hardware designer can improve performance by reducing the number of clock cycles required for a program or the length of the clock cycle. As we will see in later chapters, the designer often faces a trade-off between the number of clock cycles needed for a program and the length of each cycle. Many techniques that decrease the number of clock cycles may also increase the clock cycle time.
+
+
+- Instruction performance
+
+	- the number of clock cycles required for a program can be written as
+
+		> CPU clock cycles = insturction for a program * avg clock cycles per instruction
+
+	- Clock cycles per instruction (CPI)
+		
+		- Average number of clock cycles per instruction for a program or program fragment.
+
+- Classic perfromance equation
+
+	> CPU Time = Instruction count * CPI * Clock cycle time
+	> CPU Time = Instuction count * CPI / Clock rate
+	> CPU Clock cycle = sum(CPI * Instuction count)
+
+- Big Picture
+
+	> Always bear in mind that the only complete and reliable measure of computer performance is time. For example, changing the instruction set to lower the instruction count may lead to an organization with a slower clock cycle time or higher CPI that offsets the improvement in instruction count. Similarly, because CPI depends on the type of instructions executed, the code that executes the fewest number of instructions may not be the fastest.
+
+	- instruction mix
+
+		- A measure of the dynamic frequency of instructions across one or many programs.
 
