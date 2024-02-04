@@ -349,4 +349,48 @@ With a special chemical process, it is possible to add materials to silicon that
 	- system CPU time
 		- The CPU time spent in the operating system performing tasks on behalf of the program.
 
+- formula
+
+	- 1 / execution time
+
+- Understanding Performance
+
+	> Many applications, especially those running on servers, depend as much on I/O performance, which, in turn, relies on both hardware and software. Total elapsed time measured by a wall clock is the measurement of interest. In some application environments, the user may care about throughput, response time, or a complex combination of the two (e.g., maximum throughput with a worst-case response time).
+
+	> To improve the performance of a program, one must have a clear definition of what performance metric matters and then proceed to find performance bottlenecks by measuring program execution and looking for the likely bottlenecks.
+
+- Hardware's discrete time intervals
+
+	- clock cycle
+
+		- The time for one clock period, usually of the processor clock, which runs at a constant rate.
+	
+	- clock rate
+
+		- the inverse of the clock period. (e.g. 4GHz)
+	
+	- clock period
+
+		- The length of each clock cycle.
+
+- Question 
+
+1. Suppose we know that an application that uses both personal mobile devices and the Cloud is limited by network performance. For the following changes, state whether only the throughput improves, both response time and throughput improve, or neither improves.
+
+	- An extra network channel is added between the PMD and the Cloud, increasing the total network throughput and reducing the delay to obtain network access (since there are now two channels).
+
+		-  both response time and throughput improve
+	
+	- The networking software is improved, thereby reducing the network communication delay, but not increasing throughput.
+		
+		- only the latency (response time improve) 
+	
+	-  More memory is added to the computer
+
+		- neither improves
+
+2. Computer C’s performance is four times as fast as the performance of computer B, which runs a given application in 28 seconds. How long will computer C take to run that application?
+
+	- 7 seconds
+
 
