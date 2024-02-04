@@ -432,3 +432,27 @@ With a special chemical process, it is possible to add materials to silicon that
 
 		- A measure of the dynamic frequency of instructions across one or many programs.
 
+- Program performance
+
+|Component                   |Affect what                       |How           |
+|----------------------------|----------------------------------|--------------|
+| Algorithm  		         | Instruction count, CPI           | The algorithm determines the number of source program instructions executed and hence the number of processor instructions executed. The algorithm may also affect the CPI, by favoring slower or faster instructions. For example, if the algorithm uses more divides, it will tend to have a higher CPI. 					  |
+| Programming language       |Instruction count, CPI            |The programming language certainly affects the instruction count, since statements in the language are translated to processor instructions, which determine instruction count. The language may also affect the CPI because of its features; for example, a language with heavy support for data abstraction (e.g., Java) will require indirect calls, which will use higher CPI instructions.  |
+|Complier 			         | Instruction count, CPI           | The efficiency of the compiler affects both the instruction count and average cycles per instruction, since the compiler determines the translation of the source language instructions into computer instructions. The compiler’s role can be very complex and affect the CPI in varied ways.|
+|Instruction Set Architecture|Instruction count, clock rate, CPI| The instruction set architecture affects all three aspects of CPU performance, since it affects the instructions needed for a function, the cost in cycles of each instruction, and the overall clock rate of the processor.|
+
+- Special Note
+
+	- Although clock cycle time has traditionally been fixed, to save energy or temporarily boost performance, today’s processors can vary their clock rates, so we would need to use the average clock rate for a program. For example, the Intel Core i7 will temporarily increase clock rate by about 10% until the chip gets too warm. Intel calls this Turbo mode.
+
+- Question
+
+	> A given application written in Java runs 15 seconds on a desktop processor. A new Java compiler is released that requires only 0.6 as many instructions as the old compiler. Unfortunately, it increases the CPI by 1.1. How fast can we expect the application to run using this new compiler? Pick the right answer from the three choices below:
+
+	execution time = 15s
+	instuction count = I * 0.6
+	CPI = +1.1
+
+	- Ans: 15 * 0.6 * 1.1 = 9.9s
+
+
