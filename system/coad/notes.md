@@ -487,4 +487,23 @@ With a special chemical process, it is possible to add materials to silicon that
 
 	2. The second reason is that fast for parallel hardware means that the programmer must divide an application so that each processor has roughly the same amount to do at the same time, and that the overhead of scheduling and coordination doesn’t fritter away the potential performance benefits of parallelism.
 
+**Benchmark vs Workload**
+
+- 2 Metrics for measuring performance of a processor/computer
+
+	1. workload
+	2. benchmark
+
+- Workload
+
+	- A set of programs run on a computer that is either the actual collection of applications run by a user or constructed from real programs to approximate such a mix. A typical workload specifies both the programs and the relative frequencies.
+
+- Benchmark
+
+	- A program selected for use in comparing computer performance.
+
+- SPECratios as an indicator of performance 
+
+	- the bigger numeric results indicate faster performance
+
 
