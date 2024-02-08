@@ -534,3 +534,11 @@ With a special chemical process, it is possible to add materials to silicon that
 
 		3.  if a new program executes more instructions but each instruction is faster, MIPS can vary independently from performance!
 
+
+**Questions **
+
+a. Computer A has higher MIPS (4,000) compared to Computer B (3,636)
+
+b. Comuter B is faster in terms of CPU time (35.2), compared to computer A (40)
+
+
