@@ -506,4 +506,31 @@ With a special chemical process, it is possible to add materials to silicon that
 
 	- the bigger numeric results indicate faster performance
 
+**Fallacies and Pitfalls**
+
+- Amdahl’s Law
+
+	> A rule stating that the performance enhancement possible with a given improvement is limited by the amount that the improved feature is used. It is a quantitative version of the law of diminishing returns.
+
+	- exe time after imp = exe time affected by imp / amount of imp + exe time unaffected
+
+- Fallacy: Designing for performance and designing for energy efficiency are unrelated goals.
+
+	> Since energy is power over time, it is often the case that hardware or software optimizations that take less time save energy overall even if the optimization takes a bit more energy when it is used. One reason is that all the rest of the computer is consuming energy while the program is running, so even if the optimized portion uses a little more energy, the reduced time can save the energy of the whole system.
+
+- Pitfall: Using a subset of the performance equation as a performance metric.
+
+	- nearly all proposed alternatives to the use of time as the performance metric have led eventually to misleading claims, distorted results, or incorrect interpretations.
+
+	- MIPS (million instructions per second)
+
+		> A measurement of program execution speed based on the number of millions of instructions. MIPS is computed as the instruction count divided by the product of the execution time and 10 ^ 6.
+
+	- three problems with using MIPS as a measure for comparing computers
+
+		1. MIPS specifies the instruction execution rate but does not take into account the capabilities of the instructions. We cannot compare computers with different instruction sets using MIPS, since the instruction counts will certainly differ
+
+		2. MIPS varies between programs on the same computer; thus, a computer cannot have a single MIPS rating.
+
+		3.  if a new program executes more instructions but each instruction is faster, MIPS can vary independently from performance!
 
