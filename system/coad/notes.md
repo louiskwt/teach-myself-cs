@@ -449,9 +449,9 @@ With a special chemical process, it is possible to add materials to silicon that
 
 	> A given application written in Java runs 15 seconds on a desktop processor. A new Java compiler is released that requires only 0.6 as many instructions as the old compiler. Unfortunately, it increases the CPI by 1.1. How fast can we expect the application to run using this new compiler? Pick the right answer from the three choices below:
 
-	execution time = 15s
-	instuction count = I * 0.6
-	CPI = +1.1
+	1. the reduction in instruction = 0.6
+
+	2. CPI increased by 1.1 
 
 	- Ans: 15 * 0.6 * 1.1 = 9.9s
 
