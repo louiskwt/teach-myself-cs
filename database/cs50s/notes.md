@@ -191,4 +191,15 @@ _ INTEGER
 				GROUP BY "ratings"."book_id";
 			```
 	3. Partioning
+
 	4. Securing
+
+- Temp View (of a view)
+
+	```
+		CREATE TEMPORARY VIEW "average_ratings_by_year" AS
+		SELECT "year", ROUND(AVG("ratings"), 2) AS "rating" FROM "avaerage_book_ratings"
+		GROUP BY "year";
+	```
+
+	- it will be gone after quiting the sqlite terminal
