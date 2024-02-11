@@ -135,6 +135,8 @@ _ INTEGER
 
 - a virtual table defined by a query
 
+- it won't use much disk space since it's only a virtual table
+
 # Usage of View
 
 	1. Simplifying
