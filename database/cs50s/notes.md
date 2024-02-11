@@ -198,8 +198,43 @@ _ INTEGER
 
 	```
 		CREATE TEMPORARY VIEW "average_ratings_by_year" AS
-		SELECT "year", ROUND(AVG("ratings"), 2) AS "rating" FROM "avaerage_book_ratings"
-		GROUP BY "year";
+		SELECT "year", round(avg("ratings"), 2) as "rating" from "avaerage_book_ratings"
+		group by "year";
 	```
 
 	- it will be gone after quiting the sqlite terminal
+
+- CTE (common table expression)
+
+	- A temporary view that exists only within the duration of a query
+	- used only for querying
+
+	```
+		WITH name AS (
+			SELECT ...
+		), ...
+		SELECT ... FROM name
+	```
+
+	- Example
+
+		```
+			WITH "avarage_book_ratings" AS (
+				CREATE VIEW "average_book_ratings" AS
+				SELECT "book_id", "title", "year",  ROUND(AVG("rating"), 2) AS "rating"
+				FROM "ratings"
+				JOIN "books" on "ratings"."book_id" = "books"."id"
+				GROUP BY "ratings"."book_id"
+			)
+			SELECT "year", ROUND(AVG("rating"), 2) AS "rating"
+			FROM "avarage_book_ratings"
+			GROUP BY "year";
+		```
+	
+- Drop View
+
+	```
+		DROP VIEW name
+	```
+
+		
