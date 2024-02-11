@@ -130,3 +130,45 @@ _ INTEGER
 # Soft Delection
 
 - using a deleted column to soft delete
+
+# View in SQL
+
+- a virtual table defined by a query
+
+# Usage of View
+
+	1. Simplifying
+		
+		- From
+
+			```
+				SELECT "title" FROM "books"
+				WHERE "id" IN (
+					SELECT "book_id" FROM "authored"
+					WHERE "author_id" = (
+				        SELECT "id" FROM "authors"
+					    WHERE "name" = 'Frenanda Melchor'
+					)
+				);
+			```
+
+		- To
+
+			```
+				CREATE VIEW "longlist" AS
+				SELECT "name", "title" FROM "authors"
+				JOIN "authored" on "authors"."id" = "authored"."author_id"
+				JOIN "books" on "books"."id" = "authored"."book_id";
+			```
+
+		- Then
+
+			```
+				SELECT "title" FROM "longlist"
+				WHERE "name" = 'Frenanda Melchor';
+			```
+
+
+	2. Aggregating
+	3. Partioning
+	4. Securing
