@@ -168,7 +168,25 @@ _ INTEGER
 				WHERE "name" = 'Frenanda Melchor';
 			```
 
-
 	2. Aggregating
+
+		- From
+
+			```
+				SELECT "book_id", "title", "year",  ROUND(AVG("rating"), 2) AS "rating"
+				FROM "ratings"
+				JOIN "books" on "ratings"."book_id" = "books"."id"
+				GROUP BY "ratings"."book_id";
+			```
+
+		- To 
+
+			``` 
+				CREATE VIEW "average_book_ratings" AS
+				SELECT "book_id", "title", "year",  ROUND(AVG("rating"), 2) AS "rating"
+				FROM "ratings"
+				JOIN "books" on "ratings"."book_id" = "books"."id"
+				GROUP BY "ratings"."book_id";
+			```
 	3. Partioning
 	4. Securing
