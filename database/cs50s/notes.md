@@ -270,4 +270,36 @@ _ INTEGER
 		DROP VIEW name
 	```
 
-		
+- Soft Deletion
+
+	```
+		CREATE VIEW "current_collections" AS
+		SELECT "id", "title", "accession_number", "acquired"
+		FROM "collections" WHERE "delected" != 1;
+	```
+
+- Views cannot be modified, but the underlying table can
+
+- Use triggers to update view (modifying the underlying table)
+
+	```
+		CREATE TRIGGER name
+		INSTEAD OF DELETE ON view_name
+		FOR EACH ROW
+		BEGIN
+			...;
+		END;
+	```
+
+	- Example
+
+		```
+			CREATE TRIGGER "delete"
+			INSTEAD OF DELETE ON "current_collections"
+			FOR EACH ROW
+			BEGIN
+				UPDATE "collections" SET "deleted" = 1
+				WHERE "id" = OLD."id";
+			END;
+		```
+
