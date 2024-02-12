@@ -208,7 +208,22 @@ _ INTEGER
 
 	4. Securing
 
+		- hide Personal Identifiable Information (PII)
 
+		```
+			SELECT "id", "origin", "destination", "Anonymous" AS "rider"
+			FROM "rides";
+		```
+
+		- Create a view for that
+
+		```
+			CREATE VIEW "analysis" AS
+			SELECT "id", "origin", "destination", "Anonymous" AS "rider"
+			FROM "rides";
+		```
+		
+		- In Sqlite, we cannot restrict access to table!
 
 **Views Cannot be updated**
 
