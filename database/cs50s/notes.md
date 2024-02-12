@@ -192,6 +192,18 @@ _ INTEGER
 			```
 	3. Partioning
 
+		```
+			CREATE VIEW "2022" AS
+			SELECT "id", "title" FROM "books"
+			WHERE "year" = 2022;
+		```
+
+		```
+			CREATE VIEW "2021"
+			SELECT "id", "title" FROM "books"
+			WHERE "year" = 2021;
+		```
+
 	4. Securing
 
 - Temp View (of a view)
