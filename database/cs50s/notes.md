@@ -137,6 +137,8 @@ _ INTEGER
 
 - it won't use much disk space since it's only a virtual table
 
+- it's a combination of data from an underlying table so it cannot be updated
+
 # Usage of View
 
 	1. Simplifying
@@ -205,6 +207,10 @@ _ INTEGER
 		```
 
 	4. Securing
+
+
+
+**Views Cannot be updated**
 
 - Temp View (of a view)
 
