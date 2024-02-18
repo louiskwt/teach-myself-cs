@@ -16,6 +16,8 @@
 
 1. [CS50P](https://cs50.harvard.edu/python/2022/) --> Passed ✅
 
+2. [C Programming](https://www.coursera.org/specializations/c-programming-linux) --> In Progress
+
 **System**
 
 1. [Build a Modern Computer from First Principles Part I]('https://www.coursera.org/search?query=Build%20a%20Modern%20Computer%20from%20First%20Principles%3A%20Nand%20to%20Tetris%20Part%20I') --> Passed ✅
@@ -31,6 +33,10 @@
 **Math**
 
 1. [Introduction To Calculus](https://www.coursera.org/learn/introduction-to-calculus) --> Passed ✅
+
+2. [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization) --> In Progress
+
+3. [Single Variable Calculus](https://www.coursera.org/instructor/robghrist) --> In Progress
 
 **Software Engineering**
 
