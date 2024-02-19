@@ -31,3 +31,41 @@ The C Standard provides a substantial degree of latitude to implementations to a
 - each compiler with a particular set of command line flags, along with the C Standard Library, is considered a separate implementation, and different implementations can have significantly different implementation-defined behavior. This is noticeable in GNU Compiler Collection (GCC), which uses the -std= flag to determine the language standard. Possible values for this option include c89, c90, c99, c11, c17, c18, and c2x. The default depends on the version of the compiler. If no C language dialect options are given, the default for GCC 10 is -std=gnu17, which provides extensions to the C language. For portability, specify the standard you’re using. For access to new language features, specify a recent standard. A good choice (in 2019) with GCC 8 and later is -std=c17.
 
 - Because of that, c program can behave differently based on the standard used during compilation
+
+**Compiling and Running Your Program**
+
+- On Linux and other Unix-like operating systems, you can invoke the system compiler with the cc command.
+
+```
+cc hello.c
+```
+
+- The cc command has numerous flags and compiler options. The -o file flag, for example, lets you give the executable file a memorable name instead of a.out.
+
+```
+% cc -o hello hello.c
+% ./hello
+Hello, world!
+```
+
+**Hello World**
+
+- Preprocessor
+
+  - The first two lines of the hello.c program use the #include preprocessor directive, which behaves as if you replaced it with the contents of the specified file at the exact same location. We include the <stdio.h> and <stdlib.h> headers to access the functions declared in those headers, which we can then call from the program. The puts function is declared in <stdio.h>, and the EXIT_SUCCESS macro is defined in <stdlib.h>. As the filenames suggest, <stdio.h> contains the declarations for C Standard I/O functions, and <stdlib.h> contains the declarations for general utility functions. You need to include the declarations for any library functions that you use in your program.
+
+- The main function
+
+  - The main function defines the main entry point for the program that’s executed in a hosted environment when the program is invoked from the command line or from another program. C defines two possible execution environments: freestanding and hosted. A freestanding environment may not provide an operating system and is typically used in embedded programming. These implementations provide a minimal set of library functions, and the name and type of the function called at program startup are implementation defined.
+
+- Put
+
+  - The puts function is a C Standard Library function that writes a string argument to stdout, which typically represents the console or terminal window, and appends a newline character to the output.
+
+- EXIT_SUCCESS
+
+  - an object-like macro that commonly expands to 0 and is typically defined as follows:
+
+    ```
+    #define EXIT_SUCCESS 0
+    ```
