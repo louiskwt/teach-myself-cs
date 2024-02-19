@@ -1,5 +1,7 @@
 # C Programming Notes
 
+## Getting Started
+
 **The spirit of C**
 
 - Trust the programmer. Generally speaking, the C language assumes you know what you’re doing and lets you. This isn’t always a good thing (for example, if you don’t know what you’re doing).
@@ -66,6 +68,38 @@ Hello, world!
 
   - an object-like macro that commonly expands to 0 and is typically defined as follows:
 
-    ```
-    #define EXIT_SUCCESS 0
-    ```
+        ```
+        #define EXIT_SUCCESS 0
+        ```
+
+**Portability**
+
+> Every C compiler implementation is at least a little different. Compilers continually evolve—so, for example, a compiler like GCC might provide full support for C17 but be working toward support for C2x, in which case it might have some C2x features implemented but not others.
+
+- Programs written for C can be considered strictly conforming if they use only those features of the language and library specified in the standard.
+
+- 5 portability issues
+
+  1. Implementation-defined behavior
+
+  - program behavior that’s not specified by the C Standard and that may offer different results among implementations, but has consistent, documented behavior within an implementation. An example of implementation-defined behavior is the number of bits in a byte.
+
+  - Whenever possible, avoid writing code that depends on implementation-defined behaviors that vary among the C implementations you might use to compile your code.
+
+  2. Unspecified Behavior
+
+  - program behavior for which the standard provides two or more options. The standard imposes no requirements on which option is chosen in any instance. Each execution of a given expression may have different results or produce a different value than a previous execution of the same expression.
+
+  - An example of unspecified behavior is function parameter storage layout, which can vary among function invocations within the same program. Avoid writing code that depends on the unspecified behaviors enumerated in Annex J.1 of the C Standard.
+
+  3. Undefined Behavior
+
+  - behavior that isn’t defined by the C Standard, or less circularly, “behavior, upon use of a nonportable or erroneous program construct or of erroneous data, for which the standard imposes no requirements.
+
+  4. Locale-Specific Behavior
+
+  - behavior depends on local conventions of nationality, culture, and language that each implementation documents.
+
+  5. Common Extensions
+
+  - widely used in many systems but are not portable to all implementations.
