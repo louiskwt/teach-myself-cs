@@ -316,4 +316,22 @@ _ INTEGER
 			WHERE "accession_number" = NEW."accession_number";
 		END;
 	```
+## Optimizing
 
+- profiling query
+
+	```
+	.timer on
+	```
+
+- real time
+
+	- clock time
+
+- user time
+
+	- time it took CPU to execute the query
+
+- sys time
+
+	- time it takes for system to wait to run the query
