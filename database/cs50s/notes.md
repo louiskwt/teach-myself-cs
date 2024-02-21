@@ -335,3 +335,35 @@ _ INTEGER
 - sys time
 
 	- time it takes for system to wait to run the query
+
+- Index
+
+	- A structure used to speed up the retrieval of rows from a table
+
+	```
+	CREATE INDEX name 
+	ON TABLE (column0, ...);
+	```
+
+	```
+	DROP INDEX "index_name"; 
+	```
+
+	- using index can make a query 70 times faster!
+
+- Explain Query Plan
+
+	```
+	EXPLAIN QUERY Plan
+	(Query)
+	```
+- Covering Index
+
+	- An index in which queried data can be retrieved from the index itself without going to the table
+
+- Notes on Index
+
+> Index can take up space (trade off for speed)
+
+
+
