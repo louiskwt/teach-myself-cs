@@ -365,5 +365,25 @@ _ INTEGER
 
 > Index can take up space (trade off for speed)
 
+- B-Tree (Data structure)
+
+	- A balanced tree
+	- used to create an index in DB
+	- inserting can be a hassle
+
+**Optimising for Space**
+
+- Partial Index
+
+	- An index that includes only a subset of rows from a table
+
+```
+CREATE INDEX name
+ON table (column0...)
+WHERE condition;
+```
+
+
+
 
 
