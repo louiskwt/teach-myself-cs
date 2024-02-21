@@ -383,6 +383,18 @@ ON table (column0...)
 WHERE condition;
 ```
 
+- Vacuum
+
+```
+du -b file -> check bytes used
+```
+
+```
+VACUUM;
+```
+
+- when you delete it, it's just marked as de-allocated (can be traced back)
+- the way to give back the memory to the system
 
 
 
