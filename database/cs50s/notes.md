@@ -316,7 +316,7 @@ _ INTEGER
 			WHERE "accession_number" = NEW."accession_number";
 		END;
 	```
-## Optimizing
+**Optimizing for Speed**
 
 - profiling query
 
@@ -396,6 +396,39 @@ VACUUM;
 - when you delete it, it's just marked as de-allocated (can be traced back)
 - the way to give back the memory to the system
 
+**Concurrency**
 
+- Transaction
+
+	- a unit of work in a database
+
+	- ACID
+
+		- Atomicity --> Cannot be further broken down, so you can't see the intermediate data
+
+		- Consistency --> Don't break any underlying constraints
+
+		- Isolation --> no intereference
+
+		- Durability --> in case a failure
+'''
+BEGIN TRANSACTION
+UPDATE ...
+COMMIT; / ROLLBACK;
+'''
+
+- Race Conditions
+
+	- can be handled sequentially using Locks 
+
+- Locks
+
+	- UNLOCKED
+	- SHARED (concurrent read-only)
+	- EXCLUSIVE
+
+
+
+	
 
 
