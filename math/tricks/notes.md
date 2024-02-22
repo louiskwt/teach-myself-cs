@@ -17,3 +17,5 @@ Show that this is the case.
 2x + 4 = 2x + 4
 
 x = x
+
+[Source](https://pi.math.cornell.edu/~mec/Winter2009/Blanco/guessing.html)
