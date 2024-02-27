@@ -35,10 +35,6 @@
 
 1. [Introduction To Calculus](https://www.coursera.org/learn/introduction-to-calculus) --> Passed ✅
 
-2. [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization) --> In Progress
-
-3. [Single Variable Calculus](https://www.coursera.org/instructor/robghrist) --> In Progress
-
 **Software Engineering**
 
 **General Science**
