@@ -441,4 +441,66 @@ COMMIT; / ROLLBACK;
 	- fixed precision (MySQL)
 	
 
+- Stored Procedure
 
+	- isn't it like a view? Yes, but this is for MySQL
+
+	```
+	delimiter //
+	CREATE PROCEDURE name()
+	BEGIN
+	...
+	END//
+	```
+
+	- Call procedure
+
+	```
+	CALL `name`();
+	```
+
+- Vertical Scaling
+
+	- increasing capacity by increasing the capacity of the server
+
+- Horizontaal Scaling
+
+	- increasing capacity by distrubing the load across multiple servers
+
+- Replication
+	
+	- keeping copies of a db on multiple server
+
+- Replication Approach
+
+	- single-leader
+
+		- one server listening for updates
+		- built in for MySQL
+		
+
+	- multi-leader
+
+		- more than one server listening for updates
+
+	
+	- leaderless
+
+- Read Replica
+	
+	- A copy of a db from which data may only be read
+
+
+- How DB communicate
+
+	- Synchronous
+
+		- leader will wait until followers finish update
+
+
+- Sharding
+
+	- Spliting data across multiple database servers
+
+- Access control
+	- Asynchronous 
