@@ -427,8 +427,18 @@ COMMIT; / ROLLBACK;
 	- SHARED (concurrent read-only)
 	- EXCLUSIVE
 
+**Scalability**
 
+- def: ability to increase or decrease capacity to meed demand
 
+- Database Server
+
+	- MYSQL
+	- Postgres
+
+- Floating Point Imprecision
+
+	- fixed precision (MySQL)
 	
 
 
