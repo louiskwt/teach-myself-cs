@@ -504,3 +504,11 @@ COMMIT; / ROLLBACK;
 
 - Access control
 	- Asynchronous 
+
+**Security**
+
+- SQL injection attack
+	
+- Prepare statement to Prevent injection attack
+
+
