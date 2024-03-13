@@ -9,7 +9,7 @@
         "tests/*.py": "ok_test"
     },
     "default_tests": [
-        "twenty_twenty_three",
+        "twenty_twenty_four",
         "python-basics"
     ],
     "protocols": [
