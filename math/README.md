@@ -6,6 +6,8 @@
 
 - [Khan Academy](https://www.khanacademy.org/math/precalculus)
 
+- [Precalculus](https://www.udemy.com/course/trig-by-krista-king/)
+
 **Math 1A**
 
 - [Math 1A Lectures](https://www.youtube.com/watch?v=jsYrmxFUqAo&list=PLShth7hrtLHPz41qo1XlGZRNl9pcVVTfj)
