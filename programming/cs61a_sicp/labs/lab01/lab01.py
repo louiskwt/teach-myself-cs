@@ -11,6 +11,17 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
+    if k == 0:
+        return 1 
+    elif k == 1:
+        return n
+    else:
+        factorial = n
+        while k != 1:
+            k -= 1
+            factorial = factorial * (n - k)  
+        return factorial
+
 
 
 def divisible_by_k(n, k):
