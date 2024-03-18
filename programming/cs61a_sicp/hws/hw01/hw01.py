@@ -103,7 +103,6 @@ def hailstone(n):
         
         step += 1
 
-    if n == 1:
-        print(n)
+    print(n)
 
     return step
