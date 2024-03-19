@@ -45,7 +45,15 @@ def divisible_by_k(n, k):
     0
     """
     "*** YOUR CODE HERE ***"
-
+    count, integer = 0, 1
+    while integer <= n:
+        if integer % k == 0:
+            print(integer)
+            count += 1
+        
+        integer += 1
+    
+    return count
 
 def sum_digits(y):
     """Sum all the digits of y.
@@ -61,6 +69,17 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
+    if y < 10:
+        return y
+    
+    curr, sum = y, 0
+    while curr >= 10:
+        sum += curr % 10
+        curr = curr // 10
+    
+    sum += curr
+    
+    return sum 
 
 
 def double_eights(n):
@@ -79,4 +98,18 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
+    if n <= 10:
+        return False
+    
+    curr, has_double_eights = n, False
+    while curr > 10 and not has_double_eights:
+        curr_digit = curr % 10
+        next_digit = (curr // 10) % 10
+        if curr_digit == 8 and next_digit == 8:
+            has_double_eights = True
+        
+        curr = curr // 10
+        
+    return has_double_eights
+
 
