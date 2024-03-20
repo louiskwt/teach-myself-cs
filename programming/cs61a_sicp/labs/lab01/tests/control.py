@@ -1,6 +1,6 @@
 test = {
   'name': 'Control',
-  'points': 0,
+  'points': 1,
   'suites': [
     {
       'cases': [
@@ -51,7 +51,7 @@ test = {
           'multiline': False
         }
       ],
-      'scored': False,
+      'scored': True,
       'type': 'wwpp'
     },
     {
@@ -99,7 +99,7 @@ test = {
           'multiline': True
         }
       ],
-      'scored': False,
+      'scored': True,
       'type': 'wwpp'
     }
   ]

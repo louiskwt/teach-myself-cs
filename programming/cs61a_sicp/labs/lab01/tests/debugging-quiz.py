@@ -1,6 +1,6 @@
 test = {
   'name': 'debugging-quiz',
-  'points': 0,
+  'points': 1,
   'suites': [
     {
       'cases': [
@@ -144,7 +144,7 @@ test = {
           'question': 'Which of the following is NOT true?'
         }
       ],
-      'scored': False,
+      'scored': True,
       'type': 'concept'
     }
   ]
