@@ -173,4 +173,4 @@ def has_digit(n, k):
         n = n // 10
     return n == k 
 
-# notes  Assignments for def statements use pointers to functions, 
+# notes  Assignments for def statements use pointers to functions
