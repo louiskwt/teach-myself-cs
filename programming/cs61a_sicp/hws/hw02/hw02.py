@@ -129,8 +129,15 @@ def funception(func1, begin):
     >>> g3(-1)   # increment(-3) * increment(-2) = -2 * -1 = 2
     2
     """
-    "*** YOUR CODE HERE ***"
-
+    def f2(end):
+        if end <= begin:
+            return 1
+        i, p = begin, 1
+        while i < end:
+            p *= func1(i)
+            i += 1
+        return p
+    return f2
 
 def mul_by_num(num):
     """Returns a function that takes one argument and returns num
