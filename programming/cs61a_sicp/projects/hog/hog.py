@@ -245,7 +245,13 @@ def make_averaged(original_function, samples_count=1000):
     3.0
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    def avg_func(*args):
+        i, acc = 0, 0
+        while i < samples_count:
+            acc += original_function(*args)
+            i += 1
+        return acc / samples_count
+    return avg_func
     # END PROBLEM 8
 
 
