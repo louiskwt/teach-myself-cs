@@ -216,7 +216,20 @@ def is_always_roll(strategy, goal=GOAL):
     False
     """
     # BEGIN PROBLEM 7
-    "*** YOUR CODE HERE ***"
+    def check(player_score):
+        init_roll, always_same = strategy(player_score, 0), True
+        for i in range(1, goal):
+            roll = strategy(p_score, i)
+            if roll != init_roll:
+                always_same = False
+                break
+        return always_same
+    
+    p_score, same = 0, True
+    while p_score < goal and same:
+        same = check(p_score)
+        p_score += 1
+    return same
     # END PROBLEM 7
 
 
