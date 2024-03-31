@@ -265,7 +265,13 @@ def max_scoring_num_rolls(dice=six_sided, samples_count=1000):
     1
     """
     # BEGIN PROBLEM 9
-    "*** YOUR CODE HERE ***"
+    avg_dice = make_averaged(roll_dice, samples_count)
+    num_roll, highest_avg = 1, avg_dice(1, dice)
+    for i in range(2, 11):
+        curr_avg = avg_dice(i, dice)
+        if curr_avg > highest_avg:
+            num_roll, highest_avg = i, curr_avg
+    return num_roll
     # END PROBLEM 9
 
 
