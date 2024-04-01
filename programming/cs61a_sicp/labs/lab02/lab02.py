@@ -123,5 +123,34 @@ def cycle(f1, f2, f3):
     >>> do_two_cycles(1)
     19
     """
-    "*** YOUR CODE HERE ***"
+    # it takes in 3 functions
+    # it first return a function g that takes in n 
+    # the returned func g takes in x and cycle through 3 functions provided at the beginning
+    # the cycle is based on n
+    # n = 0 > x (no function applied)
+    # n = 1 > f1(x) 
+    # n = 2 > f2(f1(x))
+    # n = 3 > f3(f2(f1(x)))
+    # n = 4 > f1(f3(f2(f1(x)))) ... and so forth up to n 
+    def g(n):
+        def h(x):
+            if n == 0:
+                return x
+            # need to have something to keep track of function used
+            i, count, output = 1, 1, x
+            while i <= n:
+                if count == 1:
+                    output = f1(output)
+                    count += 1
+                elif count == 2:
+                    output = f2(output)
+                    count += 1
+                elif count == 3:
+                    output = f3(output)
+                    count -= 2
+                i += 1
+            return output
+        return h
+    return g
+
 
