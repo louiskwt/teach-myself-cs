@@ -91,8 +91,10 @@ def multiple(a, b):
     >>> multiple(14, 21)
     42
     """
-    "*** YOUR CODE HERE ***"
-
+    scm = a
+    while scm % a != 0 or scm % b != 0:
+        scm += 1
+    return scm
 
 
 def cycle(f1, f2, f3):
