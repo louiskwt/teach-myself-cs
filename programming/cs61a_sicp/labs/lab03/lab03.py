@@ -94,8 +94,31 @@ def nearest_two(x):
     2.0
 
     """
+    # start with 2^0
+    # need to check prev and next
+    # choose the larger one if tied
     power_of_two = 1.0
-    "*** YOUR CODE HERE ***"
+    n = 1 if x > 1 else -1
+    prev, next = power_of_two, 2.0 ** n 
+    while True:
+        if abs(x - prev) == abs(x - next):
+            power_of_two = prev if x < 1 else next
+            break
+        if prev < x and next > x:
+            power_of_two = next if next - x < x - prev else prev
+            break
+        if prev > x and next < x:
+            power_of_two = prev if prev - x < x - next else next 
+            break
+        if next == x:
+            power_of_two = next
+            break
+        if x < 1:
+            n -= 1
+        else:
+            n += 1
+        prev = next
+        next = 2.0 ** n
     return power_of_two
 
 
