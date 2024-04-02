@@ -137,7 +137,14 @@ def make_repeater(func, n):
     >>> make_repeater(square, 0)(5) # Yes, it makes sense to apply the function zero times!
     5
     """
-    "*** YOUR CODE HERE ***"
+    def f(x):
+        if n == 0:
+            return x
+        i, out = 1, x
+        while i <= n:
+            out, i = func(out), i + 1
+        return out
+    return f
 
 def composer(func1, func2):
     """Returns a function f, such that f(x) = func1(func2(x))."""
