@@ -176,12 +176,13 @@ def div_by_primes_under(n):
     False
     """
     checker = lambda x: False
-    i = ____________________________
-    while ____________________________:
+    i = 2
+    while i <= n:
+        print(checker(i), n, i)
         if not checker(i):
-            checker = ____________________________
-        i = ____________________________
-    return ____________________________
+            checker = (lambda f, i: lambda x: not f(x) and x % i == 0)(checker, i)
+        i = i + 1
+    return 
 
 def div_by_primes_under_no_lambda(n):
     """
@@ -196,14 +197,14 @@ def div_by_primes_under_no_lambda(n):
     """
     def checker(x):
         return False
-    i = ____________________________
-    while ____________________________:
+    i = 2
+    while i <= n:
         if not checker(i):
-            def outer(____________________________):
-                def inner(____________________________):
-                    return ____________________________
-                return ____________________________
-            checker = ____________________________
-        i = ____________________________
-    return ____________________________
+            def outer(x):
+                def inner(x):
+                    return x % i == 0
+                return inner(x) and x == i
+            checker = outer
+        i = i + 1
+    return checker
 
