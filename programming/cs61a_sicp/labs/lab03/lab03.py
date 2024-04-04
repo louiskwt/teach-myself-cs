@@ -202,7 +202,6 @@ def div_by_primes_under_no_lambda(n):
             def outer(x):
                 print(x)
                 def inner(x):
-                    print(f'x: {x}, {n}, {i}')
                     return checker(x)
                 return x % i == 0 or inner(x)
             checker = outer
