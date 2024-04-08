@@ -1,3 +1,4 @@
+# And if True, pick the last one; if false return first falsy value | Or if (left) True, pick the first one
 # print inside print evaluates to None
 # --> print(1, print(40), 61)  40 > 1, None, 61 (note that inner print show up first)
 # --> printing a function with reture will print the returned value 
