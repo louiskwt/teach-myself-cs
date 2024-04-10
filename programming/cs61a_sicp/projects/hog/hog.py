@@ -335,7 +335,8 @@ def sus_strategy(score, opponent_score, threshold=11, num_rolls=6):
 
 def final_strategy(score, opponent_score):
     """Write a brief description of your final strategy.
-
+    This strategy returns 0 it can score higher than rolling six or have a higher score than opponent rolling 0 or 6
+    It also takes fewer risk by if it has a lead or is close to the GOAL
     *** YOUR DESCRIPTION HERE ***
     """
     # BEGIN PROBLEM 12
@@ -346,6 +347,8 @@ def final_strategy(score, opponent_score):
     
     if roll_zero_score > roll_six_score or roll_zero_score > opp_roll_zero_score or roll_zero_score > opp_roll_six_score:
         return 0
+    elif sus_update(1, score, opponent_score) >= GOAL:
+        return 1
     elif sus_update(2, score, opponent_score) >= GOAL:
         return 2
     else:
