@@ -60,7 +60,7 @@ def take_turn(num_rolls, player_score, opponent_score, dice=six_sided):
     assert num_rolls >= 0, 'Cannot roll a negative number of dice in take_turn.'
     assert num_rolls <= 10, 'Cannot roll more than 10 dice.'
     # BEGIN PROBLEM 3
-    return boar_brawl (player_score, opponent_score) if not num_rolls else roll_dice(num_rolls, dice) 
+    return boar_brawl(player_score, opponent_score) if not num_rolls else roll_dice(num_rolls, dice) 
     # END PROBLEM 3
 
 
@@ -339,7 +339,17 @@ def final_strategy(score, opponent_score):
     *** YOUR DESCRIPTION HERE ***
     """
     # BEGIN PROBLEM 12
-    return 6  # Remove this line once implemented.
+    roll_zero_score = sus_update(0, score, opponent_score)
+    roll_six_score = sus_update(6, score, opponent_score)
+    opp_roll_zero_score = sus_update(0, opponent_score, score)
+    opp_roll_six_score = sus_update(6, opponent_score, score)
+    
+    if roll_zero_score > roll_six_score or roll_zero_score > opp_roll_zero_score or roll_zero_score > opp_roll_six_score:
+        return 0
+    elif sus_update(2, score, opponent_score) >= GOAL:
+        return 2
+    else:
+        return 6
     # END PROBLEM 12
 
 
