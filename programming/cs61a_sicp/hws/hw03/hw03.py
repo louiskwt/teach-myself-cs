@@ -74,8 +74,11 @@ def interleaved_sum(n, odd_term, even_term):
     >>> check(HW_SOURCE_FILE, 'interleaved_sum', ['While', 'For', 'Mod']) # ban loops and %
     True
     """
-    "*** YOUR CODE HERE ***"
-
+    def sum_helper(i, f1, f2):
+        if i == n:
+            return f1(i)
+        return f1(i) + sum_helper(i+1, f2, f1)
+    return sum_helper(1, odd_term, even_term)
 
 def next_larger_coin(coin):
     """Returns the next larger coin in order.
@@ -128,8 +131,16 @@ def count_coins(total):
     >>> check(HW_SOURCE_FILE, 'count_coins', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
-
+    def coin_partition(t, c):
+        if t == 0:
+            return 1
+        elif t < 0:
+            return 0
+        elif c == 1:
+            return 1
+        else:
+            return coin_partition(t-c, c) + coin_partition(t, next_smaller_coin(c))
+    return coin_partition(total, 25)
 
 def print_move(origin, destination):
     """Print instructions to move a disk."""
