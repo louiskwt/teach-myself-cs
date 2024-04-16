@@ -125,8 +125,11 @@ def merge(lst1, lst2):
     >>> check(LAB_SOURCE_FILE, 'merge', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
-
+    min_lst, max_lst = min(lst1, lst2), max(lst1, lst2)
+    if len(min_lst) == 0:
+        return max_lst
+    else:
+        return [min_lst[0]] + merge(min_lst[1:], max_lst) 
 
 def summation(n, term):
     """Return the sum of numbers 1 through n (including n) wíth term applied to each number.
