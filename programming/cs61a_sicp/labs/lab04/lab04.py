@@ -161,5 +161,5 @@ def count_palindromes(L):
     >>> count_palindromes(("Acme", "Madam", "Pivot", "Pip"))
     2
     """
-    return ______
+    return len([w for w in L if w.lower() == w[::-1].lower()])
 
