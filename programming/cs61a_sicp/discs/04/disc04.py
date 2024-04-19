@@ -68,3 +68,26 @@ def max_product(s):
     else:
         # start with 2 & 3
         return s[0] * max(max_product(s[2:]), max_product(s[3:]))
+
+def flatten(s):
+    """Returns a flattened version of list s.
+
+    >>> flatten([1, 2, 3])
+    [1, 2, 3]
+    >>> deep = [1, [[2], 3], 4, [5, 6]]
+    >>> flatten(deep)
+    [1, 2, 3, 4, 5, 6]
+    >>> deep                                # input list is unchanged
+    [1, [[2], 3], 4, [5, 6]]
+    >>> very_deep = [['m', ['i', ['n', ['m', 'e', ['w', 't', ['a'], 't', 'i', 'o'], 'n']], 's']]]
+    >>> flatten(very_deep)
+    ['m', 'i', 'n', 'm', 'e', 'w', 't', 'a', 't', 'i', 'o', 'n', 's']
+    """
+    # [1] + [2] + [3]
+    # [] + [[1, 2]] + [3]  --> [] + [1] + [2] + [3]
+    if len(s) > 0 and type(s[0]) != list:
+        return [s[0]] + flatten(s[1:]) 
+    elif len(s) > 0 and type(s[0]) == list:
+        return [] + flatten(s[0]) + flatten(s[1:])
+    else:
+        return []
