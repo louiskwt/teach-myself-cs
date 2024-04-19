@@ -25,16 +25,19 @@ def count_k(n, k):
     >>> count_k(300, 1) # Only one step at a time
     1
     """
-    print(f'n: {n}, k: {k}')
-    if n == 0:
+    if n == 0 or n == 1 or k == 1:
         return 1
-    elif n < 0 or k == 0:
+    if n == 2:
+        return 2
+    elif n < 0:
         return 0
-    elif k == 1 and n == 1:
-        return 1
     else:
-        return count_k(n-k, k) + count_k(n, k-1)
-    
+        total, i = 0, 1
+        while i <= k:
+            total += count_k(n-i, k)
+            i += 1
+        return total
+
 def paths(m, n):
     """Return the number of paths from one corner of an
     M by N grid to the opposite corner.
