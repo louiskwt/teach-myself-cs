@@ -92,7 +92,7 @@ def accuracy(typed, source):
     if len(typed_words) == 0 and len(source_words) == 0:
         return 100.0
     target_range = min(len(typed_words), len(source_words))
-    return (len([typed_words[i] for i in range(target_range) if typed_words[i] == source_words[i]]) / len(typed_words)) * 100.0
+    return (len([typed_words[i] for i in range(target_range) if typed_words[i] == source_words[i]]) / len(typed_words)) * 100
     # END PROBLEM 3
 
 
