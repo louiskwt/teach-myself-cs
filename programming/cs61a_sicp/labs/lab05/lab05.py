@@ -15,8 +15,10 @@ def berry_finder(t):
     >>> berry_finder(t)
     True
     """
-    "*** YOUR CODE HERE ***"
-
+    if is_leaf(t):
+        return 'berry' == label(t)
+    else:
+        return any([berry_finder(b) for b in branches(t)]) or label(t) == 'berry'
 
 def replace_loki_at_leaf(t, lokis_replacement):
     """Returns a new tree where every leaf value equal to "loki" has
