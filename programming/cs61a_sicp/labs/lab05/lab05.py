@@ -49,8 +49,10 @@ def replace_loki_at_leaf(t, lokis_replacement):
     >>> laerad == yggdrasil # Make sure original tree is unmodified
     True
     """
-    "*** YOUR CODE HERE ***"
-
+    if is_leaf(t):
+        return t if label(t) != "loki" else tree(lokis_replacement)
+    else:
+        return tree(label(t), branches=[replace_loki_at_leaf(b, lokis_replacement) for b in branches(t)])
 
 
 # Tree ADT
