@@ -1,4 +1,36 @@
 # Q1
+from math import gcd
+
+def make_rat(num, den):
+    """Creates a rational number, given a numerator and denominator.
+
+    >>> a = make_rat(2, 4)
+    >>> numer(a)
+    1
+    >>> denom(a)
+    2
+    """
+    cd = gcd(num, den)
+    return [(num//cd), (den//cd)]
+
+def numer(rat):
+    """Extracts the numerator from a rational number."""
+    return rat[0]
+
+def denom(rat):
+    """Extracts the denominator from a rational number."""
+    return rat[1]
+
+
+
+
+
+
+
+
+
+
+# Q1
 # s = "cs61a"
 # s_iter = iter(s)
 # next(s_iter) --> c
