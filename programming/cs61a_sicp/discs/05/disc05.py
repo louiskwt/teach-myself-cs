@@ -21,12 +21,36 @@ def denom(rat):
     """Extracts the denominator from a rational number."""
     return rat[1]
 
+def div_rat(x, y):
+    """The quotient of rationals x/y.
+    >>> a, b = make_rat(3, 4), make_rat(5, 3)
+    >>> c = div_rat(a, b)
+    >>> numer(c)
+    9
+    >>> denom(c)
+    20
+    """
+    return make_rat(numer(x)*denom(y), denom(x)*numer(y))
 
 
-
-
-
-
+def lt_rat(x, y):
+    """Returns True iff x < y as rational numbers; else False.
+    >>> a, b = make_rat(6, 7), make_rat(12, 16)
+    >>> lt_rat(a, b)
+    False
+    >>> lt_rat(b, a)
+    True
+    >>> lt_rat(a, b)
+    False
+    >>> a, b = make_rat(-6, 7), make_rat(-12, 16)
+    >>> lt_rat(a, b)
+    True
+    >>> lt_rat(b, a)
+    False
+    >>> lt_rat(a, a)
+    False
+    """
+    return (numer(x)/denom(x)) < (numer(y)/denom(y))
 
 
 
