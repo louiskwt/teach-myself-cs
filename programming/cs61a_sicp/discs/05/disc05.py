@@ -53,6 +53,30 @@ def lt_rat(x, y):
     return (numer(x)/denom(x)) < (numer(y)/denom(y))
 
 
+def tree(label, branches=[]):
+    """Construct a tree with the given label value and a list of branches."""
+    return [label] + list(branches)
+
+def label(tree):
+    """Return the label value of a tree."""
+    return tree[0]
+
+def branches(tree):
+    """Return the list of branches of the given tree."""
+    return tree[1:]
+
+def is_leaf(tree):
+    """Returns True if the tree's list of branches is empty, and False otherwise."""
+    return not branches(tree)
+
+t = tree(1, [tree(2), tree(4)])
+
+label(t) # 1
+t[0] # 1
+label(branches(t)[0])  # 2
+is_leaf(t[1:][1]) # True
+[label(b) for b in branches(t)] # [2, 4]
+branches(tree(5, [t, tree(3)]))[0][0] # 1
 
 # Q1
 # s = "cs61a"
