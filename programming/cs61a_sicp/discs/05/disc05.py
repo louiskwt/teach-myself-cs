@@ -180,6 +180,33 @@ def sprout_leaves(t, leaves):
     
     return tree(label(t), trees_with_leaves) 
 
+
+def sum_tree(t):
+    """
+    Add all elements in a tree.
+    >>> t = tree(4, [tree(2, [tree(3)]), tree(6)])
+    >>> sum_tree(t)
+    15
+    """
+    return label(t) if is_leaf(t) else label(t) + sum([sum_tree(b) for b in branches(t)])
+
+
+def balanced(t):
+    """
+    Checks if each branch has same sum of all elements and
+    if each branch is balanced.
+    >>> t = tree(1, [tree(3), tree(1, [tree(2)]), tree(1, [tree(1), tree(1)])])
+    >>> balanced(t)
+    True
+    >>> t = tree(1, [t, tree(1)])
+    >>> balanced(t)
+    False
+    >>> t = tree(1, [tree(4), tree(1, [tree(2), tree(1)]), tree(1, [tree(3)])])
+    >>> balanced(t)
+    False
+    """
+    return all([sum_tree(b) == sum_tree(branches(t)[0]) for b in branches(t)] + [balanced(b) for b in branches(t)])
+
 # Q1
 # s = "cs61a"
 # s_iter = iter(s)
