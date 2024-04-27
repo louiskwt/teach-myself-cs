@@ -95,6 +95,27 @@ def height(t):
             return h + max([calculate_height(b, 1) for b in branches(t)])
     return calculate_height(t)
 
+def find_path(t, x):
+    """
+    >>> t = tree(2, [tree(7, [tree(3), tree(6, [tree(5), tree(11)])] ), tree(15)])
+    >>> find_path(t, 5)
+    [2, 7, 6, 5]
+    >>> find_path(t, 10)  # returns None
+    """
+    if is_leaf(t) and label(t) != x:
+        return None
+    
+    if label(t) == x:
+        return [label(t)]
+    
+    path = None
+    for b in branches(t):
+        b_path = find_path(b, x)
+        if find_path(b, x):
+            path = [label(t)] + b_path
+    return path
+
+
 # Q1
 # s = "cs61a"
 # s_iter = iter(s)
