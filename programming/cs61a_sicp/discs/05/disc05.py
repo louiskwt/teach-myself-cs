@@ -69,14 +69,31 @@ def is_leaf(tree):
     """Returns True if the tree's list of branches is empty, and False otherwise."""
     return not branches(tree)
 
-t = tree(1, [tree(2), tree(4)])
+# t = tree(1, [tree(2), tree(4)])
 
-label(t) # 1
-t[0] # 1
-label(branches(t)[0])  # 2
-is_leaf(t[1:][1]) # True
-[label(b) for b in branches(t)] # [2, 4]
-branches(tree(5, [t, tree(3)]))[0][0] # 1
+# label(t) # 1
+# t[0] # 1
+# label(branches(t)[0])  # 2
+# is_leaf(t[1:][1]) # True
+# [label(b) for b in branches(t)] # [2, 4]
+# branches(tree(5, [t, tree(3)]))[0][0] # 1
+
+
+def height(t):
+    """Return the height of a tree.
+    >>> t = tree(3, [tree(5, [tree(1)]), tree(2)])
+    >>> height(t)
+    2
+    >>> t = tree(3, [tree(1), tree(2, [tree(5, [tree(6)]), tree(1)])])
+    >>> height(t)
+    3
+    """
+    def calculate_height(t, h=0):
+        if is_leaf(t):
+            return 1
+        else:
+            return h + max([calculate_height(b, 1) for b in branches(t)])
+    return calculate_height(t)
 
 # Q1
 # s = "cs61a"
