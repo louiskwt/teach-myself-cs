@@ -207,7 +207,7 @@ def minimum_mewtations(typed, source, limit):
     >>> minimum_mewtations("ckiteus", "kittens", big_limit) # ckiteus -> kiteus -> kitteus -> kittens
     3
     """
-    # print(f"typed: {typed}, source: {source}, limit: {limit}")
+    print(f"typed: {typed}, source: {source}, limit: {limit}")
     if not typed and not source or typed == source: # Base cases should go here, you may add more base cases as needed.
         return 0
     if (not typed and source) or (not source and typed):
@@ -218,17 +218,18 @@ def minimum_mewtations(typed, source, limit):
     else:
         # wird -> bird (1) sub
         # iwrd -> biwrd -> bird (2) one add one remove
-        add = source[0] not in typed and (len(source) > len(typed)) or (typed[0] in source and source[0] in typed and typed[0] != source[0])
-        remove = typed[0] not in source and (len(source) == len(typed) and len(typed) > 2) or len(typed) > len(source)
-        substitute = (typed[0] != source[0] and typed[0] in source) or (source[0]+typed[1:] == source) 
+        # careful about len
+        add = source[0] not in typed and (len(source) > 1 and len(typed) > 1 and source[0]+typed[1:] != source) or len(typed) < len(source)
+        remove = typed[0] not in source and (len(source) == len(typed) and len(typed) > 2) or len(typed) > len(source) 
+        substitute = len(typed) == len(source) and (typed[0] != source[0] and typed[0] in source) or (source[0]+typed[1:] == source)
+        if typed[0] == source[0]:
+            return minimum_mewtations(typed[1:], source[1:], limit) 
         if add:
             return 1 + minimum_mewtations(source[0]+typed, source, limit - 1)
         if substitute:
             return 1 + minimum_mewtations(source[0]+typed[1:], source, limit - 1)
-        if remove:
+        if remove or typed[1:] == source:
             return 1 + minimum_mewtations(typed[1:], source, limit - 1)
-        else:
-            return minimum_mewtations(typed[1:], source[1:], limit)
         # END
 
 
