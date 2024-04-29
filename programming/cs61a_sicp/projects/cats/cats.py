@@ -356,7 +356,14 @@ def report_progress(typed, source, user_id, upload):
     0.2
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    progress = 0
+    for i in range(len(typed)):
+        if source[i] != typed[i]:
+            break
+        else:
+            progress += 1
+    upload({'id': user_id, 'progress': progress/len(source)})
+    return progress/len(source)
     # END PROBLEM 8
 
 
