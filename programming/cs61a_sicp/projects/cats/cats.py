@@ -224,11 +224,105 @@ def minimum_mewtations(typed, source, limit):
             return min(add, remove, substitute)
         # END
 
+COMMONLY_MISSPELLED_WORDS = [
+    "accommodate",
+    "a lot",
+    "algorithm",
+    "already",
+    "analysis",
+    "anniversary",
+    "antidote",
+    "apparent",
+    "attendance",
+    "available",
+    "average",
+    "babysit",
+    "backward",
+    "calendar",
+    "category",
+    "cemetery",
+    "cholesterol",
+    "conscience",
+    "conscious",
+    "definitely",
+    "disappoint",
+    "ecstasy",
+    "existence",
+    "experience",
+    "fifty",
+    "fluorescent",
+    "forgotten",
+    "galleries",
+    "grammar",
+    "harass",
+    "hors d'oeuvre",
+    "inoculate",
+    "its",
+    "kindergarten",
+    "library",
+    "license",
+    "maintenance",
+    "maneuver",
+    "mediocre",
+    "millennium",
+    "minuscule",
+    "misspell",
+    "mischievous",
+    "neighbor",
+    "occasionally",
+    "omitted",
+    "one hundred",
+    "occasion",
+    "parallel",
+    "privilege",
+    "pronunciation",
+    "pastime",
+    "questionnaire",
+    "reoccur",
+    "separate",
+    "supersede",
+    "their",
+    "thorough",
+    "twelfth",
+    "undoubtedly",
+    "vegetarian",
+    "weird",
+    "witness",
+    "yourself",
+]
 
 def final_diff(typed, source, limit):
     """A diff function that takes in a string TYPED, a string SOURCE, and a number LIMIT.
     If you implement this function, it will be used."""
-    assert False, 'Remove this line to use your final_diff function.'
+    # minimum mew:                                Feline
+    # Correction Speed: 70.44539370760674 wpm     14212.960106167578 wpm
+    # Correctly Corrected: 42 words               409 words
+    # Incorrectly Corrected: 8 words              419 words
+    # Uncorrected: 4 words                        112 words
+    if not typed and not source or typed == source: # Base cases should go here, you may add more base cases as needed.
+        return 0
+    if (not typed and source) or (not source and typed):
+        return max(len(typed), len(source))
+    # Recursive cases should go below here
+    if limit <= 0:
+        return 99999999
+    else:
+        inc = 1
+        if typed[0] in source and abs(0 - source.index(typed[0])) <= 3:
+            inc = 0
+        if source in COMMONLY_MISSPELLED_WORDS:
+            inc = 0
+        elif (len(typed) == len(source) and len(typed) > 2) and (source[0] not in typed or typed[0] not in source) and typed[1] == source[0]:
+            inc = 0
+
+        add = inc + minimum_mewtations(source[0]+typed, source, limit-inc) if typed[0] != source[0] else 0
+        remove = inc + minimum_mewtations(typed[1:], source, limit-inc) if typed[0] != source[0] else 0
+        substitute = inc + minimum_mewtations(source[0]+typed[1:], source, limit-inc) if typed[0] != source[0] else 0
+        if source[0] == typed[0]:
+            return minimum_mewtations(typed[1:], source[1:], limit)
+        else:
+            return min(add, remove, substitute)
+    # END
 
 FINAL_DIFF_LIMIT = 6 # REPLACE THIS WITH YOUR LIMIT
 
