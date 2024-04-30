@@ -422,7 +422,6 @@ def fastest_words(match):
             fastest_player_index = [pt['player'] for pt in players_word_times if pt['time'] == fastest_time][0]
             words[fastest_player_index].append(get_word(match, w_index))
     return words
-
     # END PROBLEM 10
 
 
@@ -471,7 +470,7 @@ def match_string(match):
     """A helper function that takes in a match data abstraction and returns a string representation of it"""
     return f"match({get_all_words(match)}, {get_all_times(match)})"
 
-enable_multiplayer = False  # Change to True when you're ready to race.
+enable_multiplayer = True  # Change to True when you're ready to race.
 
 ##########################
 # Command Line Interface #
