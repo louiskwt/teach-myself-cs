@@ -1,6 +1,6 @@
 test = {
   'name': 'List Mutation',
-  'points': 0,
+  'points': 1,
   'suites': [
     {
       'cases': [
@@ -42,7 +42,7 @@ test = {
           'multiline': False
         }
       ],
-      'scored': False,
+      'scored': True,
       'type': 'wwpp'
     }
   ]
