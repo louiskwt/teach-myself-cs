@@ -108,5 +108,7 @@ def partial_reverse(s, start):
     >>> a
     [1, 2, 7, 6, 5, 3, 4]
     """
-    "*** YOUR CODE HERE ***"
-
+    partial_lst, reversed_partial_lst = s[start:], s[start:][::-1]
+    for i in range(len(partial_lst)):
+        s.pop(s.index(partial_lst[i]))
+    s.extend(reversed_partial_lst)
