@@ -81,8 +81,17 @@ def repeated(t, k):
     2
     """
     assert k > 1
-    "*** YOUR CODE HERE ***"
-
+    prev, count = None, 1
+    while count < k:
+        if not prev:
+            prev = next(t)
+        else:
+            curr = next(t)
+            if prev == curr:
+                count, prev = count + 1, curr 
+            else:
+                count, prev = 1, curr
+    return prev
 
 def partial_reverse(s, start):
     """Reverse part of a list in-place, starting with start up to the end of
