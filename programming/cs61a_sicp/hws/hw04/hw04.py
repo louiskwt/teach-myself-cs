@@ -34,9 +34,20 @@ def deep_map_mut(func, lst):
     True
     >>> s3 is s2[1]
     True
-    """
-    "*** YOUR CODE HERE ***"
-
+    """ 
+    def is_lst(lst):
+        return type(lst) == list
+    def mut_deep_lst(func, lst):
+        for i in range(len(lst)):
+            if is_lst(lst[i]):
+                mut_deep_lst(func, lst[i])
+            else:
+                lst[i] = func(lst[i])
+    for i in range(len(lst)):
+        if is_lst(lst[i]):
+           mut_deep_lst(func, lst[i])
+        else:
+           lst[i] = func(lst[i])
 
 HW_SOURCE_FILE=__file__
 
