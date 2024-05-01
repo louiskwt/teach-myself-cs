@@ -26,8 +26,16 @@ def insert_items(s, before, after):
     >>> large_s3 is large_s
     True
     """
-    "*** YOUR CODE HERE ***"
-
+    if before == after:
+        s.insert(s.index(before), after)
+    else:
+        targets = [i for i in s if i == before]
+        while targets:
+            for i in range(len(s)):
+                if s[i] in targets and (i+1 == len(s) or  s[i+1] != after):
+                    s.insert(i+1, after) 
+            targets.pop()
+    return s
 
 def count_occurrences(t, n, x):
     """Return the number of times that x is equal to one of the
