@@ -99,10 +99,26 @@ def has_path(t, word):
     False
     """
     assert len(word) > 0, 'no path for empty word.'
-    "*** YOUR CODE HERE ***"
-
-
-
+    def get_combined_label(t):
+        if is_leaf(t):
+            return label(t)
+        else:
+            top_label = label(t)
+            sub_labels = [get_combined_label(b) for b in branches(t)]
+            if len(sub_labels) > 1:
+                return [top_label + l for l in sub_labels]
+            else:
+                return top_label + ("").join(sub_labels)
+    pathes = []
+    if label(t) == word:
+        return True
+    elif is_leaf(t):
+        return word in pathes 
+    else:
+        for b in branches(t):
+            pathes.extend(get_combined_label(b))
+    return word in [label(t) + word for word in pathes]
+     
 # Tree ADT
 
 def tree(label, branches=[]):
