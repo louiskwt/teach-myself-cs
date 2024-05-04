@@ -70,3 +70,20 @@ def filter_iter(iterable, f):
     4
     """
     yield from filter(lambda x: f(x), iterable)
+
+
+def differences(it):
+    """ 
+    Yields the differences between successive terms of iterable it.
+
+    >>> d = differences(iter([5, 2, -100, 103]))
+    >>> [next(d) for _ in range(3)]
+    [-3, -102, 203]
+    >>> list(differences([1]))
+    []
+    """
+    it_lst = list(it) 
+    if len(it_lst) < 2:
+        return []
+    else:
+        yield from [it_lst[i+1] - it_lst[i] for i in range(len(it_lst)-1)]
