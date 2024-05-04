@@ -117,3 +117,54 @@ def primes_gen(n):
             prime_lst.append(n)
         n -= 1
     yield from prime_lst
+
+def count_ways(n, m):
+    """
+    Find all possible ways to reach N stairs by climbing 1 or 2 steps at a time
+
+    >>> find_ways(2)
+    [[2], [1, 1]]
+    >>> find_ways(3)
+    [[2, 1], [1, 1, 1]]
+    """
+    if n == 0:
+        return [[]]
+    if n < 0:
+        return []
+    if m == 1:
+        return [[]] + [[1]*n]
+    
+    ways = []
+
+    for subways in count_ways(n-2, m-2):
+        subways.append(2)
+        print(f"check 2 n: {n}. m: {m}, sub: {subways}")
+        ways.append(subways)
+   
+    for subways in count_ways(n-1, m-1):
+        subways.append(1)
+        print(f"n: {n}. m: {m}, sub: {subways}")
+        if sum(subways) >= n:
+            ways.append(subways)
+        
+            
+
+    return ways
+
+
+
+
+def stair_ways(n):
+    """
+    Yields all ways to climb a set of N stairs taking
+    1 or 2 steps at a time.
+
+    >>> list(stair_ways(0))
+    [[]]
+    >>> s_w = stair_ways(4)
+    >>> sorted([next(s_w) for _ in range(5)])
+    [[1, 1, 1, 1], [1, 1, 2], [1, 2, 1], [2, 1, 1], [2, 2]]
+    >>> list(s_w) # Ensure you're not yielding extra
+    []
+    """
+    
