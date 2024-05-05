@@ -21,6 +21,7 @@ def hailstone(n):
     #   n = n // 2 if n % 2 == 0 else (3*n) + 1
     # while n == 1:
     #     yield 1  
+  
 def sequence(start, step):
     while True:
         yield start
@@ -74,8 +75,20 @@ def perms(seq):
     >>> sorted(perms("ab"))
     [['a', 'b'], ['b', 'a']]
     """
-    "*** YOUR CODE HERE ***"
+    if len(seq) == 1:
+        yield [seq[0]]
+    else:
+        for elem in seq:
+            seq_copy, i = seq[:], seq.index(elem)
+            if type(seq_copy) != list:
+                seq_copy = list(seq_copy)
+                seq_copy.pop(i)
+            else:
+                seq_copy.pop(i)
 
+            for s in list(perms(seq_copy)):
+                s = [elem] + s
+                yield s
 
 def yield_paths(t, value):
     """Q4: Yields all possible paths from the root of t to a node with the label
