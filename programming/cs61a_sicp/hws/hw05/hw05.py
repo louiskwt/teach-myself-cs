@@ -124,12 +124,14 @@ def yield_paths(t, value):
     >>> sorted(list(path_to_2))
     [[0, 2], [0, 2, 1, 2]]
     """
-    "*** YOUR CODE HERE ***"
-    
-    for _______________ in _________________:
-        for _______________ in _________________:
-            "*** YOUR CODE HERE ***"
-
+    if (is_leaf(t) and label(t) == value) or label(t) == value:
+        yield [label(t)]
+    if is_leaf(t) and label(t) != value:
+        return
+    else:
+      for b in branches(t):
+          for tree in yield_paths(b, value):
+              yield [label(t)] + tree
 
 def remainders_generator(m):
     """Q5:
