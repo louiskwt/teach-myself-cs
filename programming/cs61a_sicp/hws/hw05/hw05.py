@@ -21,7 +21,10 @@ def hailstone(n):
     #   n = n // 2 if n % 2 == 0 else (3*n) + 1
     # while n == 1:
     #     yield 1  
-
+def sequence(start, step):
+    while True:
+        yield start
+        start += step
 
 def merge(a, b):
     """Q2:
@@ -35,7 +38,18 @@ def merge(a, b):
     >>> [next(result) for _ in range(10)]
     [2, 3, 5, 7, 8, 9, 11, 13, 14, 15]
     """
-    "*** YOUR CODE HERE ***"
+    merged = []
+    while True:
+        next_a, next_b = next(a), next(b)
+        if next_a in merged:
+            next_a = next(a)
+        if next_b in merged:
+            next_b = next(b)
+        curr = sorted([next_a, next_b])
+        for i in curr:
+            if i not in merged:
+                yield i
+                merged.extend([i])
 
 
 def perms(seq):
