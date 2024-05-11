@@ -47,8 +47,37 @@ class VendingMachine:
     >>> w.vend()
     'Here is your soda.'
     """
-    "*** YOUR CODE HERE ***"
+    stock = 0
+    balance = 0
 
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def vend(self):
+        if self.stock == 0:
+            return 'Nothing left to vend. Please restock.'
+        if self.balance == self.price:
+            self.balance -= self.price
+            self.stock -= 1
+            return f'Here is your {self.name}.'
+        if self.balance < self.price:
+            return f'Please add ${self.price - self.balance} more funds.' 
+        if self.balance > self.price:
+            change_amount = self.balance - self.price
+            self.balance = 0
+            self.stock -= 1
+            return f'Here is your candy and ${change_amount} change.'
+
+    def add_funds(self, funds):
+        if self.stock == 0:
+            return f'Nothing left to vend. Please restock. Here is your ${funds}.' 
+        self.balance += funds
+        return f'Current balance: ${self.balance}'
+
+    def restock(self, quantity):
+        self.stock += quantity
+        return f'Current {self.name} stock: {self.stock}'
 
 def store_digits(n):
     """Stores the digits of a positive number n in a linked list.
