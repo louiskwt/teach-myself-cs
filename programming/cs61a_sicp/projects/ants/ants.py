@@ -177,6 +177,8 @@ class ThrowerAnt(Ant):
     implemented = True
     damage = 1
     food_cost = 3
+    lower_bound = 0
+    upper_bound = float('inf')
 
     def nearest_bee(self):
         """Return the nearest Bee in a Place that is not the HIVE, connected to
@@ -185,13 +187,20 @@ class ThrowerAnt(Ant):
         This method returns None if there is no such Bee (or none in range).
         """
         # BEGIN Problem 3 and 4
-        targets, hive_place, curr_place = random_bee(self.place.bees), self.place.is_hive, self.place
-        while not targets and not hive_place:
-            curr_place = curr_place.entrance
-            hive_place = curr_place.is_hive
-            if not hive_place:
-                targets = random_bee(curr_place.bees)
-        return targets
+        place_count, curr_place = 0, self.place
+        while place_count < self.lower_bound and not curr_place.is_hive:
+            curr_place, place_count = curr_place.entrance, place_count + 1
+        if curr_place.is_hive:
+            return None
+        if self.lower_bound <= place_count <= self.upper_bound:
+            targets, hive_place = random_bee(curr_place.bees), curr_place.is_hive
+            while not targets and not hive_place and place_count < self.upper_bound:
+                curr_place = curr_place.entrance
+                hive_place = curr_place.is_hive
+                place_count += 1 
+                if not hive_place:
+                    targets = random_bee(curr_place.bees)
+        return targets if not hive_place else None
         # END Problem 3 and 4
 
     def throw_at(self, target):
@@ -222,8 +231,10 @@ class ShortThrower(ThrowerAnt):
     name = 'Short'
     food_cost = 2
     # OVERRIDE CLASS ATTRIBUTES HERE
+    lower_bound = 0
+    upper_bound = 3
     # BEGIN Problem 4
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem 4
 
 
@@ -233,8 +244,9 @@ class LongThrower(ThrowerAnt):
     name = 'Long'
     food_cost = 2
     # OVERRIDE CLASS ATTRIBUTES HERE
+    lower_bound = 5
     # BEGIN Problem 4
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem 4
 
 
