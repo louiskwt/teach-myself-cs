@@ -146,7 +146,17 @@ def two_list(vals, counts):
     >>> c
     Link(1, Link(1, Link(3, Link(3, Link(2)))))
     """
-    "*** YOUR CODE HERE ***"
+    # loop over counts
+    lnk, counts[0] = Link(vals[0], Link.empty), counts[0] - 1
+    for i in range(len(counts)):
+        if lnk.rest is Link.empty and counts[i] > 0:
+            lnk.rest = Link(vals[i], Link.empty)
+            counts[i] -= 1
+    return lnk
+
+
+        
+
 
 
 class Link:
