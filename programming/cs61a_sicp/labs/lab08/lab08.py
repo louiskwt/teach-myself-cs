@@ -32,7 +32,16 @@ def convert_link(link):
     >>> convert_link(Link.empty)
     []
     """
-    "*** YOUR CODE HERE ***"
+    lst = []
+    if link is Link.empty:
+        return lst
+    else:
+        lnk_copy = link
+        while lnk_copy is not Link.empty:
+            lst.append(lnk_copy.first)
+            lnk_copy = lnk_copy.rest
+    return lst
+            
 
 
 def multiply_lnks(lst_of_lnks):
