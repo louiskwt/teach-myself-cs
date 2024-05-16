@@ -60,12 +60,12 @@ def multiply_lnks(lst_of_lnks):
     Link(48, Link(12, Link(0)))
     """
     product = 1
-    for _________ in ________________:
-        if __________________________________________:
-            _________________________________
-        ___________________
-    lst_of_lnks_rests = [_________ for _________ in ________________]
-    return _________________________________________________
+    for lnk in lst_of_lnks:
+        if lnk is Link.empty:
+            return Link.empty
+        product *= lnk.first
+    lst_of_lnks_rests = [lnk.rest for lnk in lst_of_lnks]
+    return Link(product, multiply_lnks(lst_of_lnks_rests))
 
 
 class Link:
