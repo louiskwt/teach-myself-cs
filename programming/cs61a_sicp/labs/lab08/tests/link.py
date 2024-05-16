@@ -1,6 +1,6 @@
 test = {
   'name': 'Link',
-  'points': 0,
+  'points': 1.0,
   'suites': [
     {
       'cases': [
@@ -68,7 +68,7 @@ test = {
           'multiline': False
         }
       ],
-      'scored': False,
+      'scored': True,
       'type': 'wwpp'
     }
   ]
