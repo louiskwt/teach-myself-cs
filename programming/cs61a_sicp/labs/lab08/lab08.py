@@ -17,8 +17,11 @@ def duplicate_link(link, val):
     >>> z
     Link(1, Link(2, Link(2, Link(2, Link(2, Link(3))))))
     """
-    "*** YOUR CODE HERE ***"
-
+    if link.first is not Link.empty and link.first == val:
+        link.rest = Link(val, link.rest)
+        duplicate_link(link.rest.rest, val)
+    elif link.rest is not Link.empty:
+        duplicate_link(link.rest, val)
 
 def convert_link(link):
     """Takes a linked list and returns a Python list with the same elements.
