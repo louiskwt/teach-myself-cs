@@ -107,6 +107,7 @@ class Ant(Insect):
     food_cost = 0
     is_container = False
     # ADD CLASS ATTRIBUTES HERE
+    has_doubled_damage = False
 
     def __init__(self, health=1):
         """Create an Insect with a HEALTH quantity."""
@@ -156,7 +157,9 @@ class Ant(Insect):
     def double(self):
         """Double this ants's damage, if it has not already been doubled."""
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        if not self.has_doubled_damage:
+            self.damage *= 2
+            self.has_doubled_damage = True
         # END Problem 12
 
 
@@ -431,7 +434,7 @@ class ScubaThrower(ThrowerAnt):
 # END Problem 11
 
 # BEGIN Problem 12
-class QueenAnt(Ant):  # You should change this line
+class QueenAnt(ScubaThrower):  # You should change this line
 # END Problem 12
     """QueenAnt is a ScubaThrower that boosts the damage of all ants behind her."""
 
@@ -439,7 +442,7 @@ class QueenAnt(Ant):  # You should change this line
     food_cost = 7
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 12
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem 12
 
     def action(self, gamestate):
@@ -447,7 +450,15 @@ class QueenAnt(Ant):  # You should change this line
         in her tunnel.
         """
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        self.throw_at(self.nearest_bee()) 
+        behind = self.place.exit
+        while behind:
+            ant = behind.ant
+            if ant:
+                ant.double()
+                if ant.is_container and ant.ant_contained:
+                    ant.ant_contained.double()
+            behind = behind.exit
         # END Problem 12
 
     def reduce_health(self, amount):
@@ -455,12 +466,14 @@ class QueenAnt(Ant):  # You should change this line
         remaining, signal the end of the game.
         """
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        super().reduce_health(amount)
+        if self.health - amount <= 0:
+            ants_lose()
         # END Problem 12
 
     def remove_from(self, place):
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        return
         # END Problem 12
 
 
