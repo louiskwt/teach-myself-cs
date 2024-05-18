@@ -108,6 +108,7 @@ class Ant(Insect):
     is_container = False
     # ADD CLASS ATTRIBUTES HERE
     has_doubled_damage = False
+    blocks_path = True
 
     def __init__(self, health=1):
         """Create an Insect with a HEALTH quantity."""
@@ -508,7 +509,7 @@ class Bee(Insect):
         """Return True if this Bee cannot advance to the next Place."""
         # Special handling for NinjaAnt
         # BEGIN Problem Optional 1
-        return self.place.ant is not None
+        return self.place.ant and self.place.ant.blocks_path
         # END Problem Optional 1
 
     def action(self, gamestate):
@@ -547,12 +548,18 @@ class NinjaAnt(Ant):
     food_cost = 5
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem Optional 1
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
+    blocks_path = False
+
+    def __init__(self, health=1):
+        super().__init__(health)
     # END Problem Optional 1
 
     def action(self, gamestate):
         # BEGIN Problem Optional 1
-        "*** YOUR CODE HERE ***"
+        bee_lst = self.place.bees[:]
+        for bee in bee_lst:
+            Bee.reduce_health(bee, self.damage) 
         # END Problem Optional 1
 
 ############
