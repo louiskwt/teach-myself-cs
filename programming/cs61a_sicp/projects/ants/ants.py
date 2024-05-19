@@ -589,14 +589,14 @@ class LaserAnt(ThrowerAnt):
             for bee in place.bees: 
                 targets[bee] = d
             ant = place.ant
-            if ant and ant.is_container:
-                contained_ant = ant.ant_contained
-                if contained_ant is not self:
+            if ant:
+                if ant.is_container:
+                    contained_ant = ant.ant_contained
+                    if contained_ant is not self:
+                        targets[ant] = d
+                if ant is not self:
                     targets[ant] = d
-            if ant and ant is not self:
-                targets[ant] = d
-            d += 1
-            place = place.entrance
+            d, place = d + 1, place.entrance
         return targets
         # END Problem Optional 2
 
