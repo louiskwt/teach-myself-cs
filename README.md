@@ -50,3 +50,5 @@ This project is inspired by [Teach yourself CS](https://teachyourselfcs.com/). T
 - **Course**: MIT 6.041
 - **OpenCourseWare Link**: [Probabilistic Systems Analysis and Applied Probability](https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/)
 - **Project Idea**: Develop a statistical analysis tool for educational data.
+
+* Last Revised: 07/05/2024
