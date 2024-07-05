@@ -1,18 +1,37 @@
-### Structured Learning Plan with MIT OpenCourseWare and Project-Based Learning
+# A Structured Plan to Learn the Fundamentals of Computer Science
 
-## Phase 1: Foundational Courses
+This project is inspired by [Teach yourself CS](https://teachyourselfcs.com/). The learning path is generated with the help of [Perplextiy](https://www.perplexity.ai/) and then edited by me
+
+## Phase 1: Preparation Courses
+
+### 1. Mathematics Preparation:
+
+- Start with Khan Academy's math courses, focusing on:
+  - Algebra
+  - Geometry
+  - Trigonometry
+  - Pre-calculus
+
+### 2. Science Background:
+
+- Build up my science knowledge through Khan Academy's science courses, focusing on:
+  - Physics
+  - Chemistry
+  - Biology
+  - Computer Science
+
+### 3. Computer Science Introduction
+
+    - CS50
+    - MIT 6.0001
+
+# Phase 2: Fooundation Courses
 
 ### 1. Mathematics for Computer Science
 
 - **Course**: MIT 6.042J
 - **OpenCourseWare Link**: [Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/)
 - **Project Idea**: Implement a simple encryption/decryption system using number theory concepts.
-
-### 2. Introduction to Computer Science and Programming in Python
-
-- **Course**: MIT 6.0001
-- **OpenCourseWare Link**: [Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
-- **Project Idea**: Create a basic learning management system (LMS) with features like course creation, student enrollment, and grade tracking.
 
 ### 3. Calculus
 
