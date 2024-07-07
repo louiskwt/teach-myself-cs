@@ -25,7 +25,7 @@ This project is inspired by [Teach yourself CS](https://teachyourselfcs.com/). T
 - CS50
 - MIT 6.0001
 
-# Phase 2: Fooundation Courses
+# Phase 2: Foundation Courses
 
 ### 1. Mathematics for Computer Science
 
