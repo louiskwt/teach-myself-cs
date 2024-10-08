@@ -5,3 +5,4 @@ def ilove61a():
     'I love CS 61A!'
     """
     "*** YOUR CODE HERE ***"
+    return "I love CS 61A!"
