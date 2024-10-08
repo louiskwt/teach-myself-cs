@@ -14,9 +14,9 @@ def a_plus_abs_b(a, b):
     3
     """
     if b < 0:
-        f = _____
+        f = sub
     else:
-        f = _____
+        f = add
     return f(a, b)
 
 
@@ -44,7 +44,7 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return _____
+    return (i * i) + (j * j) + (k * k) - (max(i, j, k) * max(i, j, k))
 
 
 def two_of_three_syntax_check():
@@ -69,3 +69,9 @@ def largest_factor(n):
     1
     """
     "*** YOUR CODE HERE ***"
+    i, lgf = 1, 1
+    while i < n:
+        if n % i == 0:
+            lgf = i
+        i += 1
+    return lgf
