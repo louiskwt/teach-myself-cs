@@ -10,3 +10,8 @@ def digit_pos_match(n, k):
     False
     """
     "*** YOUR CODE HERE ***"
+    while n > 10:
+        if n % 10 == k:
+            return True
+        n = n // 10
+    return n == k
