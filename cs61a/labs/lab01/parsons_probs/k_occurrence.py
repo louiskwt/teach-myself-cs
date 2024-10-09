@@ -10,3 +10,11 @@ def k_occurrence(k, num):
     0
     """
     "*** YOUR CODE HERE ***"
+    if num == 0:
+        return 0
+    occurrence = 0
+    while num > 0:
+        if num % 10 == k:
+            occurrence += 1
+        num = num // 10
+    return occurrence
