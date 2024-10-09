@@ -11,6 +11,11 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
+    factorial, depth = 1, 0
+    while depth < k:
+        factorial = factorial * (n - depth)
+        depth += 1
+    return factorial
 
 
 def sum_digits(y):
@@ -27,6 +32,11 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
+    sum = 0
+    while y >= 10:
+        sum += y % 10
+        y = y // 10
+    return sum + y
 
 
 def double_eights(n):
