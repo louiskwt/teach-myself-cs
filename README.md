@@ -4,4 +4,4 @@ This project is inspired by [Teach yourself CS](https://teachyourselfcs.com/) as
 
 It documents my journey to learn the fundamentals of computer science through self-study.
 
-Last Revised: 10/08/2024
+Last Revised: 10/28/2024
