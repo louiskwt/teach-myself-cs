@@ -23,3 +23,9 @@ Higher Order Functions
 - Functions that manipulate functions are called higher-order functions. This section shows how higher-order functions can serve as powerful abstraction mechanisms, vastly increasing the expressive power of our language.
 
 - decorators are hofs
+
+## Lambda
+
+When the function returned by the lambda expression is called, the return expression of a lambda expression executed.
+
+- Lambdas can return other lambdas!
