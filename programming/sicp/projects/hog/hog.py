@@ -5,7 +5,7 @@ from ucb import main, trace, interact
 
 GOAL_SCORE = 100  # The goal of Hog is to score 100 points.
 SOW_SAD_SCORE = 1
-ZERO_SCORE = 0
+ZERO = 0
 
 ######################
 # Phase 1: Simulator #
@@ -123,7 +123,7 @@ def hog_pile(player_score, opponent_score):
     # BEGIN PROBLEM 4
     p_ones_digit = player_score % 10
     opp_ones_digit = opponent_score % 10
-    return p_ones_digit if p_ones_digit == opp_ones_digit else ZERO_SCORE
+    return p_ones_digit if p_ones_digit == opp_ones_digit else ZERO
     # END PROBLEM 4
 
 
@@ -291,7 +291,13 @@ def make_averaged(original_function, total_samples=1000):
     3.0
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    def f(*args):
+        samples, value, count = total_samples, 0, 0
+        while count < samples:
+            value += original_function(*args)
+            count += 1
+        return value / samples
+    return f
     # END PROBLEM 8
 
 
@@ -305,7 +311,15 @@ def max_scoring_num_rolls(dice=six_sided, total_samples=1000):
     1
     """
     # BEGIN PROBLEM 9
-    "*** YOUR CODE HERE ***"
+    max_value, max_roll, num_rolls = 0, 0, 1
+    average_roll_dice = make_averaged(roll_dice, total_samples)
+    while num_rolls <= 10:
+        average_value = average_roll_dice(num_rolls, dice)    
+        if max_value < average_value:
+            max_value = average_value
+            max_roll = num_rolls
+        num_rolls += 1
+    return max_roll 
     # END PROBLEM 9
 
 
@@ -346,7 +360,7 @@ def hefty_hogs_strategy(score, opponent_score, threshold=8, num_rolls=6):
     returns NUM_ROLLS otherwise.
     """
     # BEGIN PROBLEM 10
-    return 6  # Remove this line once implemented.
+    return ZERO if hefty_hogs(score, opponent_score) >= threshold else num_rolls 
     # END PROBLEM 10
 
 
@@ -356,7 +370,9 @@ def hog_pile_strategy(score, opponent_score, threshold=8, num_rolls=6):
     Otherwise, it returns NUM_ROLLS.
     """
     # BEGIN PROBLEM 11
-    return 6  # Remove this line once implemented.
+    hefty_score = hefty_hogs(score, opponent_score)
+    potential_score = score + hefty_score 
+    return ZERO if hefty_score >= threshold or hog_pile(potential_score, opponent_score) > 0 else num_rolls 
     # END PROBLEM 11
 
 
