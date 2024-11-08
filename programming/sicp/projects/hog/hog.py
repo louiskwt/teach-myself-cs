@@ -161,13 +161,26 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     say:        The commentary function to call every turn.
     """
     who = 0  # Who is about to take a turn, 0 (first) or 1 (second)
-    leader = None  # To be used in problem 7
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
+    leader = None
+    while score0 < goal and score1 < goal:
+        if who == 0:
+            p0_num_rolls = strategy0(score0, score1)
+            score0 += take_turn(p0_num_rolls, score0, score1, dice, goal)
+            score0 = score0 + hog_pile(score0, score1)
+            leader, messsage = say(score0, score1, leader)
+        else:
+            p1_num_rolls = strategy1(score1, score0)
+            score1 += take_turn(p1_num_rolls, score1, score0, dice, goal)
+            score1 = score1 + hog_pile(score1, score0)
+            leader, messsage = say(score0, score1, leader)
+        
+        if messsage:
+            print(messsage)
+            
+        who = next_player(who)
     # END PROBLEM 5
-    # (note that the indentation for the problem 7 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 7
-    "*** YOUR CODE HERE ***"
     # END PROBLEM 7
     return score0, score1
 
@@ -201,7 +214,18 @@ def announce_lead_changes(score0, score1, last_leader=None):
     Player 0 takes the lead by 2
     """
     # BEGIN PROBLEM 6
-    "*** YOUR CODE HERE ***"
+    message, leader = None, None
+    if score0 > score1:
+        leader = 0
+        if last_leader != leader:
+            message = f'Player 0 takes the lead by {score0 - score1}'
+
+    if score1 > score0:
+        leader = 1
+        if last_leader != leader:
+            message = f'Player 1 takes the lead by {score1 - score0}' 
+
+    return leader, message
     # END PROBLEM 6
 
 
