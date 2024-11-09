@@ -372,7 +372,7 @@ def hog_pile_strategy(score, opponent_score, threshold=8, num_rolls=6):
     # BEGIN PROBLEM 11
     hefty_score = hefty_hogs(score, opponent_score)
     potential_score = score + hefty_score 
-    return ZERO if hefty_score >= threshold or hog_pile(potential_score, opponent_score) > 0 else num_rolls 
+    return ZERO if not hefty_hogs_strategy(score, opponent_score, threshold, num_rolls) or hog_pile(potential_score, opponent_score) > 0 else num_rolls 
     # END PROBLEM 11
 
 
