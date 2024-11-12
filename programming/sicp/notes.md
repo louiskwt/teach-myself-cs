@@ -37,3 +37,9 @@ What's abstraction? Abstraction is a mean to hide implementation details so that
 When the function returned by the lambda expression is called, the return expression of a lambda expression executed.
 
 - Lambdas can return other lambdas!
+
+## Recusion
+
+Recursion is a technique used for creating a function that is defined in terms of itself. It means that if a recursive function will call itself when it was executed. The gist of recursion is that it has to have base case defined so that it will eventually return, and when the fucntion calls itself, it does so with a smaller or simpler set of input so that the function will eventually reach the base case and return.
+
+The order of a recursive function is that all the recursive calls have to return before the first function frame that trigger the recursive call can proceed.
