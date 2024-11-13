@@ -56,3 +56,15 @@ def pascal(row, column):
     6
     """
     "*** YOUR CODE HERE ***"
+    if row == column:
+        return 1
+    # out of range
+    if column >= row + 1 or row < 0 or column < 0:
+        return 0
+    return pascal(row - 1, column) + pascal(row - 1, column - 1)
+
+# 1
+# 1 1
+# 1 2 1
+# 1 3 3 1
+# 1 4 6 4 1
