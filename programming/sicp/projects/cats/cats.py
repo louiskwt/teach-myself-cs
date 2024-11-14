@@ -131,7 +131,13 @@ def autocorrect(typed_word, word_list, diff_function, limit):
     'testing'
     """
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
+    if typed_word in word_list:
+        return typed_word
+    diff_words = [[word, diff_function(word, typed_word, limit)] for word in word_list if diff_function(word, typed_word, limit) <= limit]
+    if not diff_words:
+        return typed_word
+    else:
+        return min(diff_words, key=lambda w: w[1])[0]
     # END PROBLEM 5
 
 
@@ -158,7 +164,22 @@ def sphinx_swaps(start, goal, limit):
     5
     """
     # BEGIN PROBLEM 6
-    assert False, 'Remove this line'
+    goal_len = len(goal)
+    start_len = len(start)
+    # base cases
+    if limit < 0:      # run over the limit
+        return 99999999
+    if start == goal:   # they are the same to begin with
+        return 0
+    if (not start_len and goal_len) or (start_len and not goal_len): # one is longer than the other after swapping
+        return abs(goal_len - start_len)
+    if goal_len == 0 and start_len == 0:  # stop
+        return 0
+    # recursive steps
+    if start[0] != goal[0]:
+        return 1 + sphinx_swaps(start[1:start_len], goal[1:goal_len], limit - 1)
+    else:
+        return 0 + sphinx_swaps(start[1:start_len], goal[1:goal_len], limit)
     # END PROBLEM 6
 
 
@@ -179,26 +200,21 @@ def minimum_mewtations(start, goal, limit):
     >>> minimum_mewtations("ckiteus", "kittens", big_limit) # ckiteus -> kiteus -> kitteus -> kittens
     3
     """
-    assert False, 'Remove this line'
-
-    if ______________:  # Fill in the condition
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
-
-    elif ___________:  # Feel free to remove or add additional cases
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
-
+    goal_len = len(goal)
+    start_len = len(start)
+    if limit < 0:  # Fill in the condition
+        return 99999999 
+    elif start == goal:  # Feel free to remove or add additional cases
+        return 0
+    elif (not start_len and goal_len) or (start_len and not goal_len):
+        return abs(start_len - goal_len)
+    elif start[0] == goal[0]:
+        return minimum_mewtations(start[1:start_len], goal[1:goal_len], limit)
     else:
-        add = ...  # Fill in these lines
-        remove = ...
-        substitute = ...
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
-
+        add = 1 + minimum_mewtations(goal[0] + start, goal, limit - 1)
+        remove = 1 + minimum_mewtations(start[1:start_len], goal, limit - 1)
+        substitute = 1 + minimum_mewtations(goal[0] + start[1:start_len], goal, limit - 1)
+        return min(add, remove, substitute)
 
 def final_diff(start, goal, limit):
     """A diff function that takes in a string START, a string GOAL, and a number LIMIT.
