@@ -216,13 +216,33 @@ def minimum_mewtations(start, goal, limit):
         substitute = 1 + minimum_mewtations(goal[0] + start[1:start_len], goal, limit - 1)
         return min(add, remove, substitute)
 
+# Correction Speed: 18345.73467937681 wpm
+# Correctly Corrected: 421 words
+# Incorrectly Corrected: 407 words
+# Uncorrected: 112 words
 def final_diff(start, goal, limit):
     """A diff function that takes in a string START, a string GOAL, and a number LIMIT.
     If you implement this function, it will be used."""
-    assert False, 'Remove this line to use your final_diff function.'
+    goal_len = len(goal)
+    start_len = len(start)
+    # base cases
+    if limit < 0:      # run over the limit
+        return 99999999
+    if start == goal:   # they are the same to begin with
+        return 0
+    if (not start_len and goal_len) or (start_len and not goal_len): # one is longer than the other after swapping
+        return abs(goal_len - start_len)
+    if goal_len == 0 and start_len == 0:  # stop
+        return 0
+    # recursive steps
+    if goal_len > 2 and start[0] != goal[0] and goal[0] == goal[1]:
+        return 0 + sphinx_swaps(start[1:start_len], goal[1:goal_len], limit - 1)
+    if start[0] != goal[0]:
+        return 1 + sphinx_swaps(start[1:start_len], goal[1:goal_len], limit - 1)
+    else:
+        return 0 + sphinx_swaps(start[1:start_len], goal[1:goal_len], limit)
 
-
-FINAL_DIFF_LIMIT = 6  # REPLACE THIS WITH YOUR LIMIT
+FINAL_DIFF_LIMIT = 8  # REPLACE THIS WITH YOUR LIMIT
 
 
 ###########
