@@ -46,6 +46,8 @@ The order of a recursive function is that all the recursive calls have to return
 
 When recursively processing lists, the base case is often the empty list and the recursive case is often all-but-the-first items.
 
+A tree recursive function is a recursive function that makes more than one call to itself, resulting in a tree-like series of calls.
+
 ## object
 
 An object is a bundle of data and behavior.
