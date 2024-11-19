@@ -103,3 +103,11 @@ Polymorphism can be achieved through shared interface (class attribute / methods
 Inheritance represents the "is-a" relationship. E.g --> a rabbit is an animal so rabbit inherits the class of animal
 
 Composition represents the "has-a" relationship. E.g --> a zoo has an animal or more so it keeps track of it in an attribute called animals using a list.
+
+## Special Class methods
+
+There are two main ways to produce the "string" of an object in Python: str() and repr(). While the two are similar, they are used for different purposes.
+
+str() is used to describe the object to the end user in a "Human-readable" form, while repr() can be thought of as a "Computer-readable" form mainly used for debugging and development.
+
+When we define a class in Python, **str** and **repr** are both built-in methods for the class.
