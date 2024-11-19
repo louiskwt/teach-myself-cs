@@ -84,4 +84,22 @@ We would like to use the object system to promote a separation of concerns. Each
 
 Object-oriented programming is particularly well-suited to programs that model systems that have separate but interacting parts.
 
-On the other hand, f–unctional abstractions provide a more natural metaphor for representing relationships between inputs and outputs. One should not feel compelled to fit every bit of logic in a program within a class, especially when defining independent functions for manipulating data is more natural.
+On the other hand, functional abstractions provide a more natural metaphor for representing relationships between inputs and outputs. One should not feel compelled to fit every bit of logic in a program within a class, especially when defining independent functions for manipulating data is more natural.
+
+## Polymorphism
+
+Defining the repr function presents a new challenge: we would like it to apply correctly to all data types, even those that did not exist when repr was implemented. We would like it to be a generic or polymorphic function, one that can be applied to many (poly) different forms (morph) of data.
+
+By implementing this same method in user-defined classes, we can extend the applicability of repr to any class we create in the future. This example highlights another benefit of dot expressions in general, that they provide a mechanism for extending the domain of existing functions to new object types.
+
+The str constructor is implemented in a similar manner: it invokes a method called **str** on its argument.
+
+Polymorphic functions are examples of a more general principle: certain functions should apply to multiple data types. Moreover, one way to create such a function is to use a shared attribute name with a different definition in each class.
+
+Polymorphism can be achieved through shared interface (class attribute / methods), type dispatch or type coercion.
+
+## Composition vs Inheritance
+
+Inheritance represents the "is-a" relationship. E.g --> a rabbit is an animal so rabbit inherits the class of animal
+
+Composition represents the "has-a" relationship. E.g --> a zoo has an animal or more so it keeps track of it in an attribute called animals using a list.
