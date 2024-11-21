@@ -52,7 +52,7 @@ class Insect:
     """An Insect, the base class of Ant and Bee, has health and a Place."""
 
     damage = 0
-    # ADD CLASS ATTRIBUTES HERE
+    is_waterproof = False 
 
     def __init__(self, health, place=None):
         """Create an Insect with a health amount and a starting PLACE."""
@@ -109,6 +109,7 @@ class Ant(Insect):
 
     def __init__(self, health=1):
         """Create an Insect with a HEALTH quantity."""
+        self.doubled = False
         super().__init__(health)
 
     @classmethod
@@ -413,17 +414,29 @@ class Water(Place):
         """Add an Insect to this place. If the insect is not waterproof, reduce
         its health to 0."""
         # BEGIN Problem 10
-        "*** YOUR CODE HERE ***"
+        Place.add_insect(self, insect) 
+        if not insect.is_waterproof:
+            insect.reduce_health(insect.health)
         # END Problem 10
 
 # BEGIN Problem 11
 # The ScubaThrower class
+class ScubaThrower(ThrowerAnt):
+    """ScubaThrowerAnt can be placed in water and can attack like ThrowerAnt."""
+
+    name = 'Scuba'
+    food_cost = 6
+    is_waterproof = True
+    implemented = True
+
+    def __init__(self, health=1):
+        super().__init__(health)
+    
 # END Problem 11
 
 # BEGIN Problem 12
 
-
-class QueenAnt(Ant):  # You should change this line
+class QueenAnt(ScubaThrower):  # You should change this line
 # END Problem 12
     """The Queen of the colony. The game is over if a bee enters her place."""
 
@@ -431,7 +444,7 @@ class QueenAnt(Ant):  # You should change this line
     food_cost = 7
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 12
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem 12
 
     @classmethod
@@ -441,7 +454,11 @@ class QueenAnt(Ant):  # You should change this line
         returns None otherwise. Remember to call the construct() method of the superclass!
         """
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        if gamestate.has_queen:
+            return
+        else:
+            gamestate.has_queen = True
+            return super().construct(gamestate)
         # END Problem 12
 
     def action(self, gamestate):
@@ -449,7 +466,23 @@ class QueenAnt(Ant):  # You should change this line
         in her tunnel.
         """
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        self.throw_at(self.nearest_bee())
+        next_behind = self.place.exit
+        while next_behind:
+            has_ant = next_behind.ant  
+            should_double_ant = has_ant and not next_behind.ant.doubled and next_behind.ant.damage > 0
+            is_container_ant = has_ant and next_behind.ant.is_container
+            should_double_contained = is_container_ant and next_behind.ant.ant_contained and not next_behind.ant.ant_contained.doubled
+            if should_double_ant:
+                next_behind.ant.damage *= 2
+                next_behind.ant.doubled = True 
+
+            if should_double_contained:
+                next_behind.ant.ant_contained.damage *= 2
+                next_behind.ant.ant_contained.doubled = True
+
+            next_behind = next_behind.exit 
+
         # END Problem 12
 
     def reduce_health(self, amount):
@@ -457,9 +490,13 @@ class QueenAnt(Ant):  # You should change this line
         remaining, signal the end of the game.
         """
         # BEGIN Problem 12
-        "*** YOUR CODE HERE ***"
+        self.health -= amount
+        if self.health <= 0:
+            ants_lose()
         # END Problem 12
 
+    def remove_from(self, place):
+        return None
 
 class AntRemover(Ant):
     """Allows the player to remove ants from the board in the GUI."""
@@ -476,7 +513,7 @@ class Bee(Insect):
 
     name = 'Bee'
     damage = 1
-    # OVERRIDE CLASS ATTRIBUTES HERE
+    is_waterproof = True
 
     def sting(self, ant):
         """Attack an ANT, reducing its health by 1."""
@@ -727,6 +764,8 @@ class GameState:
         self.dimensions = dimensions
         self.active_bees = []
         self.configure(beehive, create_places)
+        self.has_queen = False
+        self.doubled = False
 
     def configure(self, beehive, create_places):
         """Configure the places in the colony."""
