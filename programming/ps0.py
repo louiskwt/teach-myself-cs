@@ -11,15 +11,13 @@ def square_root(x: int) -> float:
         diff = abs(x - g**2)
     return round(g, 3)
 
-x: str = input("Enter a number: ")
 
 while True:
     try:
-        x = float(x)
+        x = float(input("Enter a number: "))
         break
     except ValueError:
         print("Please enter a number!")
-        x = input("Enter a number: ") 
 
 if x < 0:
     print("Error: Negative numbers don't have real square roots.")
