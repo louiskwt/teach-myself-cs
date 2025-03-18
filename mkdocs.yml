@@ -5,3 +5,12 @@ theme:
   palette:
     scheme: slate
     primary: black
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+
+nav:
+  - Home: index.md
+  - "MIT 6.100":
+      - "6.100/index.md"
+      - "6.100/lecture1.md"
