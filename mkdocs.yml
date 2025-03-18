@@ -1,5 +1,5 @@
 site_name: LT CS Study Notes
-
+site_url: https://louiskwt.github.io/teach-myself-cs/
 theme:
   name: material
   palette:
