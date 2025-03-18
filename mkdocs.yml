@@ -1,0 +1,7 @@
+site_name: LT CS Study Notes
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: black
