@@ -30,7 +30,19 @@ Although computer is powerful for processing data, it can only do what you tell 
 
 ## Basic Primitives
 
-Turning showed that you can compute anything with only 6 primitives: left, right, print, scan, erase, no op
+Turing showed that you can compute anything with only 6 primitives: left, right, print, scan, erase, no op
+
+Church-Turing Thesis: if a functoin is computable, a Turing Machine can be programmed to compute it
+
+The if in Church-Turin thesis is important because not all function is computable.
+
+E.g. 
+
+- halting problem
+
+it is impossible to write a program that given an arbitrary program, call it P, prints true if and only if it runs forever
+
+Turing Completeness: A programming language is Turing complete if it can be used to simulatre a universal Turing machine. (Most modern programming langauges are)
 
 Real programming languages have more convenient set of primitives and ways to combine primitives to create new primitives
 
@@ -43,8 +55,8 @@ Program only has one meaning, but the meaning may not be what you intend
 Things can go wrong
 
 1. syntax error
-2. static sematic error
-3. the output is not what you intended!
+2. static semantic error (valid syntax but invalid meaning or not meaningful)
+3. the output is not what you intended! (semantic error)
 
 
 ## what is programming about
@@ -133,5 +145,11 @@ variables can enhance reusability
 can re-bind variable names using new assignment statement
 
 BIG IDEA: Lines are evaluated one after another
+
+## Computational Thinkinng
+
+- Thinking imperatively and designing algorithms to solve problems
+
+Definition of an algorithm: a finite list instructions that describe a computation that when executed on a set of inputs will proceed through as set of well-defined states and eventually produce an output.
 
 
