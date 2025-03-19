@@ -150,6 +150,5 @@ BIG IDEA: Lines are evaluated one after another
 
 - Thinking imperatively and designing algorithms to solve problems
 
-Definition of an algorithm: a finite list instructions that describe a computation that when executed on a set of inputs will proceed through as set of well-defined states and eventually produce an output.
-
+Definition of an algorithm: a finite list of instructions that describe a computation that when executed on a set of inputs will proceed through as set of well-defined states and eventually produce an output.
 
