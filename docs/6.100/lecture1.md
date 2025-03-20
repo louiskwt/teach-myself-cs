@@ -10,7 +10,7 @@ Topics Cover
 
 _CS focsues on the imperative knowledge (how to / recipe) not the declarative knowledge (statements of facts)_
 
-## Imparative Knowledge Exampl (Finding Square Root with Newton's Method)
+## Imparative Knowledge Example (Finding Square Root with Newton's Method)
 
 1. Start with a guess g
 2. if g * g is close enough to x, stop and say g is the square root
