@@ -1,4 +1,4 @@
-# Lecture 1 
+# Lecture 1
 
 Topics Cover
 
@@ -13,10 +13,9 @@ _CS focsues on the imperative knowledge (how to / recipe) not the declarative kn
 ## Imparative Knowledge Example (Finding Square Root with Newton's Method)
 
 1. Start with a guess g
-2. if g * g is close enough to x, stop and say g is the square root
+2. if g \* g is close enough to x, stop and say g is the square root
 3. else make a new guess by averaging g and x / g
 4. using the new guess, repeat the process until it's close enough
-
 
 We have an algorithm
 
@@ -36,7 +35,7 @@ Church-Turing Thesis: if a functoin is computable, a Turing Machine can be progr
 
 The if in Church-Turin thesis is important because not all function is computable.
 
-E.g. 
+E.g.
 
 - halting problem
 
@@ -52,12 +51,11 @@ _Anything computable in one language is computable in any other programming lang
 
 Program only has one meaning, but the meaning may not be what you intend
 
-Things can go wrong
+How things can go wrong in programming
 
 1. syntax error
 2. static semantic error (valid syntax but invalid meaning or not meaningful)
 3. the output is not what you intended! (semantic error)
-
 
 ## what is programming about
 
@@ -67,18 +65,21 @@ Objects have a type that defines the kinds of things programs can do them
 
 - Scalar object (no internal structure)
 
-    1. int 
-    2. float
-    3. bool
-    4. NoneType
+  1. int
+  2. float
+  3. bool
+  4. NoneType
 
 - Non-scalar (has an internal structure / can be subdivided into smaller elements)
-    1. list
-    2. dictionary
+
+  1. list
+  2. dictionary
+  3. str
 
 ## Type Casting
 
-Can convert one object to another type
+convert one object to another type
+
 float(3)
 
 But the original object is still in memory not modified
@@ -97,7 +98,7 @@ In programming, expression is any code that evaluates to a value, it can be
 1. literals (e.g., "hello", 42)
 2. variables (e.g., x)
 3. function calls (e.g. type(x))
-4. operator (e.g. <Object> < Operator> < Object>)
+4. operator (e.g. <Object> <Operator> <Object>)
 
 Python evaluates the expression and then store the value, but not the expression itself
 
@@ -107,12 +108,12 @@ BIG IDEA: Python replace complex expressions by ONE value
 
 - functions and objects can store behaviour, but not expression
 
-* you can store expressions using eval() and ast.parse() to allow python to analyze the expression structually 
+* you can store expressions using eval() and ast.parse() to allow python to analyze the expression structually
 
-    - eval() is used to execute a string as a Python expression but it can be dangerous
-    - ast is used for parsing and analyzing code without executing it (used in pylint, mypy) or for building custom interpreters
+  - eval() is used to execute a string as a Python expression but it can be dangerous
+  - ast is used for parsing and analyzing code without executing it (used in pylint, mypy) or for building custom interpreters
 
-** functions are stored as function object, and its logic is stored as complied bytecode, not as the expression from the code!
+\*\* functions are stored as function object, and its logic is stored as complied bytecode, not as the expression from the code!
 
 ## Operators on int and float
 
@@ -122,19 +123,21 @@ For division, the result is always float
 
 opearator precedence without paraenthesis
 
-**
+\*\*
 
-* / % executed left to right, as appear in expression
+- / % executed left to right, as appear in expression
 
-+ = executed left to right, as appear in expression
+* = executed left to right, as appear in expression
 
 ## Variables
 
 Math variable
+
 - Abstract
 - Can represent many values
 
 CS variables
+
 - bound to one single value
 - can be bound to an expression
 
@@ -151,4 +154,3 @@ BIG IDEA: Lines are evaluated one after another
 - Thinking imperatively and designing algorithms to solve problems
 
 Definition of an algorithm: a finite list of instructions that describe a computation that when executed on a set of inputs will proceed through as set of well-defined states and eventually produce an output.
-
